@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>miscellaneous/os/process.h</header>
+ <class>DS::Miscellaneous::OS::Process</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>Process</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Process</name>
+   <signature>(const DS::Miscellaneous::OS::Process &amp; process)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Miscellaneous::OS::Process &amp;(const DS::Miscellaneous::OS::Process &amp; process)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsValid</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetPid</name>
+   <signature>int () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Create</name>
+   <signature>DS::Miscellaneous::OS::Process (const tstring &amp; executable ,const tstring &amp; arguments ,const tstring &amp; wdir ,bool showWindow ,bool interactive)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Execute</name>
+   <signature>tstring (const tstring &amp; executable ,const tstring &amp; arguments ,const tstring &amp; wdir ,bool showWindow)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>InstallListener</name>
+   <signature>void (DS::Miscellaneous::OS::IProcessListener * pListener)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>UninstallListener</name>
+   <signature>void (DS::Miscellaneous::OS::IProcessListener * pListener)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Terminate</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>WaitProcess</name>
+   <signature>bool (unsigned int timeout)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Read</name>
+   <signature>tstring ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Write</name>
+   <signature>void (const tstring &amp; line)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Detach</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetExitCode</name>
+   <signature>int () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsCrashed</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetCrashCode</name>
+   <signature>int () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Process</name>
+   <signature>(DS::Miscellaneous::OS::ProcessImpl * pImpl)</signature>
+  </method>
+ </methods>
+</description>

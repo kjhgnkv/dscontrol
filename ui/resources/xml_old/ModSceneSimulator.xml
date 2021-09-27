@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="ModSceneSimulator" title="场景模拟" type="0" category="波束调度">
+    <Recv id="1" name="波束描述(beam)" protocol="stdbin"/>
+    <Recv id="8" name="定时定位信息(gps_ins)" protocol="stdbin"/>
+    <Recv id="104" name="模拟目标控制(target_simu)" protocol="stdbin"/>
+    <Send id="9" name="模拟波形描述(simulation)" protocol="stdbin"/>
+</ModuleClass>

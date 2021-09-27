@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="ModRouteSender" title="sender" type="0" category="unknow">
+  <Version name="1.01.001"/>
+  <Send id="0" name="message" protocol="stdbin"/>
+</ModuleClass>

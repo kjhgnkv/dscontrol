@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/paxos/paxos.h</header>
+ <class>DS::Synchronization::Paxos::Proposal</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>Proposal</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Proposal</name>
+   <signature>(const DS::UID &amp; proposer ,unsigned int number ,unsigned int value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsPrecedent</name>
+   <signature>bool (const DS::Synchronization::Paxos::Proposal &amp; other)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsPrecedent</name>
+   <signature>bool (unsigned int number1 ,unsigned int number2)</signature>
+  </method>
+ </methods>
+</description>

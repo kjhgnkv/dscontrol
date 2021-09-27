@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>core/imodule.h</header>
+ <class>DS::Core::IModuleHelper</class>
+ <inheritance>
+  <class>DS::Core::IQueriable</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetVersion</name>
+   <signature>DS::Version () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>SetPrintStream</name>
+   <signature>void (Miscellaneous::IPrintStream * pPrinter)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>PrintHelp</name>
+   <signature>void () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetFlags</name>
+   <signature>unsigned int () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetTitle</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetProvidedServices</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetUsedServices</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetInputMessages</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetOutputMessages</name>
+   <signature>const tchar *() const</signature>
+  </method>
+ </methods>
+</description>

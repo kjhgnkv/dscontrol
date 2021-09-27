@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>miscellaneous/string/cmdline_tokenizer.h</header>
+ <class>DS::Miscellaneous::String::CommandLineTokenizer</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>CommandLineTokenizer</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>CommandLineTokenizer</name>
+   <signature>(const tchar * commandline)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Arg</name>
+   <signature>DS::Miscellaneous::String::CommandLineTokenizer &amp;(const tstring &amp; arg)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetArgCount</name>
+   <signature>int () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetArguments</name>
+   <signature>const tchar *const *() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Tokenize</name>
+   <signature>void (const tchar * commandline)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Clear</name>
+   <signature>void ()</signature>
+  </method>
+ </methods>
+</description>

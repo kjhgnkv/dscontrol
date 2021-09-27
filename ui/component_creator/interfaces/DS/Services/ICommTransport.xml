@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>services/icommtransport.h</header>
+ <class>DS::Services::ICommTransport</class>
+ <inheritance>
+  <class>DS::Core::IQueriable</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>RegisterCommProvider</name>
+   <signature>void (const tchar * type ,DS::Communication::ICommProvider * pProvider)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>UnregisterCommProvider</name>
+   <signature>void (const tchar * type ,DS::Communication::ICommProvider * pProvider)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>FindCommProvider</name>
+   <signature>DS::Communication::ICommProvider *(const tchar * type)</signature>
+  </method>
+ </methods>
+</description>

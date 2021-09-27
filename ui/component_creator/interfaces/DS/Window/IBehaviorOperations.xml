@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>window/icommonops.h</header>
+ <class>DS::Window::IBehaviorOperations</class>
+ <inheritance>
+  <class>DS::Core::IQueriable</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Undo</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Redo</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>CanUndo</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>CanRedo</name>
+   <signature>bool () const</signature>
+  </method>
+ </methods>
+</description>

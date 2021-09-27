@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<bundlespec>
+  <manifest>
+    <name>RPC Test Bundle</name>
+    <symbolicName>ds.host.samples.rpc_test</symbolicName>
+    <version>1.0.0</version>
+    <vendor>CETC</vendor>
+    <copyright>(c) 2020, CETC Belarus</copyright>
+    <activator>
+      <class>RPCTestBundleObjectActivator</class>
+      <library>ds.host.samples.rpc_test</library>
+    </activator>
+    <lazyStart>false</lazyStart>
+    <runLevel>400</runLevel>
+    <module-dependency>
+        <symbolicName>ds.host.extension.rpc</symbolicName>
+        <version>1.0</version>
+    </module-dependency>
+  </manifest>
+  <code>
+      lib/*.so,
+      lib/*.dll,
+  </code>
+</bundlespec>

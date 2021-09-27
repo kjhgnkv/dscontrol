@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="DSTracker" title="MHT核心处理" type="2" category="航迹跟踪">
+    <Service name="ITrackerEngine" provide="1"/>
+    <Recv id="2" name="点迹包(plot)" protocol="stdbin"/>
+    <Recv id="4" name="战术操作(tactic)" protocol="stdbin"/>
+    <Recv id="8" name="定时定位信息(gps_ins)" protocol="stdbin"/>
+    <Recv id="100" name="工作参数设置(work_param)" protocol="stdbin"/>
+    <Send id="3" name="航迹(track)" protocol="stdbin"/>
+    <Send id="5" name="状态报(state)" protocol="stdbin"/>
+</ModuleClass>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>components/data/autoptr.h</header>
+ <class>DS::Components::Data::AutoPtr&lt;T></class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>AutoPtr&lt;T></name>
+   <signature>(T * ptr)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>AutoPtr&lt;T> &amp;(T * ptr)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator-></name>
+   <signature>T *() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>AutoPtr&lt;T> &amp;(AutoPtr&lt;T> * autoptr)</signature>
+  </method>
+ </methods>
+</description>

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="SPChannelCopy" title="通道复制" type="1" category="信号处理">
+    <Service name="ISignalProcessEngine" provide="0"/>
+</ModuleClass>

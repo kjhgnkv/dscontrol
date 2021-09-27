@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>services/iintegrationservice.h</header>
+ <class>DS::Services::IIntegrationService</class>
+ <inheritance>
+  <class>DS::Core::IQueriable</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>FindComponent</name>
+   <signature>const DS::Services::IComponentConfig *(const tchar * filename)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>ForeachObject</name>
+   <signature>void (DS::Services::IObjectVisitor * pVisitor)</signature>
+  </method>
+ </methods>
+</description>

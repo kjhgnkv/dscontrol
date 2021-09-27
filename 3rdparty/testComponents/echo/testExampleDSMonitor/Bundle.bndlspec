@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<bundlespec>
+  <manifest>
+    <name>Test Example DSMonitor Bundle</name>
+    <symbolicName>ds.host.samples.test_example_dsmonitor</symbolicName>
+    <version>1.0.0</version>
+    <vendor>CETC</vendor>
+    <copyright>(c) 2020, CETC Belarus</copyright>
+    <activator>
+      <class>TestExampleDSMonitorBundleActivator</class>
+      <library>ds.host.samples.test_example_dsmonitor</library>
+    </activator>
+    <lazyStart>false</lazyStart>
+    <runLevel>400</runLevel>
+  </manifest>
+  <code>
+      lib/*.so,
+      lib/*.dll,
+  </code>
+</bundlespec>

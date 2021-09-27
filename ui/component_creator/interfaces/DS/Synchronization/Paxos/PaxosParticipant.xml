@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/paxos/paxos.h</header>
+ <class>DS::Synchronization::Paxos::PaxosParticipant</class>
+ <inheritance>
+  <class>DS::Communication::IMessageHandler</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>PaxosParticipant</name>
+   <signature>(const DS::UID &amp; id ,Communication::ICommSender * pSender)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>AddRole</name>
+   <signature>void (DS::Synchronization::Paxos::PaxosRole * role)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetQuorumSize</name>
+   <signature>void (unsigned int nQuorumSize)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetQuorumSize</name>
+   <signature>unsigned int () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetParticipantId</name>
+   <signature>const DS::UID &amp;() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>OnProposalAccepted</name>
+   <signature>void (const DS::Synchronization::Paxos::Proposal &amp; proposal)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>OnProposalRejected</name>
+   <signature>void (const DS::Synchronization::Paxos::Proposal &amp; proposal)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Request</name>
+   <signature>void (const DS::Synchronization::Paxos::Proposal &amp; proposal)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ProcessMessage</name>
+   <signature>void (int commid ,void * msg_ ,unsigned int msgsize)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Recv</name>
+   <signature>void (const DS::Synchronization::Paxos::PaxosMessage * message)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Send</name>
+   <signature>void (DS::Synchronization::Paxos::PaxosMessage * message ,DS::Synchronization::Paxos::Role senderRole)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>TranslateMessage</name>
+   <signature>DS::Synchronization::Paxos::PaxosMessage *(DS::Synchronization::Paxos::PaxosMessage * message ,DS::Synchronization::Paxos::Role senderRole)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Decode</name>
+   <signature>DS::Synchronization::Paxos::PaxosMessage *(const void * buffer ,unsigned int size)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Encode</name>
+   <signature>bool (void * buffer ,unsigned int size ,const DS::Synchronization::Paxos::PaxosMessage * message ,DS::Synchronization::Paxos::Role senderRole)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Send</name>
+   <signature>void (const void * buffer ,unsigned int size ,DS::Synchronization::Paxos::Role senderRole)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetClient</name>
+   <signature>void (DS::Synchronization::Paxos::PaxosRole * role)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetAcceptor</name>
+   <signature>void (DS::Synchronization::Paxos::PaxosRole * role)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetProposer</name>
+   <signature>void (DS::Synchronization::Paxos::PaxosRole * role)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetLearner</name>
+   <signature>void (DS::Synchronization::Paxos::PaxosRole * role)</signature>
+  </method>
+ </methods>
+</description>

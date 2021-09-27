@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>components/data/ireferencecountable.h</header>
+ <class>DS::Components::Data::IReferenceCountable</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>Reference</name>
+   <signature>int ()</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Dereference</name>
+   <signature>void ()</signature>
+  </method>
+ </methods>
+</description>

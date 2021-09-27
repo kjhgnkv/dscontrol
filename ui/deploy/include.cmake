@@ -1,0 +1,12 @@
+set(deploy
+    DeployDestModel.cpp
+    DeployDestModel.hpp
+    DeployTargetItem.cpp
+    DeployTargetItem.hpp
+    DeployTargetModel.cpp
+    DeployTargetModel.hpp
+    DeployWidget.cpp
+    DeployWidget.hpp
+    DeployWidget.ui
+    DestData.hpp
+    )

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>utils/flags.h</header>
+ <class>DS::Flags&lt;FlagType,IntType></class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>Flags&lt;FlagType, IntType></name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Flags&lt;FlagType, IntType></name>
+   <signature>(IntType bits)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetFlag</name>
+   <signature>void (FlagType flag)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Assign</name>
+   <signature>void (IntType flags)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ClearFlag</name>
+   <signature>void (FlagType flag)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ClearAll</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>TestFlag</name>
+   <signature>bool (FlagType flag)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator&lt;&lt;</name>
+   <signature>Flags&lt;FlagType, IntType> &amp;(FlagType flag)</signature>
+  </method>
+ </methods>
+</description>

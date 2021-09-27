@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/locks.h</header>
+ <class>DS::Synchronization::Spin</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>Spin</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Lock</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Unlock</name>
+   <signature>void () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Synchronization::Spin &amp;(const DS::Synchronization::Spin &amp; other)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Spin</name>
+   <signature>(const DS::Synchronization::Spin &amp; other)</signature>
+  </method>
+ </methods>
+</description>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>processes/threads.h</header>
+ <class>DS::Processes::Thread</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>Start</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Stop</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Detach</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsRunning</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetProcessorUsage</name>
+   <signature>double () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>AddProcessor</name>
+   <signature>DS::Processes::CpuSet *(DS::Processes::CpuSet * cpuset ,int coreIdx ,int coreCount)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetProcesorAffinity</name>
+   <signature>void (const DS::Processes::CpuSet * cpuset)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetProcessorCount</name>
+   <signature>unsigned int ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Sleep</name>
+   <signature>void (unsigned int timeout)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>CreateThreadDataKey</name>
+   <signature>DS::Processes::ThreadDataKey *()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetThreadData</name>
+   <signature>void *(DS::Processes::ThreadDataKey * key)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetThreadData</name>
+   <signature>bool (DS::Processes::ThreadDataKey * key ,void * data)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>DeleteThreadDataKey</name>
+   <signature>void (DS::Processes::ThreadDataKey * key)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Thread</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>NotifyStop</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Execute</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>NeedStop</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>PerformanceTest</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ThreadProc</name>
+   <signature>void *(void * arg)</signature>
+  </method>
+ </methods>
+</description>

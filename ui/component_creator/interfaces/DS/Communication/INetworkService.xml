@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/inetworkservice.h</header>
+ <class>DS::Communication::INetworkService</class>
+ <inheritance>
+  <class>DS::Core::IQueriable</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Query</name>
+   <signature>DS::Core::IQueriable *(const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsOrInherits</name>
+   <signature>bool (const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>RegisterMessageHandler</name>
+   <signature>bool (int code ,DS::Communication::IMessageHandler * pHandler)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>UnregisterMessageHandler</name>
+   <signature>void (int code ,DS::Communication::IMessageHandler * pHandler)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>RegisterDedicatedHandler</name>
+   <signature>bool (int channel ,int code ,DS::Communication::IMessageHandler * pHandler)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>UnregisterDedicatedHandler</name>
+   <signature>void (int channel ,int code ,DS::Communication::IMessageHandler * pHandler)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>SendMessageToChannel</name>
+   <signature>bool (int code ,const void * msg_ ,size_t msglen ,int channel)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>CreateSendChannel</name>
+   <signature>int (const tchar * name ,const tchar * net ,const tchar * protocol ,const tchar * config)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>DeleteSendChannel</name>
+   <signature>void (int channel)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>CreateRecvChannel</name>
+   <signature>int (const tchar * name ,const tchar * net ,const tchar * protocol ,const tchar * config)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>DeleteRecvChannel</name>
+   <signature>void (int channel)</signature>
+  </method>
+ </methods>
+</description>

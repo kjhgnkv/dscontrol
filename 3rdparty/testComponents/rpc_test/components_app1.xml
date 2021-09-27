@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DSHost>
+    <Protocols>
+        <Protocol name="integer" factory="raw"/>
+    </Protocols>
+    <Communication>
+        <Comm name="1:tcp/server/any" id="1" factory="tcp" component="ds.host.transport.provider.tcp" server="true" bind="localhost:60000"/>
+    </Communication>
+    <Components>
+        <Component name="ds.host.extension.rpc">
+            <Object name="rpc">
+                <Send name="comm" comm="1:tcp/server/any" destination="rpc"/>
+                <Recv name="comm" comm="1:tcp/server/any" source="rpc"/>
+            </Object>
+        </Component>
+
+        <Component name="ds.host.samples.rpc_test" start="false"/>
+    </Components>
+</DSHost>
+

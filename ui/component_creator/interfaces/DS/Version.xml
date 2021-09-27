@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>version.h</header>
+ <class>DS::Version</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>Version</name>
+   <signature>(unsigned short major ,unsigned short minor ,const char * date)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Version</name>
+   <signature>(unsigned short major ,unsigned short minor ,unsigned int rev)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Version</name>
+   <signature>(uint64 ver)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToString</name>
+   <signature>tstring () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToInteger</name>
+   <signature>uint64 () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator&lt;</name>
+   <signature>bool (const DS::Version &amp; version)</signature>
+  </method>
+ </methods>
+</description>

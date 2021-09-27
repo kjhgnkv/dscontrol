@@ -1,0 +1,26 @@
+make_includable(  "templates/protocol"               CMakeLists.txt)
+make_includable(  "templates/protocol"               macchina.cmake)
+make_includable(  "templates/protocol"               build.cmake)
+make_includable(  "templates/protocol"               Bundle.bndlspec)
+make_includable(  "templates/protocol"               Activator.cpp)
+
+make_includable(  "templates/protocol/include"       Defines.h)
+make_includable(  "templates/protocol/include"       Message.h)
+make_includable(  "templates/protocol/include"       Protocol.h)
+make_includable(  "templates/protocol/include"       ProtocolFactory.h)
+make_includable(  "templates/protocol/include"       RawConverter.h)
+make_includable(  "templates/protocol/include"       StandardInternalConverter.h)
+make_includable(  "templates/protocol/include"       MessageAuxDataModifier.h)
+
+make_includable(  "templates/protocol/include/Impl"  Message.h)
+make_includable(  "templates/protocol/include/Impl"  Protocol.h)
+make_includable(  "templates/protocol/include/Impl"  ProtocolFactory.h)
+make_includable(  "templates/protocol/include/Impl"  RawConverter.h)
+make_includable(  "templates/protocol/include/Impl"  StandardInternalConverter.h)
+make_includable(  "templates/protocol/include/Impl"  MessageAuxDataModifier.h)
+
+make_includable(  "templates/protocol/src"           RawConverter.cpp)
+make_includable(  "templates/protocol/src"           RawConverterFeatures.cpp)
+make_includable(  "templates/protocol/src"           StandardInternalConverter.cpp)
+make_includable(  "templates/protocol/src"           MessageAuxDataModifier.cpp)
+

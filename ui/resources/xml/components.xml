@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="ds.host.transport.provider.tcp" title="sender" type="0" category="unknow">
+    <Service name="ISignalProcessEngine" provide="1"/>
+    <GUID name="{4C60ADFE-8A1D-4973-AB58-A9B958ADFB06}"/>
+    <Version name="1.01.001"/>
+    <Extension name=".dll"/>
+    <CreatedDate name="01.12.2018"/>
+    <UpdatedDate name="23.01.2019"/>
+    <UploadDate name="01.02.2019"/>
+    <LastmodifiedDate name="08.03.2018"/>
+    <Description name="Very Good and welldone component for signal process"/>
+    <Recv id="20" name="message_test" protocol="stdbin"/>
+    <Send id="0" name="message_test" protocol="stdbin"/>
+    <Protocols>
+        <Protocol name="integer" factory="raw"/>
+    </Protocols>
+    <DSHost>
+        <Communication>
+            <Comm name="1:tcp/server/any" id="1" factory="tcp" component="ds.host.transport.provider.tcp" server="true" bind="localhost:60000"/>
+        </Communication>
+        <Components>
+            <Component name="ds.host.extension.rpc">
+                <Object name="rpc">
+                    <Send name="comm" comm="1:tcp/server/any" destination="rpc"/>
+                    <Recv name="comm" comm="1:tcp/server/any" source="rpc"/>
+                </Object>
+            </Component>
+
+            <Component name="ds.host.samples.rpc_test" start="false">
+            </Component>
+        </Components>
+    </DSHost>
+</ModuleClass>

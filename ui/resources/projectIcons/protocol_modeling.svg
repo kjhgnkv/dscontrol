@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="305px" height="175px" viewBox="0 0 305 175" style="enable-background:new 0 0 305 175;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F2F2F5;stroke:#747D8C;stroke-miterlimit:10;}
+	.st1{fill:#DFE4EA;stroke:#7F8C8D;stroke-miterlimit:10;}
+	.st2{fill:#EDF0F1;stroke:#7F8C8D;stroke-miterlimit:10;}
+	.st3{fill:#EDCC69;stroke:#2C3E50;stroke-miterlimit:10;}
+	.st4{fill:#F2F2F5;stroke:#2C3E50;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#2C3E50;stroke-miterlimit:10;}
+	.st6{font-family:'MyriadPro-Regular';}
+	.st7{font-size:17px;}
+	.st8{fill:#F9A242;stroke:#747D8C;stroke-miterlimit:10;}
+	.st9{fill:#F2F2F5;stroke:#747D8C;stroke-width:0.5;stroke-miterlimit:10;}
+	.st10{fill:#FFFFFF;stroke:#747D8C;stroke-width:0.5;stroke-miterlimit:10;}
+	.st11{fill:#EDCC69;stroke:#747D8C;stroke-miterlimit:10;}
+</style>
+<g>
+	<path class="st1" d="M279.6,172.5H4.5c-1.1,0-2-0.9-2-2V4.5c0-1.1,0.9-2,2-2h277.1v168C281.6,171.6,280.7,172.5,279.6,172.5z"/>
+	<ellipse class="st2" cx="281.6" cy="23.8" rx="20.9" ry="21.3"/>
+	<g>
+		<g>
+			<rect x="273.1" y="9.6" class="st3" width="10.6" height="5.4"/>
+		</g>
+		<g>
+			<rect x="282.6" y="20.4" class="st4" width="8" height="5.4"/>
+		</g>
+		<g>
+			<rect x="279.9" y="20.4" class="st3" width="2.7" height="5.4"/>
+		</g>
+		<g>
+			<rect x="282.6" y="31.2" class="st4" width="8" height="5.4"/>
+		</g>
+		<g>
+			<rect x="279.9" y="31.2" class="st3" width="2.7" height="5.4"/>
+		</g>
+		<line class="st5" x1="276.1" y1="15" x2="276.1" y2="33.9"/>
+		<line class="st5" x1="279.9" y1="33.9" x2="275.8" y2="33.9"/>
+		<line class="st5" x1="279.9" y1="23.1" x2="276.1" y2="23.1"/>
+		<line class="st5" x1="276.1" y1="15" x2="276.1" y2="9.6"/>
+	</g>
+	<text transform="matrix(0.985 0 0 1 77.3438 31.1699)" class="st6 st7">Protocol modeling</text>
+	<g>
+		<path class="st8" d="M148.4,69.4V78H106v53.4c0,1.4,1.1,2.6,2.5,2.6h79.7c1.4,0,2.5-1.2,2.5-2.6V78v-8.6H148.4z"/>
+		
+			<rect x="132.2" y="64.4" transform="matrix(4.091744e-14 -1 1 4.091744e-14 59.5996 249.9073)" class="st9" width="45.2" height="61.4"/>
+		
+			<rect x="121.8" y="66.9" transform="matrix(8.088547e-14 -1 1 8.088547e-14 45.3767 243.4321)" class="st10" width="45.2" height="64.3"/>
+		<path class="st11" d="M188.2,133.9h-79.7c-1.4,0-2.5-1-2.5-2.3l-12.7-48h84.8l12.7,48C190.8,132.8,189.7,133.9,188.2,133.9z"/>
+	</g>
+</g>
+</svg>

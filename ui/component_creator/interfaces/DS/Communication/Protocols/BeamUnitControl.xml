@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/protocols/standard/value_def.h</header>
+ <class>DS::Communication::Protocols::BeamUnitControl</class>
+ <inheritance>
+  <class>DS::Communication::Protocols::AntennaUnit</class>
+ </inheritance>
+ <methods/>
+</description>

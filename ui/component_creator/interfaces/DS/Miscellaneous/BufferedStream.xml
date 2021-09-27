@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>miscellaneous/print.h</header>
+ <class>DS::Miscellaneous::BufferedStream</class>
+ <inheritance>
+  <class>tstringstream</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>BufferedStream</name>
+   <signature>(IPrintStream::Category cat ,DS::Miscellaneous::IPrintStream * printer)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetPrintStream</name>
+   <signature>void (DS::Miscellaneous::IPrintStream * pPrinter)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetPrintStream</name>
+   <signature>DS::Miscellaneous::IPrintStream *()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator&lt;&lt;</name>
+   <signature>DS::Miscellaneous::BufferedStream &amp;(DS::Miscellaneous::BufferedStream::_Pfn_t _Pfn)</signature>
+  </method>
+ </methods>
+</description>

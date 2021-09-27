@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="DSSignalProcess" title="信号处理核心" type="2" category="GroupSignal">
+    <Service name="ISignalProcessEngine" provide="1"/>
+    <GUID name="{4C60ADFE-8A1D-4973-AB58-A9B958ADFB06}"/>
+    <Version name="1.01.001"/>
+    <Extension name=".dll"/>
+    <CreatedDate name="01.12.2018"/>
+    <UpdatedDate name="23.01.2019"/>
+    <UploadDate name="01.02.2019"/>
+    <LastmodifiedDate name="08.03.2018"/>
+    <Description name="Very Good and welldone component for signal process"/>
+    <Recv id="20" name="原始回波(cpisdata)" protocol="stdbin"/>
+    <Send id="2" name="点迹包(plot)" protocol="stdbin"/>
+    <Send id="11" name="扫描线(scanline)" protocol="stdbin"/>
+    <Send id="5" name="状态报(state)" protocol="stdbin"/>
+</ModuleClass>

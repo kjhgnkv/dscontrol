@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/data_recorder.h</header>
+ <class>DS::Communication::DataRecorder</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>DataRecorder</name>
+   <signature>(const tstring &amp; dirPath)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>StartRecording</name>
+   <signature>void (TimeType time)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>RecordMessage</name>
+   <signature>void (int commid ,void * msg_ ,unsigned int msgsize ,TimeType recvtime)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>StopRecording</name>
+   <signature>tstring ()</signature>
+  </method>
+ </methods>
+</description>

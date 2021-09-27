@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/paxos/basic_paxos.h</header>
+ <class>DS::Synchronization::Paxos::BasicPaxos</class>
+ <inheritance>
+  <class>DS::Synchronization::Paxos::PaxosParticipant</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>BasicPaxos</name>
+   <signature>(const DS::UID &amp; id ,Communication::ICommSender * pSender)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>TranslateMessage</name>
+   <signature>DS::Synchronization::Paxos::PaxosMessage *(DS::Synchronization::Paxos::PaxosMessage * message ,DS::Synchronization::Paxos::Role senderRole)</signature>
+  </method>
+ </methods>
+</description>

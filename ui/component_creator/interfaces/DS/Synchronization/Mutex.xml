@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/locks.h</header>
+ <class>DS::Synchronization::Mutex</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>Mutex</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Mutex</name>
+   <signature>(const tchar * psMutexName)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Lock</name>
+   <signature>bool (int timeout)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Unlock</name>
+   <signature>void () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Synchronization::Mutex &amp;(const DS::Synchronization::Mutex &amp; other)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Mutex</name>
+   <signature>(const DS::Synchronization::Mutex &amp; other)</signature>
+  </method>
+ </methods>
+</description>

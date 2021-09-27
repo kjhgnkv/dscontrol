@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="TRKOperate" title="战术操作" type="1" category="航迹跟踪">
+    <Service name="ITrackerEngine" provide="0"/>
+    <Recv id="4" name="战术操作(tactic)" protocol="stdbin"/>
+</ModuleClass>

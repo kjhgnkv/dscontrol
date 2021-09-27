@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="DSMonitoring" title="系统监控" type="2" category="系统监控">
+    <Recv id="5" name="状态报(state)" protocol="stdbin"/>
+    <Recv id="150" name="系统状态设置(system_state)" protocol="stdbin"/>
+    <Recv id="12" name="数据与状态查询(query)" protocol="stdbin"/>
+    <Recv id="6" name="控制命令(control)" protocol="stdbin"/>
+    <Recv id="8" name="定时定位信息(gps_ins)" protocol="stdbin"/>
+    <Send id="5" name="状态报(state)" protocol="stdbin"/>
+    <Send id="150" name="系统状态设置(system_state)" protocol="stdbin"/>
+    <Send id="6" name="控制命令(control)" protocol="stdbin"/>
+</ModuleClass>

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ToolBarWidget</class>
+ <widget class="QWidget" name="ToolBarWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>234</width>
+    <height>34</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>234</width>
+    <height>34</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>234</width>
+    <height>34</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: transparent;</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>1</x>
+     <y>1</y>
+     <width>232</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>232</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>232</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #51515E;
+border: 1px solid #7B59FF;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="fontBtn">
+    <property name="geometry">
+     <rect>
+      <x>8</x>
+      <y>4</y>
+      <width>24</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../../../resources/nodeeditorResources.qrc">
+      <normaloff>:/toolbar/font.png</normaloff>:/toolbar/font.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="colorBtn">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>4</y>
+      <width>24</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background-color: #00ff00;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../../../resources/nodeeditorResources.qrc">
+      <normaloff>:/toolbar/color.png</normaloff>:/toolbar/color.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="backColorBtn">
+    <property name="geometry">
+     <rect>
+      <x>72</x>
+      <y>4</y>
+      <width>24</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background-color: red;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../../../resources/nodeeditorResources.qrc">
+      <normaloff>:/toolbar/backColor.png</normaloff>:/toolbar/backColor.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="borderColorBtn">
+    <property name="geometry">
+     <rect>
+      <x>104</x>
+      <y>4</y>
+      <width>24</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background-color: yellow;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../../../resources/nodeeditorResources.qrc">
+      <normaloff>:/toolbar/borderColor.png</normaloff>:/toolbar/borderColor.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="BorderSpinBox" name="spinBox">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>136</x>
+      <y>6</y>
+      <width>56</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>56</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>56</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSpinBox {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #AAAAC5;
+    border-radius: 5px;
+    height: 20px;
+}
+
+QSpinBox:disabled {
+    color: #707070;
+    border: 1px solid #707070;
+}
+
+QSpinBox::up-button {
+    border-left: 1px solid #AAAAC5;
+    width: 16px;
+    height: 10px;
+}
+
+QSpinBox::up-button:disabled {
+    border-left: 1px solid #707070;
+}
+
+QSpinBox::up-arrow {
+    image: url(:/toolbar/upArrow.png);
+    width: 16px;
+    height: 9px;
+}
+
+QSpinBox::up-arrow:disabled {
+    image: url(:/toolbar/upArrowDisabled.png);
+}
+
+QSpinBox::down-button {
+    border-left: 1px solid #AAAAC5;
+    width: 16px;
+    height: 10px;
+}
+
+QSpinBox::down-button:disabled {
+    border-left: 1px solid #707070;
+}
+
+QSpinBox::down-arrow {
+    image: url(:/toolbar/downArrow.png);
+    width: 16px;
+    height: 9px;
+    top: 1px;
+}
+
+QSpinBox::down-arrow:disabled {
+    image: url(:/toolbar/downArrowDisabled.png);
+}</string>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>5</number>
+    </property>
+    <property name="singleStep">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="resetBtn">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>4</y>
+      <width>24</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../../../resources/nodeeditorResources.qrc">
+      <normaloff>:/toolbar/reset.png</normaloff>:/toolbar/reset.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>BorderSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>nodeeditor/graphicsComposites/universalGraphicsObject/toolbar/BorderSpinBox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../../resources/nodeeditorResources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

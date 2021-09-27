@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>classinfo.h</header>
+ <class>DS::ClassInfo</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>ClassInfo</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ClassInfo</name>
+   <signature>(const DS::UID &amp; clsid ,const tchar * name)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClassID</name>
+   <signature>const DS::UID &amp;() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClassName</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator==</name>
+   <signature>bool (const DS::ClassInfo &amp; info)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator!=</name>
+   <signature>bool (const DS::ClassInfo &amp; info)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator&lt;</name>
+   <signature>bool (const DS::ClassInfo &amp; info)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator==</name>
+   <signature>bool (const DS::UID &amp; uid)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator!=</name>
+   <signature>bool (const DS::UID &amp; uid)</signature>
+  </method>
+ </methods>
+</description>

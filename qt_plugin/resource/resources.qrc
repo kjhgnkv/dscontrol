@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="plugin_icon">splash.png</file>
+    </qresource>
+</RCC>
+

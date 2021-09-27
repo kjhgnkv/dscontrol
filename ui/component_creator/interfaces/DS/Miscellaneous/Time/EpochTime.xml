@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>miscellaneous/time/epoch_time.h</header>
+ <class>DS::Miscellaneous::Time::EpochTime</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>EpochTime</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>EpochTime</name>
+   <signature>(TimeType time)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>EpochTime</name>
+   <signature>(ushort year ,uchar month ,uchar day ,uchar hour ,uchar minute ,uchar second ,ushort millisec)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Year</name>
+   <signature>ushort () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Month</name>
+   <signature>uchar () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Day</name>
+   <signature>uchar () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>WeekDay</name>
+   <signature>uchar () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>YearDay</name>
+   <signature>ushort () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Hour</name>
+   <signature>uchar () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Minute</name>
+   <signature>uchar () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Second</name>
+   <signature>uchar () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Millisecond</name>
+   <signature>ushort () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>DayTime</name>
+   <signature>unsigned int () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetTime</name>
+   <signature>TimeType () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToString</name>
+   <signature>tstring () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>EpochTimeToDateTime</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>DateTimeToEpochTime</name>
+   <signature>void ()</signature>
+  </method>
+ </methods>
+</description>

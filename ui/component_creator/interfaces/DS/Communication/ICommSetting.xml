@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/icommsetting.h</header>
+ <class>DS::Communication::ICommSetting</class>
+ <inheritance>
+  <class>DS::Core::IQueriable</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>SetMessageSender</name>
+   <signature>void (DS::Communication::IMessageSender * pSender)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetMessageHandler</name>
+   <signature>DS::Communication::IMessageHandler *()</signature>
+  </method>
+ </methods>
+</description>

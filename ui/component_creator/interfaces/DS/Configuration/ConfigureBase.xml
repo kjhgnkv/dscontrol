@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>configuration/configureitem.h</header>
+ <class>DS::Configuration::ConfigureBase</class>
+ <inheritance>
+  <class>DS::Configuration::IConfigure</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>ConfigureBase</name>
+   <signature>(const tstring &amp; path)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetInstanceName</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetConfigCount</name>
+   <signature>unsigned int () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>EnumConfigInfo</name>
+   <signature>bool (unsigned int index ,DS::Configuration::ConfigureInfo &amp; info)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetConfigure</name>
+   <signature>bool (const tchar * configItem ,const tchar * configValue)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetConfigure</name>
+   <signature>bool (const tchar * configItem ,tchar * configValue ,size_t valueSize)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Register</name>
+   <signature>void (DS::Configuration::IConfigureManager * pConfigMgr)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Unregister</name>
+   <signature>void (DS::Configuration::IConfigureManager * pConfigMgr)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetGroup</name>
+   <signature>void (const tchar * pszGroup)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetGroup</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>InitComplete</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>AddConfig</name>
+   <signature>void (DS::Configuration::AbstractConfigureItem * pConfig)</signature>
+  </method>
+ </methods>
+</description>

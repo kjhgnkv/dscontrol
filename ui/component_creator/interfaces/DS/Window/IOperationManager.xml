@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>window/icommonops.h</header>
+ <class>DS::Window::IOperationManager</class>
+ <inheritance>
+  <class>DS::Core::IQueriable</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>AddOperation</name>
+   <signature>void (DS::Window::IFileOperations * fop)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>AddOperation</name>
+   <signature>void (DS::Window::IDocumentOperations * dop)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>AddOperation</name>
+   <signature>void (DS::Window::IBehaviorOperations * bop)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>AddOperation</name>
+   <signature>void (DS::Window::IClipboardOperations * cop)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>RemoveOperation</name>
+   <signature>void (DS::Window::IFileOperations * fop)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>RemoveOperation</name>
+   <signature>void (DS::Window::IDocumentOperations * dop)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>RemoveOperation</name>
+   <signature>void (DS::Window::IBehaviorOperations * bop)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>RemoveOperation</name>
+   <signature>void (DS::Window::IClipboardOperations * cop)</signature>
+  </method>
+ </methods>
+</description>

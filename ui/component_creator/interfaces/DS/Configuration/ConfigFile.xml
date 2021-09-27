@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>configuration/config_file.h</header>
+ <class>DS::Configuration::ConfigFile</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>ConfigFile</name>
+   <signature>(const tstring &amp; component)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>FindConfigFilePath</name>
+   <signature>tstring (const tstring &amp; file ,bool check)</signature>
+  </method>
+ </methods>
+</description>

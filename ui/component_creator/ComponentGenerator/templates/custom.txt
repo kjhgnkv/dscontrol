@@ -1,0 +1,6 @@
+make_includable(  "templates/custom"               CMakeLists.txt)
+make_includable(  "templates/custom"               macchina.cmake)
+make_includable(  "templates/custom"               build.cmake)
+make_includable(  "templates/custom"               Bundle.bndlspec)
+make_includable(  "templates/custom"               Activator.cpp)
+

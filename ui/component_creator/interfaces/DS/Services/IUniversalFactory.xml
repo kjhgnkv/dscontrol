@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>services/iuniversalfactory.h</header>
+ <class>DS::Services::IUniversalFactory</class>
+ <inheritance>
+  <class>DS::Core::IObjectFactory</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Query</name>
+   <signature>DS::Core::IQueriable *(const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsOrInherits</name>
+   <signature>bool (const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>RegisterFactory</name>
+   <signature>void (const DS::UID &amp; clsid ,Core::IObjectFactory * pFactory)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>UnregisterFactory</name>
+   <signature>void (const DS::UID &amp; clsid)</signature>
+  </method>
+ </methods>
+</description>

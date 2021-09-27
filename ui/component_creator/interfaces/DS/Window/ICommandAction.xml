@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>window/icmdaction.h</header>
+ <class>DS::Window::ICommandAction</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>Perform</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetId</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetType</name>
+   <signature>DS::Window::ActionType () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetText</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>SetText</name>
+   <signature>void (const tchar * text)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>IsChecked</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>IsEnabled</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>SetChecked</name>
+   <signature>void (bool checked)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>SetEnabled</name>
+   <signature>void (bool enabled)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetUndo</name>
+   <signature>DS::Window::ICommandAction *()</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetHandle</name>
+   <signature>DS::Window::ActionHandle ()</signature>
+  </method>
+ </methods>
+</description>

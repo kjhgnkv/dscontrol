@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>services/impl/printing_service.h</header>
+ <class>DS::Services::Impl::PrintingService</class>
+ <inheritance>
+  <class>DS::Miscellaneous::IPrinterSetting</class>
+  <class>DS::Miscellaneous::IPrintStream</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>PrintingService</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetPrintStream</name>
+   <signature>void (DS::Miscellaneous::IPrintStream * pPrinter ,DS::Core::IModule * pModule)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Print</name>
+   <signature>void (const tchar * content ,DS::Miscellaneous::IPrintStream::Category cat)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>RevokePrintStreamOfModule</name>
+   <signature>void (DS::Core::IModule * pModule)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>RevokeGlobalPrintStream</name>
+   <signature>void (DS::Miscellaneous::IPrintStream * pPrinter)</signature>
+  </method>
+ </methods>
+</description>

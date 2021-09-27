@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/timer.h</header>
+ <class>DS::Synchronization::TimerTask</class>
+ <inheritance>
+  <class>DS::Processes::ITask</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>TimerTask</name>
+   <signature>(bool bRepeatable)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetTime</name>
+   <signature>uint64 () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetTime</name>
+   <signature>void (uint64 time)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetInteval</name>
+   <signature>void (uint64 interval)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Postpone</name>
+   <signature>void (uint64 interval)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Repeat</name>
+   <signature>bool ()</signature>
+  </method>
+ </methods>
+</description>

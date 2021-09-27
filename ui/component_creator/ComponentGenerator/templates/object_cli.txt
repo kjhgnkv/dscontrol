@@ -1,0 +1,8 @@
+make_includable(  "templates/object_cli"               CMakeLists.txt)
+make_includable(  "templates/object_cli"               macchina.cmake)
+make_includable(  "templates/object_cli"               build.cmake)
+make_includable(  "templates/object_cli"               Bundle.bndlspec)
+
+make_includable(  "templates/object_cli/include"       BundleObject.h)
+make_includable(  "templates/object_cli/src"           BundleObject.cpp)
+

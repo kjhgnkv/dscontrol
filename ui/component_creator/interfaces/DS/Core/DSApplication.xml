@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>core/application.h</header>
+ <class>DS::Core::DSApplication</class>
+ <inheritance>
+  <class>DS::Core::ModuleManager</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>DSApplication</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>DSApplication</name>
+   <signature>(int argc ,const char *[] argv)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Load</name>
+   <signature>bool ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Reload</name>
+   <signature>bool ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Unload</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Execute</name>
+   <signature>bool ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Terminate</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetModulePath</name>
+   <signature>void (const tchar * path)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>PrintHelp</name>
+   <signature>void ()</signature>
+  </method>
+ </methods>
+</description>

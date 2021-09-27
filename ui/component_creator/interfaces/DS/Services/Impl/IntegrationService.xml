@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>services/impl/integration_service.h</header>
+ <class>DS::Services::Impl::IntegrationService</class>
+ <inheritance>
+  <class>DS::Services::IIntegrationService</class>
+  <class>DS::Services::IServiceControl</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>IntegrationService</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>LoadConfigFile</name>
+   <signature>void (const tchar * xmlFile)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>FindComponent</name>
+   <signature>const DS::Services::IComponentConfig *(const tchar * filename)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ForeachObject</name>
+   <signature>void (DS::Services::IObjectVisitor * pVisitor)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Query</name>
+   <signature>Core::IQueriable *(const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Initialize</name>
+   <signature>void (Core::IApplication * pmm)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Start</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Stop</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Finalize</name>
+   <signature>void (Core::IApplication * pmm)</signature>
+  </method>
+ </methods>
+</description>

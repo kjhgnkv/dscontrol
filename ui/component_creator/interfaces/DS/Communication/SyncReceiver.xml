@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/sync_receiver.h</header>
+ <class>DS::Communication::SyncReceiver</class>
+ <inheritance>
+  <class>DS::Synchronization::Multiplexable&lt;DS::Synchronization::IMultiplexable></class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>SyncReceiver</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Receive</name>
+   <signature>void *(unsigned int &amp; size)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ReleaseBuffer</name>
+   <signature>void (void * buffer)</signature>
+  </method>
+ </methods>
+</description>

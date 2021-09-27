@@ -1,0 +1,44 @@
+So, if you want to build and use the plugin, you have to set cmake variables:
+
+  - QTC_SOURCE - have to have inside src directory with other plugin code (for
+  example - coreplugin)
+
+  - QTC_BUILD - where running qmake
+
+  - QTC_USER_DIR - directory, where will be your plugin. For example on linux: "~/.local/share/data/QtProject/qtcreator/plugins/4.8"
+  on windows "%LOCALAPPDATA%\QtProject\QtCreator\plugins\4.8"
+
+NOTE you need install clang-6.0 and libclang-6.0-dev
+
+ON Linux
+Better copy folder src in qt directory beside bin, and copy qtcreatordata.pri and qtcreator.pri dosc.pri
+After it you just set QTC_BUILD and QTC_SOURCE to one directory (for example /opt/qt512)
+
+ON Windows
+for build on Windows you need read README.md on github.com/qt-creator/qt-creator
+
+1) install perl
+2) install llvm (manually, read in doc)
+
+After build you need set environment to libraries, which was build (plugin libraries).
+It will be on bin directory and lib/qtcreator/ (all directories with dll). Also you
+need set path to llvm
+
+WARNING!!! On Windows you also need set to environment directory with compiled
+plugin (AppData/Local/...)
+
+
+Need libDS.so near plugin, and build.
+
+Command example:
+qmake -r "QTC_BUILD = /home/dancon/Public/qt-creator/build" "QTC_SOURCE = /home/dancon/Public/qt-creator/" "DS_LIB = /home/dancon/Platformv2.0/DSControll/build/lib/libDS.so" ..
+
+qmake -r "QTC_BUILD = /home/soft/Desktop/4_12/build" "QTC_SOURCE = /home/soft/Desktop/4_12/" "DS_LIB = /home/soft/Qt/Projects/Platformv2.0/DSControll/build/lib/libDS.so" "QTC_USER_DIR = ~/.local/share/data/QtProject/qtcreator/plugins/4.12.1"
+
+cmake -D QTC_BUILD="/home/soft/Desktop/4_12" -D QTC_SOURCE="/home/soft/Desktop/4_12" -D DS_LIB="/home/soft/Qt/Projects/Platformv2.0/DSControll/build/lib/libDS.so" -D QTC_USER_DIR="~/.local/share/data/QtProject/qtcreator/plugins/4.12.1" ..
+
+
+
+qmake -r /home/soft/Qt/Projects/Platformv2.0/DSControll/qt_plugin "QTC_BUILD = /home/soft/Desktop/4_12" "QTC_SOURCE = /home/soft/Desktop/4_12" "DS_LIB = /home/soft/Qt/Projects/Platformv2.0/DSControll/build/lib/libDS.so"
+
+cmake .. -DQTC_BUILD=/home/soft/Desktop/4_12 -DQTC_SOURCE=/home/soft/Desktop/4_12 -DDS_LIB=/home/soft/Qt/Projects/Platformv2.0/DSControll/build/lib/libDS.so -DQTC_USER_DIR=/home/soft/.local/share/data/QtProject/qtcreator/plugins/4.12.1

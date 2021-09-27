@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="TRKAssocAccelerationFactor" title="加速度因子" type="1" category="航迹跟踪">
+    <Service name="ITrackerEngine" provide="0"/>
+</ModuleClass>

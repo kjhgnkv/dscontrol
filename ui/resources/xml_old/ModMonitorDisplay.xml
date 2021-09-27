@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="ModMonitorDisplay" title="监控显示" type="0" category="显控处理">
+    <Recv id="5" name="状态报(state)" protocol="stdbin"/>
+    <Recv id="150" name="系统状态设置(system_state)" protocol="stdbin"/>
+    <Send id="6" name="控制命令(control)" protocol="stdbin"/>
+    <Send id="150" name="系统状态设置(system_state)" protocol="stdbin"/>
+</ModuleClass>

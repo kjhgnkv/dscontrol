@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>services/iintegrationservice.h</header>
+ <class>DS::Services::IComponentConfig</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>GetObjectId</name>
+   <signature>const tchar *(unsigned int objidx)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>CanLoad</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>IsIntegration</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>ForeachConfig</name>
+   <signature>bool (unsigned int objidx ,DS::Services::IConfigVisitor * pVisitor)</signature>
+  </method>
+ </methods>
+</description>

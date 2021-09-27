@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>configuration/configureitem.h</header>
+ <class>DS::Configuration::ConfigureItem&lt;ValueType,Conv></class>
+ <inheritance>
+  <class>DS::Configuration::AbstractConfigureItem</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>ConfigureItem&lt;ValueType, Conv></name>
+   <signature>(ValueType &amp; bind ,const tstring &amp; name ,const tstring &amp; unit ,const tstring &amp; desc ,DS::Configuration::ConfigureType type)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetValue</name>
+   <signature>void (const tstring &amp; value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetValue</name>
+   <signature>const tstring &amp;()</signature>
+  </method>
+ </methods>
+</description>

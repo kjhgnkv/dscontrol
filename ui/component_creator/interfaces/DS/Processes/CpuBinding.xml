@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>processes/cpu_binding.h</header>
+ <class>DS::Processes::CpuBinding</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>CpuBinding</name>
+   <signature>(DS::Processes::CpuBindingStrategy strategy)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>AddRange</name>
+   <signature>void (unsigned int start ,unsigned int count)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>BindTo</name>
+   <signature>void (DS::Processes::Thread &amp; hread)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>BindTo</name>
+   <signature>void (DS::Processes::ThreadPool &amp; hreadPool)</signature>
+  </method>
+ </methods>
+</description>

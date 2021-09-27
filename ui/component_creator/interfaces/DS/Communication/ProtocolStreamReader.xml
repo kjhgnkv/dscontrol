@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/protocol_stream_reader.h</header>
+ <class>DS::Communication::ProtocolStreamReader</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>ProtocolStreamReader</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ProtocolStreamReader</name>
+   <signature>(const DS::Communication::ProtocolStreamReader &amp; other)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Communication::ProtocolStreamReader &amp;(const DS::Communication::ProtocolStreamReader &amp; other)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>AddProtocol</name>
+   <signature>void (DS::Communication::IProtocol * protocol)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>WriteStream</name>
+   <signature>void (const void * data ,unsigned int length)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ReadPackage</name>
+   <signature>void *(unsigned int &amp; length ,DS::Communication::IProtocol *&amp; protocol)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ReleasePackage</name>
+   <signature>void (void * package)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>HasMore</name>
+   <signature>bool () const</signature>
+  </method>
+ </methods>
+</description>

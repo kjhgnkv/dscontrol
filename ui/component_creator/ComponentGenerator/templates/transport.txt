@@ -1,0 +1,15 @@
+make_includable(  "templates/transport"               CMakeLists.txt)
+make_includable(  "templates/transport"               macchina.cmake)
+make_includable(  "templates/transport"               build.cmake)
+make_includable(  "templates/transport"               Bundle.bndlspec)
+make_includable(  "templates/transport"               Activator.cpp)
+
+make_includable(  "templates/transport/include"       Defines.h)
+make_includable(  "templates/transport/include"       Channel.h)
+make_includable(  "templates/transport/include"       ChannelFactory.h)
+
+make_includable(  "templates/transport/include/Impl"  Channel.h)
+make_includable(  "templates/transport/include/Impl"  ChannelFactory.h)
+
+make_includable(  "templates/transport/src"           Channel.cpp)
+

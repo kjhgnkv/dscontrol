@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>VDDE</Name>
+    <Version>1.0.0</Version>
+    <Title>VDDE Installer</Title>
+    <Publisher>CETC</Publisher>
+    <StartMenuDir>VDDE</StartMenuDir>
+    <TargetDir>@HomeDir@/VDDE</TargetDir>
+    <InstallerWindowIcon>48x48</InstallerWindowIcon>
+    <InstallerApplicationIcon>48x48</InstallerApplicationIcon>
+</Installer>

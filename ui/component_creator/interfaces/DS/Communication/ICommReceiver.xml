@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/ireceiver.h</header>
+ <class>DS::Communication::ICommReceiver</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>GetCommKey</name>
+   <signature>DS::Communication::comm_key_t () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>IsHighSpeed</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>TestRecv</name>
+   <signature>DS::Communication::ICommReceiver *(TimeType timeout)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Recv</name>
+   <signature>void *(unsigned int * size)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>ReleaseMessage</name>
+   <signature>void (void * msg_)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Print</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Start</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Stop</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>AddListener</name>
+   <signature>void (DS::Communication::ICommListener * pListener ,int nCommId)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>RemoveListener</name>
+   <signature>void (DS::Communication::ICommListener * pListener)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>BindRecvProtocol</name>
+   <signature>void (DS::Communication::IProtocol * pProtocol)</signature>
+  </method>
+ </methods>
+</description>

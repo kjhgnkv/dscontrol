@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>window/iwindow.h</header>
+ <class>DS::Window::IWindow</class>
+ <inheritance>
+  <class>DS::Core::IQueriable</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetHandle</name>
+   <signature>DS::Window::WindowHandle () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>SetTitle</name>
+   <signature>void (const tchar * title)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetTitle</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>SetParent</name>
+   <signature>void (DS::Window::IWindow * pWindow)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetParent</name>
+   <signature>DS::Window::IWindow *() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>FindWindow</name>
+   <signature>DS::Window::IWindow *(DS::Window::WindowHandle handle)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Destroy</name>
+   <signature>void ()</signature>
+  </method>
+ </methods>
+</description>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>configuration/iconfigure.h</header>
+ <class>DS::Configuration::IConfigure</class>
+ <inheritance>
+  <class>DS::Core::IQueriable</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Query</name>
+   <signature>DS::Core::IQueriable *(const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsOrInherits</name>
+   <signature>bool (const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetInstanceName</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetConfigCount</name>
+   <signature>unsigned int () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>EnumConfigInfo</name>
+   <signature>bool (unsigned int index ,DS::Configuration::ConfigureInfo &amp; info)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>SetConfigure</name>
+   <signature>bool (const tchar * configItem ,const tchar * configValue)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetConfigure</name>
+   <signature>bool (const tchar * configItem ,tchar * configValue ,size_t valueSize)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Register</name>
+   <signature>void (DS::Configuration::IConfigureManager * pConfigMgr)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Unregister</name>
+   <signature>void (DS::Configuration::IConfigureManager * pConfigMgr)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>SetGroup</name>
+   <signature>void (const tchar * pszGroup)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetGroup</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>InitComplete</name>
+   <signature>void ()</signature>
+  </method>
+ </methods>
+</description>

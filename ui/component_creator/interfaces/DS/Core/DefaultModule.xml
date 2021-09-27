@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>core/modules.h</header>
+ <class>DS::Core::DefaultModule&lt;_Module></class>
+ <inheritance>
+  <class>DS::Core::IModule</class>
+  <class>DS::Core::DefaultModuleHelper&lt;_Module></class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>DefaultModule&lt;_Module></name>
+   <signature>(const tchar * strModName)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Query</name>
+   <signature>DS::Core::IQueriable *(const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetName</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetID</name>
+   <signature>const DS::UID &amp;() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Load</name>
+   <signature>void (DS::Core::IApplication * pOwner)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Initialize</name>
+   <signature>bool (DS::Core::IApplication * pOwner)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Prepare</name>
+   <signature>void (DS::Core::IApplication * pOwner)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Start</name>
+   <signature>bool (DS::Core::IApplication * pOwner)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Stop</name>
+   <signature>bool (DS::Core::IApplication * pOwner)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Cleanup</name>
+   <signature>void (DS::Core::IApplication * pOwner)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Finalize</name>
+   <signature>void (DS::Core::IApplication * pOwner)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Release</name>
+   <signature>void (DS::Core::IApplication * pOwner)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetHost</name>
+   <signature>DS::Core::IApplication *() const</signature>
+  </method>
+ </methods>
+</description>

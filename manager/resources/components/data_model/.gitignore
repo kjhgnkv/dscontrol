@@ -1,0 +1,65 @@
+# C++ objects and libs
+
+*.slo
+*.lo
+*.o
+*.a
+*.la
+*.lai
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+
+# Qt-es
+
+*.pro.user
+*.pro.user.*
+*moc_*.cpp
+*ui_*.h
+*object_script.*
+*qrc_*.cpp
+*Makefile*
+*-build-*
+*/debug/*
+*/release/*
+*/Debug/*
+*/Release/*
+debug/*
+release/*
+Debug/*
+Release/*
+*.qmake.stash
+*.ts
+
+# Visual Studio
+
+*.obj
+*.pch
+*.lib
+*.exp
+*.ilk
+*.pdb
+
+# python
+*.pyc
+
+# General
+
+*~
+*.bak
+*Thumbs.db
+*.autosave
+.vscode/*
+*.DStore
+
+# Special
+
+*MANIFEST.MF
+*_manifest.qrc
+*_Export.h
+shared_include/*
+lib/*
+libd/*
+doc/*

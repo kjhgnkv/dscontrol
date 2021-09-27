@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/protocols/endianness.h</header>
+ <class>DS::Communication::Protocols::Endianness</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>SwapOrder</name>
+   <signature>void (void * pty ,unsigned int bytes)</signature>
+  </method>
+ </methods>
+</description>

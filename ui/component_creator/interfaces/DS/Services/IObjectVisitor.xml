@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>services/iintegrationservice.h</header>
+ <class>DS::Services::IObjectVisitor</class>
+ <inheritance>
+  <class>DS::Services::IConfigVisitor</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>BeginObject</name>
+   <signature>void (const tchar * name)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>EndObject</name>
+   <signature>void (const tchar * name)</signature>
+  </method>
+ </methods>
+</description>

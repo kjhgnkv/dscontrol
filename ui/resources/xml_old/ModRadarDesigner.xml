@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="ModRadarDesigner" title="任务管理" type="0" category="显控处理">
+    <Recv id="30-43" name="雷达设计(design_*)" protocol="stdbin"/>
+    <Recv id="10" name="工作扇区设置(scan)" protocol="stdbin"/>
+    <Recv id="105" name="工作频率设置(frequency)" protocol="stdbin"/>
+    <Send id="30-43" name="雷达设计(design_*)" protocol="stdbin"/>
+    <Send id="10" name="工作扇区设置(scan)" protocol="stdbin"/>
+    <Send id="105" name="工作频率设置(frequency)" protocol="stdbin"/>
+    <Send id="150" name="系统状态设置(system_state)" protocol="stdbin"/>
+    <Send id="100" name="工作参数设置(work_param)" protocol="stdbin"/>
+</ModuleClass>

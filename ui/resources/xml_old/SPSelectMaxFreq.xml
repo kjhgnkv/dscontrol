@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="SPSelectMaxFreq" title="频道选大" type="0" category="信号处理">
+    <Service name="ISignalProcessEngine" provide="0"/>
+</ModuleClass>

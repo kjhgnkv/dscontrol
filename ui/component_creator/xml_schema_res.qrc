@@ -1,0 +1,5 @@
+<RCC>
+  <qresource>
+    <file>component_schema.xsd</file>
+  </qresource>
+</RCC>

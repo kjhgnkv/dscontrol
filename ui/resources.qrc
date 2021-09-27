@@ -1,0 +1,253 @@
+<RCC>
+    <qresource prefix="/images">
+        <file alias="hovered">resources/images/hovered.png</file>
+        <file alias="pressed">resources/images/pressed.png</file>
+        <file alias="selected">resources/images/selected.png</file>
+        <file alias="normal">resources/images/normal.png</file>
+        <file>resources/images/test.xml</file>
+        <file>resources/images/splash.jpg</file>
+        <file>resources/deviceIcons/Cloud.svg</file>
+        <file>resources/deviceIcons/General.svg</file>
+        <file>resources/deviceIcons/General2.svg</file>
+        <file>resources/deviceIcons/Radio.svg</file>
+        <file>resources/deviceIcons/Router.svg</file>
+        <file>resources/deviceIcons/serial port.svg</file>
+        <file>resources/deviceIcons/Shared Memory.svg</file>
+        <file>resources/deviceIcons/Switch.svg</file>
+        <file>resources/images/checked.png</file>
+        <file>resources/images/unchecked.png</file>
+        <file>resources/images/down-arrow.png</file>
+        <file>resources/images/toolImage.png</file>
+        <file>resources/images/question.png</file>
+        <file>resources/images/splash_v2.png</file>
+        <file>resources/toolbar/mode/Background.png</file>
+        <file>resources/toolbar/mode/Foreground.png</file>
+        <file>resources/icons/search.svg</file>
+        <file>resources/icons/clear-filter.svg</file>
+        <file>resources/images/about-vide.png</file>
+        <file>resources/icons/CETC.png</file>
+        <file>resources/icons/VIDE.png</file>
+        <file>resources/images/question-pressed.png</file>
+        <file>resources/toolbar/mode/tab-close.png</file>
+        <file>resources/toolbar/mode/align-bottom.png</file>
+        <file>resources/toolbar/mode/align-center-hor.png</file>
+        <file>resources/toolbar/mode/align-center-vert.png</file>
+        <file>resources/toolbar/mode/align-left.png</file>
+        <file>resources/toolbar/mode/align-right.png</file>
+        <file>resources/toolbar/mode/align-top.png</file>
+        <file>resources/toolbar/mode/align-height.png</file>
+        <file>resources/toolbar/mode/align-size.png</file>
+        <file>resources/toolbar/mode/align-width.png</file>
+        <file>resources/toolbar/mode/cut-area.png</file>
+        <file>resources/toolbar/mode/align-grid.png</file>
+    </qresource>
+    <qresource prefix="/projectIcons">
+        <file alias="communication_modeling">resources/projectIcons/communication_modeling.svg</file>
+        <file alias="component_modeling">resources/projectIcons/component_modeling.svg</file>
+        <file alias="computer_modeling">resources/projectIcons/computer_modeling.svg</file>
+        <file alias="protocol_modeling">resources/projectIcons/protocol_modeling.svg</file>
+        <file alias="subsystems_modeling">resources/projectIcons/subsystems_modeling.svg</file>
+        <file alias="systems_modeling">resources/projectIcons/systems_modeling.svg</file>
+    </qresource>
+    <qresource prefix="/sceneIcons">
+        <file alias="computer0">resources/sceneIcons/computer.png</file>
+        <file alias="computer1">resources/sceneIcons/computer1.png</file>
+        <file alias="computer2">resources/sceneIcons/computer2.png</file>
+        <file alias="computer3">resources/sceneIcons/computer3.png</file>
+        <file alias="computer4">resources/sceneIcons/computer4.png</file>
+        <file alias="computer5">resources/sceneIcons/computer5.png</file>
+        <file alias="computer6">resources/sceneIcons/computer6.png</file>
+        <file alias="device0">resources/sceneIcons/device.png</file>
+        <file alias="digitanalyzer">resources/sceneIcons/digitanalyzer.png</file>
+        <file alias="digitanalyzer1">resources/sceneIcons/digitanalyzer1.png</file>
+        <file alias="keyboard">resources/sceneIcons/keyboard.png</file>
+        <file alias="logicanalyzer">resources/sceneIcons/logicanalyzer.png</file>
+        <file alias="logicanalyzer1">resources/sceneIcons/logicanalyzer1.png</file>
+        <file alias="monitor">resources/sceneIcons/monitor.png</file>
+        <file alias="monitor1">resources/sceneIcons/monitor1.png</file>
+        <file alias="monitor2">resources/sceneIcons/monitor2.png</file>
+        <file alias="monitor3">resources/sceneIcons/monitor3.png</file>
+        <file alias="mouse">resources/sceneIcons/mouse.png</file>
+        <file alias="notebookcomputer">resources/sceneIcons/notebookcomputer.png</file>
+        <file alias="notebookcomputer1">resources/sceneIcons/notebookcomputer1.png</file>
+        <file alias="Oscilloscope">resources/sceneIcons/Oscilloscope.png</file>
+        <file alias="Oscilloscope1">resources/sceneIcons/Oscilloscope1.png</file>
+        <file alias="Oscilloscope2">resources/sceneIcons/Oscilloscope2.png</file>
+        <file alias="power">resources/sceneIcons/power.png</file>
+        <file alias="power1">resources/sceneIcons/power1.png</file>
+        <file alias="power2">resources/sceneIcons/power2.png</file>
+        <file alias="power3">resources/sceneIcons/power3.png</file>
+        <file alias="printer">resources/sceneIcons/printer.png</file>
+        <file alias="router">resources/sceneIcons/router.png</file>
+        <file alias="scaner">resources/sceneIcons/scaner.png</file>
+        <file alias="server">resources/sceneIcons/server.png</file>
+        <file alias="server1">resources/sceneIcons/server1.png</file>
+        <file alias="server2">resources/sceneIcons/server2.png</file>
+        <file alias="server3">resources/sceneIcons/server3.png</file>
+        <file alias="server4">resources/sceneIcons/server4.png</file>
+        <file alias="server5">resources/sceneIcons/server5.png</file>
+        <file alias="server6">resources/sceneIcons/server6.png</file>
+        <file alias="server7">resources/sceneIcons/server7.png</file>
+        <file alias="sound">resources/sceneIcons/sound.png</file>
+        <file alias="storage">resources/sceneIcons/storage.png</file>
+        <file alias="storage1">resources/sceneIcons/storage1.png</file>
+        <file alias="storage2">resources/sceneIcons/storage2.png</file>
+        <file alias="switch">resources/sceneIcons/switch.png</file>
+        <file alias="switch1">resources/sceneIcons/switch1.png</file>
+        <file alias="phone">resources/sceneIcons/telphone.png</file>
+        <file alias="WirelessRouter">resources/sceneIcons/WirelessRouter.png</file>
+        <file alias="WirelessRouter1">resources/sceneIcons/WirelessRouter1.png</file>
+        <file alias="work">resources/sceneIcons/work.png</file>
+        <file alias="workroom">resources/sceneIcons/workroom.png</file>
+        <file alias="component">resources/sceneIcons/component.svg</file>
+        <file alias="computer">resources/sceneIcons/computer.svg</file>
+        <file alias="csci">resources/sceneIcons/csci.svg</file>
+        <file alias="device">resources/sceneIcons/device.svg</file>
+        <file alias="process">resources/sceneIcons/process.svg</file>
+        <file alias="subsystem">resources/sceneIcons/subsystem.svg</file>
+    </qresource>
+    <qresource prefix="/structureIcons">
+        <file alias="communication">resources/structureIcons/communication.png</file>
+        <file alias="component">resources/structureIcons/component.svg</file>
+        <file alias="computer">resources/structureIcons/computer.svg</file>
+        <file alias="csci">resources/structureIcons/csci.svg</file>
+        <file alias="text">resources/structureIcons/text.png</file>
+        <file alias="device">resources/structureIcons/device.svg</file>
+        <file alias="process">resources/structureIcons/process.svg</file>
+        <file alias="project">resources/structureIcons/project.svg</file>
+        <file alias="protocol">resources/structureIcons/protocol.png</file>
+        <file alias="subsystem">resources/structureIcons/subsystem.svg</file>
+        <file alias="system">resources/structureIcons/system.png</file>
+        <file>resources/icons/E.svg</file>
+        <file>resources/icons/I.svg</file>
+    </qresource>
+    <qresource prefix="/toolbar/edit">
+        <file alias="bold">resources/toolbar/edit/bold.png</file>
+        <file alias="fill">resources/toolbar/edit/fill.png</file>
+        <file alias="italic">resources/toolbar/edit/italic.png</file>
+        <file alias="lineColor">resources/toolbar/edit/lineColor.png</file>
+        <file alias="text">resources/toolbar/edit/text.png</file>
+        <file alias="underline">resources/toolbar/edit/underline.png</file>
+    </qresource>
+    <qresource prefix="/toolbar/mode">
+        <file alias="communication">resources/toolbar/mode/communication.png</file>
+        <file alias="component">resources/toolbar/mode/component.svg</file>
+        <file alias="computer">resources/toolbar/mode/computer.png</file>
+        <file alias="csci">resources/toolbar/mode/csci.png</file>
+        <file alias="cursor">resources/toolbar/mode/cursor.png</file>
+        <file alias="device">resources/toolbar/mode/device.svg</file>
+        <file alias="frame">resources/toolbar/mode/frame.png</file>
+        <file alias="process">resources/toolbar/mode/process.svg</file>
+        <file alias="system">resources/toolbar/mode/system.png</file>
+        <file alias="subsystem">resources/toolbar/mode/subsystem.png</file>
+        <file alias="text">resources/toolbar/mode/text.png</file>
+        <file alias="group">resources/toolbar/mode/group.png</file>
+        <file alias="ungroup">resources/toolbar/mode/ungroup.png</file>
+        <file alias="external">resources/toolbar/mode/external.png</file>
+        <file alias="theme">resources/toolbar/mode/theme.png</file>
+        <file alias="image">resources/toolbar/mode/image.png</file>
+        <file alias="shape">resources/toolbar/mode/shape.png</file>
+        <file alias="up">resources/toolbar/mode/up.png</file>
+        <file alias="down">resources/toolbar/mode/down.png</file>
+        <file alias="left">resources/toolbar/mode/left.png</file>
+        <file alias="right">resources/toolbar/mode/right.png</file>
+        <file alias="close">resources/toolbar/mode/close.png</file>
+        <file alias="float">resources/toolbar/mode/float.png</file>
+    </qresource>
+    <qresource prefix="/toolbar/project">
+        <file alias="close">resources/toolbar/project/close.png</file>
+        <file alias="deploy">resources/toolbar/project/deploy.png</file>
+        <file alias="new">resources/toolbar/project/new.png</file>
+        <file alias="open">resources/toolbar/project/open.png</file>
+        <file alias="save">resources/toolbar/project/save.png</file>
+        <file alias="saveAs">resources/toolbar/project/saveAs.png</file>
+        <file alias="undo">resources/toolbar/project/undo.png</file>
+        <file alias="redo">resources/toolbar/project/redo.png</file>
+    </qresource>
+    <qresource prefix="/toolbar/startpage">
+        <file alias="add-new-document">resources/toolbar/startpage/add-new-document.svg</file>
+        <file alias="files-selection">resources/toolbar/startpage/files-selection.svg</file>
+        <file alias="interface-send-symbol">resources/toolbar/startpage/interface-send-symbol.svg</file>
+    </qresource>
+    <qresource prefix="/toolbar/repo">
+        <file alias="add-component">resources/toolbar/repo/add-component.png</file>
+        <file alias="remove-component">resources/toolbar/repo/remove-component.png</file>
+        <file alias="compare-by-bytes">resources/toolbar/repo/compare-by-bytes.png</file>
+    </qresource>
+    <qresource prefix="/userui">
+        <file>resources/userUi/cross-remove-sign.svg</file>
+    </qresource>
+    <qresource prefix="/icons/window">
+        <file>resources/icons/vide/16x16.ico</file>
+        <file>resources/icons/vide/24x24.ico</file>
+        <file>resources/icons/vide/32x32.ico</file>
+        <file>resources/icons/vide/48x48.ico</file>
+        <file>resources/icons/vide/256x256.ico</file>
+        <file>resources/icons/warning.png</file>
+        <file>resources/icons/deviceInfo.png</file>
+    </qresource>
+    <qresource prefix="/icons/contextToolbar">
+        <file>resources/icons/contextToolbar/color.png</file>
+        <file>resources/icons/contextToolbar/font.png</file>
+        <file>resources/icons/contextToolbar/fillColor.png</file>
+        <file>resources/icons/contextToolbar/borderColor.png</file>
+        <file>resources/icons/contextToolbar/reset.png</file>
+        <file>resources/icons/contextToolbar/brush.png</file>
+    </qresource>
+    <qresource prefix="/fonts">
+        <file>resources/fonts/SourceSansPro-Black.ttf</file>
+        <file>resources/fonts/SourceSansPro-BlackItalic.ttf</file>
+        <file>resources/fonts/SourceSansPro-Bold.ttf</file>
+        <file>resources/fonts/SourceSansPro-BoldItalic.ttf</file>
+        <file>resources/fonts/SourceSansPro-ExtraLight.ttf</file>
+        <file>resources/fonts/SourceSansPro-ExtraLightItalic.ttf</file>
+        <file>resources/fonts/SourceSansPro-Italic.ttf</file>
+        <file>resources/fonts/SourceSansPro-Light.ttf</file>
+        <file>resources/fonts/SourceSansPro-LightItalic.ttf</file>
+        <file>resources/fonts/SourceSansPro-Regular.ttf</file>
+        <file>resources/fonts/SourceSansPro-SemiBold.ttf</file>
+        <file>resources/fonts/SourceSansPro-SemiBoldItalic.ttf</file>
+    </qresource>
+    <qresource prefix="/PanAndZoom">
+        <file>resources/PanAndZoom/MinusButton.png</file>
+        <file>resources/PanAndZoom/PlusButton.png</file>
+        <file>resources/PanAndZoom/MinusCircleButton.png</file>
+        <file>resources/PanAndZoom/PlusCircleButton.png</file>
+        <file>resources/PanAndZoom/handler-hover.png</file>
+        <file>resources/PanAndZoom/handler-normal.png</file>
+    </qresource>
+    <qresource prefix="/checkbox">
+        <file>resources/checkbox/checkbox_checked.png</file>
+        <file>resources/checkbox/checkbox_partiallyChecked.png</file>
+        <file>resources/checkbox/checkbox_unchecked.png</file>
+    </qresource>
+    <qresource prefix="/back">
+        <file>resources/back/back_active.png</file>
+        <file>resources/back/back_hide.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>resources/images/about-vide.png</file>
+    </qresource>
+    <qresource prefix="/monitor">
+        <file>resources/monitor/close.png</file>
+        <file>resources/monitor/cpu.png</file>
+        <file>resources/monitor/memory.png</file>
+        <file>resources/monitor/network.png</file>
+        <file>resources/monitor/process.png</file>
+        <file>resources/monitor/start.png</file>
+        <file>resources/monitor/startDisable.png</file>
+        <file>resources/monitor/stop.png</file>
+        <file>resources/monitor/stopDisable.png</file>
+        <file>resources/monitor/storage.png</file>
+        <file>resources/monitor/system.png</file>
+        <file>resources/monitor/threads.png</file>
+        <file>resources/monitor/update.png</file>
+        <file>resources/monitor/updateDisable.png</file>
+    </qresource>
+    <qresource prefix="/other">
+        <file>resources/other/template.vcxproj</file>
+    </qresource>
+    <qresource prefix="/docs">
+        <file>resources/docs/UserManual.pdf</file>
+    </qresource>
+</RCC>

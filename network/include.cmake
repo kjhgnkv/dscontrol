@@ -1,0 +1,3 @@
+set(network
+    SettingsManager.hpp
+    )

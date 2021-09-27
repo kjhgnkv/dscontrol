@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="ModTimingInterfaceTcp" title="时序接口" type="0" category="波束调度">
+    <Recv id="1" name="波束描述(beam)" protocol="stdbin"/>
+    <Recv id="9" name="模拟波形描述(simulation)" protocol="stdbin"/>
+    <Send id="1" name="波束描述(beam)" protocol="stdbin"/>
+</ModuleClass>

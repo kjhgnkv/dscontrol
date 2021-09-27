@@ -1,0 +1,13 @@
+make_includable(  "templates/object_gui"               CMakeLists.txt)
+make_includable(  "templates/object_gui"               macchina.cmake)
+make_includable(  "templates/object_gui"               build.cmake)
+make_includable(  "templates/object_gui"               Bundle.bndlspec)
+
+make_includable(  "templates/object_gui/include"       BundleObject.h)
+make_includable(  "templates/object_gui/include"       QtWidget.h)
+make_includable(  "templates/object_gui/include"       QtDesignerPlugin.h)
+
+make_includable(  "templates/object_gui/src"           BundleObject.cpp)
+make_includable(  "templates/object_gui/src"           QtWidget.cpp)
+make_includable(  "templates/object_gui/src"           QtDesignerPlugin.cpp)
+

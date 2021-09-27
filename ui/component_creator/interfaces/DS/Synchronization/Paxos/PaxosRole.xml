@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/paxos/paxos.h</header>
+ <class>DS::Synchronization::Paxos::PaxosRole</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>PaxosRole</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetRole</name>
+   <signature>DS::Synchronization::Paxos::Role () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Receive</name>
+   <signature>void (DS::Synchronization::Paxos::PaxosParticipant * participant ,const DS::Synchronization::Paxos::PaxosMessage * message)</signature>
+  </method>
+ </methods>
+</description>

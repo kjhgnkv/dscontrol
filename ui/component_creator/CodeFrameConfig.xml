@@ -1,0 +1,2117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Recips>
+	<RecipeTemplate name="Blank Component" type="NO_UI_Component">
+		<FileList>
+			<File type="CppHeaderFrame" filename="[#name]BundleObject.cpp">
+				<template>#include "[#name]BundleObject.h"
+#include "DSHost/Bundle/Activator.h"
+
+[#name]BundleObject::BUNDLE_OBJECT_CTOR_IMPL([#name]BundleObject)
+{
+
+}
+
+BUNDLE_ACTIVATOR([#name]BundleObjectActivator, [#name]BundleObject);
+
+POCO_BEGIN_MANIFEST(Poco::OSP::BundleActivator)
+POCO_EXPORT_CLASS([#name]BundleObjectActivator)
+POCO_END_MANIFEST
+				</template>
+			</File>
+			<File type="CppHeaderFrame" filename="[#name]BundleObject.h">
+				<template>#pragma once
+#include "Poco/Runnable.h"
+#include "Poco/AtomicCounter.h"
+#include "Poco/Mutex.h"
+
+#include "DSHost/Bundle/Object.h"
+#include "DSHost/Communication/Service.h"
+#include "DSHost/Communication/Sender.h"
+#include "DSHost/Communication/Receiver.h"
+#include "DSHost/Protocol/ImplementationFactoryService.h"
+
+using DS::bundle_objects::BundleObject;
+using DS::communication::CommunicationService;
+using DS::communication::Sender;
+using DS::communication::Receiver;
+
+class [#name]BundleObject : public BundleObject
+{
+public:
+	BUNDLE_OBJECT_CTOR_DECL([#name]BundleObject);
+	protected:
+	void onInitialize();
+	void onStart();
+	void onStop();
+	void onUninitialize();
+	void onSystemEvent(Poco::OSP::SystemEvents::EventKind&amp; eventKind);
+private:
+
+};
+
+inline void [#name]BundleObject::onInitialize()
+{
+	;
+}
+
+inline void [#name]BundleObject::onStart()
+{
+	;
+}
+
+inline void [#name]BundleObject::onStop()
+{
+	;
+}
+
+inline void [#name]BundleObject::onUninitialize()
+{
+	;
+}
+
+inline void [#name]BundleObject::onSystemEvent(Poco::OSP::SystemEvents::EventKind&amp; eventKind)
+{
+	switch (eventKind)
+	{
+	case Poco::OSP::SystemEvents::EV_SYSTEM_STARTED:
+		break;
+
+	case Poco::OSP::SystemEvents::EV_SYSTEM_SHUTTING_DOWN:
+		break;
+	}
+}
+				</template>
+			</File>
+			<File type="CmakeFrame" filename="CMakeLists.txt">
+				<template>cmake_minimum_required(VERSION 3.13)
+set(name [#BundleName])
+project(${name}project)
+
+set(CMAKE_CXX_STANDARD 98)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+if(CMAKE_COMPILER_IS_GNUCC)
+	add_definitions(-Wno-sign-compare)
+endif(CMAKE_COMPILER_IS_GNUCC)
+
+if(NOT CMAKE_DEBUG_POSTFIX)
+	set(CMAKE_DEBUG_POSTFIX d)
+endif()
+
+include(macchina.cmake)
+
+set(DSHostInclude [#DSHostInclude])
+set(LibrariesDSUtils [#LibrariesDSUtils])
+set(Macchina_LIBRARIES_RELEASE PocoFoundation PocoUtil PocoOSP)
+set(Macchina_LIBRARIES_DEBUG PocoFoundationd PocoUtild PocoOSPd)
+
+add_library(${name} MODULE)
+
+set_target_properties(${name} PROPERTIES
+	OUTPUT_NAME [#LibraryName]
+	PREFIX "")
+target_sources(${name} PRIVATE
+	[#name]BundleObject.cpp
+)
+target_include_directories(${name} PRIVATE
+	.
+	${DSHostInclude}
+	${Macchina_INCLUDE_DIRS}
+)
+target_link_directories(${name} PRIVATE
+	${Macchina_LIBRARY_DIRS}
+	${LibrariesDSUtils}
+)
+
+if(CMAKE_BUILD_TYPE MATCHES "Debug")
+	target_link_libraries(${name} PRIVATE
+	debug ${Macchina_LIBRARIES_DEBUG}
+	[#BaseLibary]
+)
+else()
+	target_link_libraries(${name} PRIVATE
+	optimized ${Macchina_LIBRARIES_RELEASE}
+	[#BaseLibary]
+)
+endif()
+
+target_compile_options(${name} PRIVATE
+	"-std=c++03"
+)
+
+macro(add_bundle_content name)
+	add_custom_target(${name}BundleContent ALL
+		COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/Bundle.bndlspec" "."
+		COMMAND ${CMAKE_COMMAND} -E make_directory "lib"
+		COMMAND ${CMAKE_COMMAND} -E copy "$&lt;TARGET_FILE:${name}&gt;" "lib/"
+		DEPENDS ${name}
+		WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+		VERBATIM
+    )
+endmacro()
+if(WIN32)
+    set(Macchina_BUNDLE_UTIL_ARG "/output-dir=${CMAKE_BINARY_DIR}\\components")
+else()
+    set(Macchina_BUNDLE_UTIL_ARG "--output-dir=${CMAKE_BINARY_DIR}/components")
+endif()
+
+macro(add_bundle_file name namedep)
+    add_custom_target(${name}Bundle ALL
+        COMMAND ${Macchina_BUNDLE_UTIL} ${Macchina_BUNDLE_UTIL_ARG} "Bundle.bndlspec"
+        DEPENDS ${namedep}
+        WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+        VERBATIM
+        )
+endmacro()
+
+macro(add_bundle name)
+    add_bundle_content(${name})
+    add_bundle_file(${name} ${name}BundleContent)
+endmacro()
+add_bundle(${name})
+				</template>
+			</File>
+			<File type="BndlspecFrame" filename="Bundle.bndlspec">
+				<template>&lt;?xml version="1.0"?&gt;
+&lt;bundlespec&gt;
+  &lt;manifest&gt;
+    &lt;name&gt;[#BundleDescriber]&lt;/name&gt;
+    &lt;symbolicName&gt;[#LibraryName]&lt;/symbolicName&gt;
+    &lt;version&gt;[#BundleVersion]&lt;/version&gt;
+    &lt;vendor&gt;[#vendor]&lt;/vendor&gt;
+    &lt;copyright&gt;[#CopyRight]&lt;/copyright&gt;
+    &lt;activator&gt;
+      &lt;class&gt;[#name]BundleObjectActivator&lt;/class&gt;
+      &lt;library&gt;[#LibraryName]&lt;/library&gt;
+    &lt;/activator&gt;
+    &lt;lazyStart&gt;[#LazyStart]&lt;/lazyStart&gt;
+    &lt;runLevel&gt;[#RunLevel]&lt;/runLevel&gt;
+  &lt;/manifest&gt;
+  &lt;code&gt;
+    [#OutputDir]/*.so,
+    [#OutputDir]/*.dll,
+  &lt;/code&gt;
+&lt;/bundlespec&gt;
+					</template>
+			</File>
+		</FileList>
+	</RecipeTemplate>
+	<RecipeTemplate name="General Component" type="NO_UI_Component">
+		<FileList>
+			<File type="CppHeaderFrame" filename="[#name]BundleObject.cpp">
+				<template>#include "[#name]BundleObject.h"
+#include "Poco/OSP/BundleContext.h"
+#include "Poco/OSP/BundleActivator.h"
+#include "Poco/OSP/ServiceRegistry.h"
+#include "Poco/ClassLibrary.h"
+#include "DSHost/Bundle/Activator.h"
+
+class [#name]BundleObjectActivator : public Poco::OSP::BundleActivator
+{
+public:
+	[#name]BundleObjectActivator() {}
+	~[#name]BundleObjectActivator() {}
+
+	void start(Poco::OSP::BundleContext::Ptr pContext)
+	{
+		std::string runLevel = pContext->thisBundle()->manifest().runLevel().substr(0, 3);
+		if ((runLevel &lt; "200") || (runLevel &gt; "899"))
+		{
+			pContext->logger().error("A bundle implementing BundleObject violates runLevel restriction: 200 &lt;= %s &gt;= 899", runLevel);
+			return;
+		}
+
+		Poco::OSP::ServiceRef::Ptr pFactoryServiceRef =
+			pContext->registry().findByName(BUNDLE_OBJECT_FACTORY_SERVICE_NAME);
+		if (pFactoryServiceRef)
+		{
+			BundleObjectFactoryService::Ptr pFactoryService =
+				pFactoryServiceRef->castedInstance&lt;BundleObjectFactoryService&gt;();
+
+			[#name]BundleObjectFactory::Ptr
+				pFactory(new [#name]BundleObjectFactory(
+					pContext->thisBundle()->symbolicName(), pContext));
+			pFactoryService->registerFactory(pFactory);
+		}
+		else
+			pContext->logger().error(
+				"The BundleObjectFactoryService is not available.");
+	}
+
+	void stop(Poco::OSP::BundleContext::Ptr pContext)
+	{
+		Poco::OSP::ServiceRef::Ptr pFactoryServiceRef =
+			pContext->registry().findByName(BUNDLE_OBJECT_FACTORY_SERVICE_NAME);
+		if (pFactoryServiceRef)
+		{
+			BundleObjectFactoryService::Ptr pFactoryService =
+				pFactoryServiceRef->castedInstance&lt;BundleObjectFactoryService&gt;();
+			pFactoryService->unregisterFactory(pContext->thisBundle()->symbolicName());
+
+			Poco::OSP::ServiceRef::Ptr pServiceRef =
+				pContext->registry().findByName(BUNDLE_OBJECT_SERVICE_NAME);
+			if (pServiceRef)
+			{
+				BundleObjectService::Ptr pService =
+					pServiceRef->castedInstance&lt;BundleObjectService&gt;();
+				pService->unregisterAllObjects(
+					pContext->thisBundle()->symbolicName());
+			}
+		}
+		else
+			pContext->logger().error(
+				"The BundleObjectFactoryService is not available.");
+	}
+};
+
+bool pocoBuildManifest(Poco::ManifestBase* pManifest_)
+{
+	std::string requiredType(typeid(Poco::Manifest&lt;Poco::OSP::BundleActivator&gt;).name());
+	std::string actualType(pManifest_->className());
+	if (requiredType == actualType)
+	{
+		Poco::Manifest&lt;Poco::OSP::BundleActivator&gt;* pManifest = static_cast&lt;Poco::Manifest&lt;Poco::OSP::BundleActivator&gt;*&gt;(pManifest_);
+		pManifest->insert(new Poco::MetaObject&lt;[#name]BundleObjectActivator, Poco::OSP::BundleActivator&gt;("[#name]BundleObjectActivator"));
+		return true;
+	}
+	else
+		return false;
+}
+				</template>
+			</File>
+			<File type="CppHeaderFrame" filename="[#name]BundleObject.h">
+				<template>#pragma once 
+#include "Poco/Runnable.h"
+#include "Poco/Thread.h"
+#include "Poco/Mutex.h"
+
+#include "DSHost/Bundle/Object.h"
+#include "DSHost/Communication/Service.h"
+#include "DSHost/Communication/Sender.h"
+#include "DSHost/Communication/Receiver.h"
+#include "DSHost/Protocol/ImplementationFactoryService.h"
+#include "DSHost/Bundle/Object.h"
+#include "DSHost/Bundle/ObjectFactory.h"
+#include "DSHost/Bundle/ObjectFactoryService.h"
+#include "DSHost/Bundle/ObjectService.h"
+
+using DS::bundle_objects::BundleObjectFactoryService;
+using DS::bundle_objects::BundleObjectService;
+using DS::bundle_objects::BundleObject;
+using Poco::OSP::BundleContext;
+using DS::bundle_objects::AbstractBundleObjectFactory;
+
+using DS::communication::CommunicationService;
+using DS::communication::Sender;
+using DS::communication::Receiver;
+
+class [#name]BundleObject : public BundleObject, public Poco::Runnable
+{
+public:
+	[#name]BundleObject(const std::string&amp; name, Poco::OSP::BundleContext::Ptr pContext,
+		const DS::bundle_objects::BundleObject::ParameterMap&amp; config = ParameterMap()) :
+	DS::bundle_objects::BundleObject(name, pContext, config) {
+	_thread.setName(name);
+	};
+	void run() {
+		while (true){
+			if (isActive()){
+				;
+			}
+		}
+	};
+protected:
+	void onInitialize();
+	void onStart();
+	void onStop();
+	void onUninitialize();
+	void onSystemEvent(Poco::OSP::SystemEvents::EventKind&amp; eventKind);
+	void onReceive(const Receiver::ReceivedMessage&amp; msg) {
+		;
+	};
+
+private:
+	std::string _version;
+	CommunicationService::Ptr _pCommService;
+	Sender::Ptr _pSender;
+	Receiver::Ptr _pReceiver;
+	Poco::Thread _thread;
+};
+
+class [#name]BundleObjectFactory : public AbstractBundleObjectFactory
+{
+public:
+	[#name]BundleObjectFactory(std::string name, BundleContext::Ptr pContext)
+		:AbstractBundleObjectFactory(name, pContext)
+	{}
+
+	BundleObject::Ptr getObject(const std::string&amp; name,
+		const ParameterMap&amp; config = ParameterMap()) const {
+		return BundleObject::Ptr(new [#name]BundleObject(name, context(), config));
+	}
+};
+inline void [#name]BundleObject::onInitialize()
+{
+	_pSender = _pCommService->sender(name());
+	_pReceiver = _pCommService->receiver(name());
+	_pReceiver->reception += delegate(this, &amp;[#name]BundleObject::onReceive);
+}
+
+inline void [#name]BundleObject::onStart()
+{
+	if (_pSender &amp;&amp; !_thread.isRunning())
+	{
+		_thread.start(*this);
+	}
+}
+
+inline void [#name]BundleObject::onStop()
+{
+	_thread.join();
+}
+
+inline void [#name]BundleObject::onUninitialize()
+{
+	_pReceiver->reception -= delegate(this, &amp;[#name]BundleObject::onReceive);
+	_pReceiver.reset();
+	_pSender.reset();
+}
+
+inline void [#name]BundleObject::onSystemEvent(Poco::OSP::SystemEvents::EventKind&amp; eventKind)
+{
+	switch (eventKind)
+	{
+	case Poco::OSP::SystemEvents::EV_SYSTEM_STARTED:
+		break;
+
+	case Poco::OSP::SystemEvents::EV_SYSTEM_SHUTTING_DOWN:
+		break;
+	}
+}
+				</template>
+			</File>
+			<File type="CmakeFrame" filename="CMakeLists.txt">
+				<template>cmake_minimum_required(VERSION 3.13)
+set(name [#BundleName])
+project(${name}project)
+set(CMAKE_CXX_STANDARD 98)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+if(CMAKE_COMPILER_IS_GNUCC)
+    add_definitions(-Wno-sign-compare)
+endif(CMAKE_COMPILER_IS_GNUCC)
+
+if(NOT CMAKE_DEBUG_POSTFIX)
+    set(CMAKE_DEBUG_POSTFIX d)
+endif()
+
+include(macchina.cmake)
+include(build.cmake)
+
+set(DSHostInclude [#DSHostInclude])
+set(LibrariesDSUtils [#LibrariesDSUtils])
+set(Macchina_LIBRARIES_RELEASE PocoFoundation PocoUtil PocoOSP)
+set(Macchina_LIBRARIES_DEBUG PocoFoundationd PocoUtild PocoOSPd)
+
+add_library(${name} MODULE 
+    [#name]BundleObject.cpp
+    )
+
+set_target_properties(${name} PROPERTIES 
+    OUTPUT_NAME [#LibraryName]
+    PREFIX "")
+
+target_include_directories(${name} PRIVATE 
+    .
+	include
+    ${DSHostInclude}
+    ${Macchina_INCLUDE_DIRS}
+    )
+target_link_directories(${name} PRIVATE 
+    ${Macchina_LIBRARY_DIRS}
+	${LibrariesDSUtils}
+    )
+
+if(CMAKE_BUILD_TYPE MATCHES "Debug")
+	target_link_libraries(${name} PRIVATE 
+		debug ${Macchina_LIBRARIES_DEBUG}
+		[#BaseLibary]
+		)
+else()
+	target_link_libraries(${name} PRIVATE 
+		optimized ${Macchina_LIBRARIES_RELEASE}
+		[#BaseLibary]
+		)
+endif()
+
+target_compile_options(${name} PRIVATE 
+    "-std=c++03"
+    )
+
+macro(add_bundle_content name)
+    add_custom_target(${name}BundleContent ALL
+        COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/Module.bndlspec" "."
+        COMMAND ${CMAKE_COMMAND} -E make_directory "lib"
+        COMMAND ${CMAKE_COMMAND} -E copy "$&lt;TARGET_FILE:${name}&gt;" "lib/"
+        DEPENDS ${name}
+        WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+        VERBATIM
+        )
+endmacro()
+if(WIN32)
+    set(Macchina_BUNDLE_UTIL_ARG "/output-dir=${CMAKE_BINARY_DIR}\\components")
+else()
+    set(Macchina_BUNDLE_UTIL_ARG "--output-dir=${CMAKE_BINARY_DIR}/components")
+endif()
+
+macro(add_bundle_file name namedep)
+    add_custom_target(${name}Bundle ALL
+        COMMAND ${Macchina_BUNDLE_UTIL} ${Macchina_BUNDLE_UTIL_ARG} "Module.bndlspec"
+        DEPENDS ${namedep}
+        WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+        VERBATIM
+        )
+endmacro()
+
+macro(add_bundle name)
+    add_bundle_content(${name})
+    add_bundle_file(${name} ${name}BundleContent)
+endmacro()
+add_bundle(${name})
+				</template>
+			</File>
+			<File type="BndlspecFrame" filename="Module.bndlspec">
+				<template>&lt;?xml version="1.0"?&gt;
+&lt;bundlespec&gt;
+  &lt;manifest&gt;
+    &lt;name&gt;[#BundleDescriber]&lt;/name&gt;
+    &lt;symbolicName&gt;[#LibraryName]&lt;/symbolicName&gt;
+    &lt;version&gt;[#BundleVersion]&lt;/version&gt;
+    &lt;vendor&gt;[#vendor]&lt;/vendor&gt;
+    &lt;copyright&gt;[#CopyRight]&lt;/copyright&gt;
+    &lt;activator&gt;
+	    &lt;class&gt;[#name]BundleObjectActivator&lt;/class&gt;
+	    &lt;library&gt;[#LibraryName]&lt;/library&gt;
+    &lt;/activator&gt;
+    &lt;lazyStart&gt;[#LazyStart]&lt;/lazyStart&gt;
+    &lt;runLevel&gt;[#RunLevel]&lt;/runLevel&gt;
+    &lt;module&gt;
+	    &lt;symbolicName&gt;[#LibraryName]&lt;/symbolicName&gt;
+	    &lt;version&gt;[#BundleVersion]&lt;/version&gt;
+    &lt;/module&gt;
+  &lt;/manifest&gt;
+  &lt;code&gt;
+	  [#OutputDir]/*.so,
+	  [#OutputDir]/*.dll,
+	&lt;/code&gt;
+&lt;/bundlespec&gt;
+				</template>
+			</File>
+		</FileList>
+	</RecipeTemplate>
+	<RecipeTemplate name="Protocol Component" type="NO_UI_Component">
+		<FileList>
+			<File type="CppHeaderFrame" filename="Activator.cpp">
+				<template>#include "Poco/OSP/BundleActivator.h"
+#include "Poco/OSP/BundleContext.h"
+#include "Poco/OSP/ServiceRegistry.h"
+#include "Poco/ClassLibrary.h"
+
+#include "DSHost/Protocol/FactoryService.h"
+#include "DSHost/Protocol/ConversionService.h"
+#include "DSHost/Transport/Headerless/MessageAuxDataModifierService.h"
+#include "DSHost/Protocol/[#name]/ProtocolFactory.h"
+#include "DSHost/Protocol/[#name]/MessageAuxDataModifier.h"
+#include "DSHost/Protocol/[#name]/RawConverter.h"
+#include "DSHost/Protocol/[#name]/StandardInternalConverter.h"
+
+
+using DS::protocols::ProtocolFactoryService;
+using DS::protocols::ProtocolConversionService;
+using DS::transport::MessageAuxDataModifierService;
+using DS::protocols::[#name]::[#name]Factory;
+using DS::protocols::[#name]::[#name]FactoryImpl;
+
+using DS::protocols::[#name]::[#name]MessageAuxDataModifier;
+using DS::protocols::[#name]::[#name]MessageAuxDataModifierImpl;
+using DS::protocols::[#name]::[#name]ToRawConverter;
+using DS::protocols::[#name]::[#name]ToRawConverterImpl;
+using DS::protocols::[#name]::RawTo[#name]Converter;
+using DS::protocols::[#name]::RawTo[#name]ConverterImpl;
+using DS::protocols::[#name]::[#name]ToStandardInternalConverter;
+using DS::protocols::[#name]::[#name]ToStandardInternalConverterImpl;
+using DS::protocols::[#name]::StandardInternalTo[#name]Converter;
+using DS::protocols::[#name]::StandardInternalTo[#name]ConverterImpl;
+
+class [#name]ComponentActivator : public Poco::OSP::BundleActivator
+{
+public:
+	[#name]ComponentActivator()
+    {
+    }
+
+    ~[#name]ComponentActivator()
+    {
+    }
+
+    void start(Poco::OSP::BundleContext::Ptr pContext)
+    {
+		Poco::OSP::ServiceRef::Ptr pProtocolFactoryServiceRef =
+			pContext->registry().findByName(PROTOCOL_FACTORY_SERVICE_NAME);
+		if (!pProtocolFactoryServiceRef)
+		{
+			pContext->logger().error("The ProtocolFactoryService is not available.");
+			return;
+		}
+		_pProtocolFactoryService = pProtocolFactoryServiceRef->castedInstance&lt;ProtocolFactoryService&gt;();
+
+		Poco::OSP::ServiceRef::Ptr pProtocolConversionServiceRef =
+			pContext->registry().findByName(PROTOCOL_CONVERSION_SERVICE_NAME);
+		if (!pProtocolConversionServiceRef)
+		{
+			pContext->logger().error("The ProtocolConversionService is not available.");
+			return;
+		}
+		_pProtocolConversionService = pProtocolConversionServiceRef->castedInstance&lt;ProtocolConversionService&gt;();
+
+		Poco::OSP::ServiceRef::Ptr pMessageAuxDataModifierServiceRef =
+			pContext->registry().findByName(MESSAGE_AUX_DATA_MODIFIER_SERVICE_NAME);
+		if (!pMessageAuxDataModifierServiceRef)
+		{
+			pContext->logger().error("The MessageAuxDataModifierService is not available.");
+			return;
+		}
+		_pMessageAuxDataModifierService = pMessageAuxDataModifierServiceRef->castedInstance&lt;MessageAuxDataModifierService&gt;();
+
+        
+		_pProtocolFactory = new [#name]Factory(
+			new [#name]FactoryImpl(&amp;pContext->logger()));
+		_pProtocolFactoryService->registerFactory(_pProtocolFactory);
+
+		_pMessageModifier = new [#name]MessageAuxDataModifier(new [#name]MessageAuxDataModifierImpl);
+		_pMessageAuxDataModifierService->registerMessageAuxDataModifier(_pMessageModifier);
+
+		_p[#name]ToRawConverter = new [#name]ToRawConverter(new [#name]ToRawConverterImpl);
+		_pRawTo[#name]Converter = new RawTo[#name]Converter(new RawTo[#name]ConverterImpl);
+		_p[#name]ToStandardInternalConverter = new [#name]ToStandardInternalConverter(new [#name]ToStandardInternalConverterImpl);
+		_pStandardInternalTo[#name]Converter = new StandardInternalTo[#name]Converter(new StandardInternalTo[#name]ConverterImpl);
+		_pProtocolConversionService->registerConverter(_p[#name]ToRawConverter);
+		_pProtocolConversionService->registerConverter(_pRawTo[#name]Converter);
+		_pProtocolConversionService->registerConverter(_p[#name]ToStandardInternalConverter);
+		_pProtocolConversionService->registerConverter(_pStandardInternalTo[#name]Converter);
+    }
+
+    void stop(Poco::OSP::BundleContext::Ptr pContext)
+    {
+
+		_pProtocolConversionService->unregisterConverter(
+			_pStandardInternalTo[#name]Converter->inputProtocolFactoryName(),
+			_pStandardInternalTo[#name]Converter->inputProtocolFactoryComponentName(),
+			_pStandardInternalTo[#name]Converter->outputProtocolFactoryName(),
+			_pStandardInternalTo[#name]Converter->outputProtocolFactoryComponentName());
+		_pProtocolConversionService->unregisterConverter(
+			_p[#name]ToStandardInternalConverter->inputProtocolFactoryName(),
+			_p[#name]ToStandardInternalConverter->inputProtocolFactoryComponentName(),
+			_p[#name]ToStandardInternalConverter->outputProtocolFactoryName(),
+			_p[#name]ToStandardInternalConverter->outputProtocolFactoryComponentName());
+		_pProtocolConversionService->unregisterConverter(
+			_pRawTo[#name]Converter->inputProtocolFactoryName(),
+			_pRawTo[#name]Converter->inputProtocolFactoryComponentName(),
+			_pRawTo[#name]Converter->outputProtocolFactoryName(),
+			_pRawTo[#name]Converter->outputProtocolFactoryComponentName());
+		_pProtocolConversionService->unregisterConverter(
+			_p[#name]ToRawConverter->inputProtocolFactoryName(),
+			_p[#name]ToRawConverter->inputProtocolFactoryComponentName(),
+			_p[#name]ToRawConverter->outputProtocolFactoryName(),
+			_p[#name]ToRawConverter->outputProtocolFactoryComponentName());
+		_pProtocolFactoryService->unregisterFactory(_pProtocolFactory->name(),
+			_pProtocolFactory->componentName());
+
+		_pMessageAuxDataModifierService->unregisterMessageAuxDataModifier(
+			_pMessageModifier->protocolFactoryName(),
+			_pMessageModifier->protocolFactoryComponentName(),
+			_pMessageModifier->protocolName());
+
+		_pStandardInternalTo[#name]Converter.reset();
+		_p[#name]ToStandardInternalConverter.reset();
+		_pRawTo[#name]Converter.reset();
+		_p[#name]ToRawConverter.reset();
+		_pMessageModifier.reset();
+		_pProtocolFactory.reset();
+		_pMessageAuxDataModifierService.reset();
+		_pProtocolConversionService.reset();
+		_pProtocolFactoryService.reset();
+
+    }
+
+private:
+    ProtocolFactoryService::Ptr _pProtocolFactoryService;
+
+
+	ProtocolConversionService::Ptr _pProtocolConversionService;
+	MessageAuxDataModifierService::Ptr _pMessageAuxDataModifierService;
+
+	[#name]Factory::Ptr _pProtocolFactory;
+	[#name]MessageAuxDataModifier::Ptr _pMessageModifier;
+	[#name]ToRawConverter::Ptr _p[#name]ToRawConverter;
+	RawTo[#name]Converter::Ptr _pRawTo[#name]Converter;
+	[#name]ToStandardInternalConverter::Ptr _p[#name]ToStandardInternalConverter;
+	StandardInternalTo[#name]Converter::Ptr _pStandardInternalTo[#name]Converter;
+
+};
+
+POCO_BEGIN_MANIFEST(Poco::OSP::BundleActivator)
+    POCO_EXPORT_CLASS([#name]ComponentActivator)
+POCO_END_MANIFEST</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Protocol/[#name]/Impl/Message.h">
+				<template>#pragma once
+
+#include "DSHost/Protocol/[#name]/Defines.h"
+#include "DSHost/Protocol/Impl/Message.h"
+
+namespace DS {
+namespace protocols {
+namespace [#name] {
+
+class [#name]LToRawConverterImpl;
+class RawTo[#name]ConverterImpl;
+class StandardInternalTo[#name]ConverterImpl;
+
+class [#name]MessageImpl : public MessageImpl
+{
+public:
+    explicit [#name]MessageImpl(const std::string&amp; protocol) 
+			:_protocol(protocol) {;};
+		~[#name]MessageImpl() {;};
+
+		std::string protocolName() const { return _protocol; };
+    std::string protocolFactoryName() const {
+			return [#name]_FACTORY_NAME;};
+    std::string protocolFactoryComponentName() const {
+			return [#name]_FACTORY_COMPONENT_NAME;};
+
+    MessageImpl* clone() const {return clone(_protocol);};
+    MessageImpl* clone(const std::string&amp; protocol) const {
+			[#name]MessageImpl *pMsg = new [#name]MessageImpl(protocol);
+			return pMsg;};
+
+private:
+    std::string _protocol;
+
+    friend class [#name]ToRawConverterImpl;
+    friend class RawTo[#name]ConverterImpl;
+    friend class StandardInternalTo[#name]ConverterImpl;
+};
+} } } // namespace DS::protocols::[#name]</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Protocol/[#name]/Impl/MessageAuxDataModifier.h">
+				<template>#pragma once
+
+#include "DSHost/Transport/Headerless/Impl/MessageAuxDataModifier.h"
+#include "Message.h"
+#include "DSHost/Protocol/[#name]/Message.h"
+
+namespace DS {
+namespace protocols {
+namespace [#name] {
+
+class [#name]MessageAuxDataModifierImpl : public DS::transport::MessageAuxDataModifierImpl
+{
+public:
+    std::string protocolName() const {
+			return "";};
+    std::string protocolFactoryName() const {
+			return [#name]_FACTORY_NAME;};
+    std::string protocolFactoryComponentName() const {
+			return [#name]_FACTORY_COMPONENT_NAME;};
+    Message::Ptr insert(Message::Ptr pMessage, const AuxData&amp; aux) {
+			[#name]Message::Ptr pInputMessage = pMessage.cast&lt;[#name]Message&gt;();
+			[#name]Message::Ptr pOutputMessage = pInputMessage->clone().cast&lt;[#name]Message&gt;();
+			poco_check_ptr(pOutputMessage);
+			//...
+			return pOutputMessage;
+		};
+    bool get(Message::Ptr pMessage, AuxData&amp; aux) {
+			[#name]Message::Ptr pInputMessage = pMessage.cast&lt;[#name]Message&gt;();
+			if (!pInputMessage)
+				return false;
+			aux = AuxData();
+			//...
+			return true;
+		};
+    Message::Ptr extract(Message::Ptr pMessage, AuxData&amp; aux) {
+			if (!get(pMessage, aux))
+				return NULL;
+			[#name]Message::Ptr pOutputMessage = pMessage->clone().cast&lt;[#name]Message&gt;();
+			poco_check_ptr(pOutputMessage);
+			//...
+			return pOutputMessage;
+		};
+};
+} } } // namespace DS::protocols::[#name]</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Protocol/[#name]/Impl/Protocol.h">
+				<template>#pragma once
+
+#include "DSHost/Protocol/Impl/Protocol.h"
+#include "Poco/RWLock.h"
+#include "../Defines.h"
+namespace DS {
+namespace protocols {
+namespace [#name] {
+
+class [#name]Impl : public ProtocolImpl
+{
+public:
+    explicit [#name]Impl(const std::string&amp; name) :_name(name)
+		{
+		};
+
+    std::string factoryName() const {
+			return [#name]_FACTORY_NAME;
+		};
+    std::string factoryComponentName() const {
+			return [#name]_FACTORY_COMPONENT_NAME;
+		};
+
+    std::string name() const {
+			return _name;
+		};
+
+    ParameterMap configuration() const {
+			return ParameterMap();
+		};
+    bool configure(const ParameterMap&amp; config) {
+			std::string configValue;
+			ParameterMap::const_iterator it = config.find("config1");
+			if (it != config.end()) {
+				configValue = it->second;
+			}
+			return true;
+		};
+
+    Id id() const {
+			Poco::ScopedReadRWLock lock(_lock);
+			return _id;
+		};
+    void setId(Id id) {
+			Poco::ScopedWriteRWLock lock(_lock);
+			_id = id;
+		};
+
+    MessageImpl* createMessage() {
+			return NULL;
+		};
+
+private:
+    std::string _name;
+    Id _id;
+    mutable Poco::RWLock _lock;
+};
+} } } // namespace DS::protocols::[#name]</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Protocol/[#name]/Impl/ProtocolFactory.h">
+				<template>#pragma once
+
+#include "DSHost/Protocol/Impl/Factory.h"
+#include "Protocol.h"
+#include "Poco/RWLock.h"
+
+namespace DS {
+namespace protocols {
+namespace [#name] {
+
+class [#name]FactoryImpl : public ProtocolFactoryImpl
+{
+public:
+    explicit [#name]FactoryImpl(Poco::Logger *pLogger) :_set(false), _pLogger(pLogger)
+		{
+		};
+
+    std::string name() const {
+			return [#name]_FACTORY_NAME;
+		};
+    std::string componentName() const {
+			return [#name]_FACTORY_COMPONENT_NAME;
+		};
+
+    ParameterMap initialConfiguration() const {
+			Poco::ScopedReadRWLock lock(_lock);
+			return _config;
+		};
+    void setInitialConfiguration(const ParameterMap&amp; config) {
+			Poco::ScopedWriteRWLock lock(_lock);
+			_config = config;
+			_set = true;
+		};
+    void unsetInitialConfiguration() {
+			Poco::ScopedWriteRWLock lock(_lock);
+			_config.clear();
+			_set = false;
+		};
+
+    ProtocolImpl* createProtocol(const std::string&amp; name, ProtocolImpl::Id id) {
+			Poco::ScopedReadRWLock lock(_lock);
+
+			[#name]Impl *pProtocolImpl = new [#name]Impl(name);
+			pProtocolImpl->setId(id);
+
+			if (_set)
+				pProtocolImpl->configure(_config);
+			return pProtocolImpl;
+		};
+
+private:
+    bool _set;
+    ParameterMap _config;
+    Poco::Logger *_pLogger;
+    mutable Poco::RWLock _lock;
+};
+
+} } } // namespace DS::protocols::[#name]</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Protocol/[#name]/Impl/RawConverter.h">
+				<template>#pragma once
+
+#include "DSHost/Protocol/Impl/Converter.h"
+#include "DSHost/Protocol/Raw/Impl/Message.h"
+#include "DSHost/Protocol/Raw/Converter.h"
+#include "DSHost/Protocol/Raw/Message.h"
+#include "Message.h"
+
+namespace DS {
+namespace protocols {
+namespace [#name] {
+
+class [#name]ToRawConverterImpl : public ProtocolConverterImpl
+{
+public:
+    std::string inputProtocolFactoryName() const {
+			return [#name]_FACTORY_NAME;};
+    std::string inputProtocolFactoryComponentName() const {
+			return [#name]_FACTORY_COMPONENT_NAME;};
+
+    std::string outputProtocolFactoryName() const {
+			return RAW_PROTOCOL_FACTORY_NAME;};
+    std::string outputProtocolFactoryComponentName() const {
+			return "";};
+
+    bool convertMessage(Message::Ptr pInput, Message::Ptr pOutput) {
+			[#name]Message::Ptr p[#name]Message = pInput.cast&lt;[#name]Message&gt;();
+			RawMessage::Ptr pRawMessage = pOutput.cast&lt;RawMessage&gt;();
+			if (!p[#name]Message || !pRawMessage)
+				return false;
+			[#name]MessageImpl *pImpl = dynamic_cast&lt;[#name]MessageImpl*&gt;(p[#name]Message->impl());
+			const char* result; 
+			//result=...;
+			//size_t length=strlen(result);
+			//pRawMessage->buffer().assign(result, length);
+			return true;
+		};
+
+    ProtocolConverterFeatures::Ptr features() const {
+			return NULL;};
+};
+
+///////////////////////////////////////////////////////////////////////////////
+
+class RawTo[#name]ConverterFeatures : public RawToProtocolConverterFeatures
+{
+public:
+	bool findMessageInStream(const FIFOBuffer&amp; buffer, size_t&amp; displ, size_t&amp; size) const {
+		size = buffer.used();
+		displ = 0;
+		return true;
+	}
+};
+class [#name]ToXMLConverterFeatures : public RawToProtocolConverterFeatures
+{
+public:
+	bool findMessageInStream(const FIFOBuffer&amp; buffer, size_t&amp; displ, size_t&amp; size) const {
+      size = buffer.used();
+      displ = 0;
+      return true;
+      };
+      };
+      class RawTo[#name]ConverterImpl : public ProtocolConverterImpl
+      {
+      public:
+      RawTo[#name]ConverterImpl() :_pFeatures(new [#name]ToXMLConverterFeatures) { ; };
+
+      std::string inputProtocolFactoryName() const {
+      return RAW_PROTOCOL_FACTORY_NAME;
+      };
+      std::string inputProtocolFactoryComponentName() const {
+      return "";
+      };
+
+      std::string outputProtocolFactoryName() const {
+      return [#name]_FACTORY_NAME;
+      };
+      std::string outputProtocolFactoryComponentName() const {
+      return [#name]_FACTORY_COMPONENT_NAME;
+      };
+
+      bool convertMessage(Message::Ptr pInput, Message::Ptr pOutput) {
+      RawMessage::Ptr pRawMessage = pInput.cast&lt;RawMessage&gt;();
+			[#name]Message::Ptr p[#name]Message = pOutput.cast&lt;[#name]Message&gt;();
+			if (!pRawMessage || !p[#name]Message)
+				return false;
+			[#name]MessageImpl *pImpl = dynamic_cast&lt;[#name]MessageImpl*&gt;(p[#name]Message->impl());
+			//pImpl->...
+
+			return true;
+		};
+
+    ProtocolConverterFeatures::Ptr features() const {
+			return _pFeatures;
+		};
+
+private:
+    RawToProtocolConverterFeatures::Ptr _pFeatures;
+};
+
+} } } // namespace DS::protocols::[#name]</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Protocol/[#name]/Impl/StandardInternalConverter.h">
+				<template>#pragma once
+
+#include "DSHost/Protocol/[#name]/Defines.h"
+#include "DSHost/Protocol/Impl/Converter.h"
+#include "DSHost/Protocol/StandardInternal/Impl/Message.h"
+#include "DSHost/Protocol/StandardInternal/Message.h"
+#include "Message.h"
+
+namespace DS {
+namespace protocols {
+namespace [#name] {
+
+class [#name]ToStandardInternalConverterImpl : public ProtocolConverterImpl
+{
+public:
+    std::string inputProtocolFactoryName() const {
+			return [#name]_FACTORY_NAME;};
+    std::string inputProtocolFactoryComponentName() const {
+			return [#name]_FACTORY_COMPONENT_NAME;};
+
+    std::string outputProtocolFactoryName() const {
+			return STANDARD_INTERNAL_PROTOCOL_FACTORY_NAME;};
+    std::string outputProtocolFactoryComponentName() const {
+			return "";};
+
+    bool convertMessage(Message::Ptr pInput, Message::Ptr pOutput) {
+			[#name]Message::Ptr p[#name]Message = pInput.cast&lt;[#name]Message&gt;();
+			StandardInternalMessage::Ptr pStandardInternalMessage = pOutput.cast&lt;StandardInternalMessage&gt;();
+
+			if (!p[#name]Message || !pStandardInternalMessage)
+				return false;
+			//...
+			return true;
+		};
+		ProtocolConverterFeatures::Ptr features() const { return NULL; };
+};
+///////////////////////////////////////////////////////////////////////////////
+class StandardInternalTo[#name]ConverterImpl : public ProtocolConverterImpl
+{
+public:
+    std::string inputProtocolFactoryName() const {
+			return STANDARD_INTERNAL_PROTOCOL_FACTORY_NAME;};
+    std::string inputProtocolFactoryComponentName() const {
+			return "";
+		};
+    std::string outputProtocolFactoryName() const {
+			return [#name]_FACTORY_NAME;};
+    std::string outputProtocolFactoryComponentName() const {
+			return [#name]_FACTORY_COMPONENT_NAME;};
+    bool convertMessage(Message::Ptr pInput, Message::Ptr pOutput) {
+			StandardInternalMessage::Ptr pStandardInternalMessage = pInput.cast&lt;StandardInternalMessage&gt;();
+			[#name]Message::Ptr p[#name]Message = pOutput.cast&lt;[#name]Message&gt;();
+			if (!pStandardInternalMessage || !p[#name]Message)
+				return false;
+			[#name]MessageImpl *pImpl = dynamic_cast&lt;[#name]MessageImpl*&gt;(p[#name]Message->impl());
+			//...
+			return true;
+		};
+		ProtocolConverterFeatures::Ptr features() const { return NULL; };
+};
+} } } // namespace DS::protocols::[#name]</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Protocol/[#name]/Defines.h">
+				<template>#pragma once
+
+#define [#name]_FACTORY_NAME "[#name]"
+#define [#name]_FACTORY_COMPONENT_NAME "ds.host.protocols.protocol.[#name]"</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Protocol/[#name]/Message.h">
+				<template>#pragma once
+
+#include "DSHost/Protocol/Message.h"
+#include "Impl/Message.h"
+
+namespace DS {
+namespace protocols {
+namespace [#name] {
+
+class [#name]Message : public Message
+{
+public:
+    typedef Poco::AutoPtr&lt;[#name]Message&gt; Ptr;
+
+    explicit [#name]Message([#name]MessageImpl *pImpl) :_pImpl(pImpl)
+		{
+			poco_check_ptr(pImpl);
+		};
+    ~[#name]Message() {
+			delete _pImpl;
+		};
+
+    Message::Ptr clone() const
+		{
+			return new [#name]Message(dynamic_cast&lt;[#name]MessageImpl*&gt;(_pImpl->clone()));
+		};
+    Message::Ptr clone(const std::string&amp; protocol) const {
+			return new [#name]Message(dynamic_cast&lt;[#name]MessageImpl*&gt;(_pImpl->clone(protocol)));
+		};
+
+    MessageImpl* impl() const {
+			return _pImpl;};
+
+private:
+    [#name]MessageImpl *_pImpl;
+};
+
+} } } // namespace DS::protocols::[#name]</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Protocol/[#name]/MessageAuxDataModifier.h">
+				<template>#pragma once
+
+#include "DSHost/Transport/Headerless/MessageAuxDataModifier.h"
+#include "Impl/MessageAuxDataModifier.h"
+
+namespace DS {
+namespace protocols {
+namespace [#name] {
+
+class [#name]MessageAuxDataModifier : public DS::transport::MessageAuxDataModifier
+{
+public:
+    typedef Poco::AutoPtr&lt;[#name]MessageAuxDataModifier&gt; Ptr;
+    explicit [#name]MessageAuxDataModifier([#name]MessageAuxDataModifierImpl *pImpl) :_pImpl(pImpl)
+		{poco_check_ptr(pImpl);};
+    ~[#name]MessageAuxDataModifier() {
+			delete _pImpl;};
+    DS::transport::MessageAuxDataModifierImpl* impl() const {
+			return _pImpl;};
+
+private:
+    [#name]MessageAuxDataModifierImpl *_pImpl;
+};
+} } } // namespace DS::protocols::[#name]</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Protocol/[#name]/Protocol.h">
+				<template>#pragma once
+
+#include "DSHost/Protocol/Protocol.h"
+#include "Impl/Protocol.h"
+
+namespace DS {
+namespace protocols {
+namespace [#name] {
+
+class [#name] : public Protocol
+{
+public:
+    typedef Poco::AutoPtr&lt;[#name]&gt; Ptr;
+
+    explicit [#name]([#name]Impl *pImpl) :_pImpl(pImpl)
+		{
+			poco_check_ptr(pImpl);
+		};
+    ~[#name]() {
+			delete _pImpl;
+		};
+
+    Message::Ptr createMessage() {
+			return NULL;
+		};
+
+    ProtocolImpl* impl() const {
+			return _pImpl;
+		};
+
+private:
+	[#name]Impl *_pImpl;
+};
+
+
+} } } // namespace DS::protocols::[#name]</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Protocol/[#name]/ProtocolFactory.h">
+				<template>#pragma once
+
+#include "DSHost/Protocol/Factory.h"
+#include "Impl/ProtocolFactory.h"
+#include "Protocol.h"
+
+namespace DS {
+namespace protocols {
+namespace [#name] {
+
+class [#name]Factory : public ProtocolFactory
+{
+public:
+    typedef Poco::AutoPtr&lt;[#name]Factory&gt; Ptr;
+
+    explicit [#name]Factory([#name]FactoryImpl *pImpl) :_pImpl(pImpl)
+		{
+			poco_check_ptr(pImpl);
+		};
+    ~[#name]Factory() {
+			delete _pImpl;
+		};
+
+    Protocol::Ptr createProtocol(const std::string&amp; name, Protocol::Id id = 0) {
+			return new [#name](dynamic_cast&lt;[#name]Impl*&gt;(_pImpl->createProtocol(name, id)));
+		};
+
+    ProtocolFactoryImpl* impl() const {
+			return _pImpl;
+		};
+
+private:
+	[#name]FactoryImpl *_pImpl;
+};
+
+} } } // namespace DS::protocols::[#name]</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Protocol/[#name]/RawConverter.h">
+				<template>#pragma once
+
+#include "DSHost/Protocol/Raw/Converter.h"
+#include "Impl/RawConverter.h"
+
+namespace DS {
+namespace protocols {
+namespace [#name] {
+
+class [#name]ToRawConverter : public ProtocolConverter
+{
+public:
+    typedef Poco::AutoPtr&lt;[#name]ToRawConverter&gt; Ptr;
+
+    explicit [#name]ToRawConverter([#name]ToRawConverterImpl *pImpl) :_pImpl(pImpl){
+			poco_check_ptr(pImpl);};
+    ~[#name]ToRawConverter() {
+			delete _pImpl;};
+
+    ProtocolConverterImpl* impl() const {
+			return _pImpl;};
+
+private:
+    [#name]ToRawConverterImpl *_pImpl;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+
+class RawTo[#name]Converter : public ProtocolConverter
+{
+public:
+    typedef Poco::AutoPtr&lt;RawTo[#name]Converter&gt; Ptr;
+
+    explicit RawTo[#name]Converter(RawTo[#name]ConverterImpl *pImpl) :_pImpl(pImpl) {
+			poco_check_ptr(pImpl);};
+    ~RawTo[#name]Converter() {
+			delete _pImpl;};
+
+    ProtocolConverterImpl* impl() const {
+			return _pImpl;};
+
+private:
+    RawTo[#name]ConverterImpl *_pImpl;
+};
+} } } // namespace DS::protocols::[#name]</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Protocol/[#name]/StandardInternalConverter.h">
+				<template>#pragma once
+
+#include "DSHost/Protocol/Converter.h"
+#include "Impl/StandardInternalConverter.h"
+
+namespace DS {
+namespace protocols {
+namespace [#name] {
+
+class [#name]ToStandardInternalConverter : public ProtocolConverter
+{
+public:
+    typedef Poco::AutoPtr&lt;[#name]ToStandardInternalConverter&gt; Ptr;
+
+    explicit [#name]ToStandardInternalConverter([#name]ToStandardInternalConverterImpl *pImpl) :_pImpl(pImpl){
+			poco_check_ptr(pImpl);};
+    ~[#name]ToStandardInternalConverter() {delete _pImpl;};
+    ProtocolConverterImpl* impl() const {return _pImpl;};
+
+private:
+    [#name]ToStandardInternalConverterImpl *_pImpl;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+
+class StandardInternalTo[#name]Converter : public ProtocolConverter
+{
+public:
+    typedef Poco::AutoPtr&lt;StandardInternalTo[#name]Converter&gt; Ptr;
+    explicit StandardInternalTo[#name]Converter(StandardInternalTo[#name]ConverterImpl *pImpl) :_pImpl(pImpl){
+			poco_check_ptr(pImpl);};
+    ~StandardInternalTo[#name]Converter() {delete _pImpl;};
+    ProtocolConverterImpl* impl() const {return _pImpl;};
+private:
+    StandardInternalTo[#name]ConverterImpl *_pImpl;
+};
+
+} } } // namespace DS::protocols::[#name]</template>
+			</File>
+			<File type="CmakeFrame" filename="CMakeLists.txt">
+				<template>cmake_minimum_required(VERSION 3.13)
+set(name [#BundleName])
+project(${name}project)
+set(CMAKE_CXX_STANDARD 98)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+if(CMAKE_COMPILER_IS_GNUCC)
+    add_definitions(-Wno-sign-compare)
+endif(CMAKE_COMPILER_IS_GNUCC)
+
+if(NOT CMAKE_DEBUG_POSTFIX)
+    set(CMAKE_DEBUG_POSTFIX d)
+endif()
+
+include(macchina.cmake)
+include(build.cmake)
+
+set(DSHostInclude [#DSHostInclude])
+set(LibrariesDSUtils [#LibrariesDSUtils])
+set(Macchina_LIBRARIES_RELEASE PocoFoundation PocoUtil PocoOSP)
+set(Macchina_LIBRARIES_DEBUG PocoFoundationd PocoUtild PocoOSPd)
+
+add_library(${name} MODULE 
+    Activator.cpp
+    )
+
+set_target_properties(${name} PROPERTIES 
+    OUTPUT_NAME [#LibraryName]
+    PREFIX "")
+
+target_include_directories(${name} PRIVATE 
+    .
+	include
+    ${DSHostInclude}
+    ${Macchina_INCLUDE_DIRS}
+    )
+target_link_directories(${name} PRIVATE 
+    ${Macchina_LIBRARY_DIRS}
+	${LibrariesDSUtils}
+    )
+
+if(CMAKE_BUILD_TYPE MATCHES "Debug")
+	target_link_libraries(${name} PRIVATE 
+		debug ${Macchina_LIBRARIES_DEBUG}
+		[#BaseLibary]
+		)
+else()
+	target_link_libraries(${name} PRIVATE 
+		optimized ${Macchina_LIBRARIES_RELEASE}
+		[#BaseLibary]
+		)
+endif()
+
+target_compile_options(${name} PRIVATE 
+    "-std=c++03"
+    )
+
+macro(add_bundle_content name)
+    add_custom_target(${name}BundleContent ALL
+        COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/Module.bndlspec" "."
+        COMMAND ${CMAKE_COMMAND} -E make_directory "lib"
+        COMMAND ${CMAKE_COMMAND} -E copy "$&lt;TARGET_FILE:${name}&gt;" "lib/"
+        DEPENDS ${name}
+        WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+        VERBATIM
+        )
+endmacro()
+if(WIN32)
+    set(Macchina_BUNDLE_UTIL_ARG "/output-dir=${CMAKE_BINARY_DIR}\\components")
+else()
+    set(Macchina_BUNDLE_UTIL_ARG "--output-dir=${CMAKE_BINARY_DIR}/components")
+endif()
+
+macro(add_bundle_file name namedep)
+    add_custom_target(${name}Bundle ALL
+        COMMAND ${Macchina_BUNDLE_UTIL} ${Macchina_BUNDLE_UTIL_ARG} "Module.bndlspec"
+        DEPENDS ${namedep}
+        WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+        VERBATIM
+        )
+endmacro()
+
+macro(add_bundle name)
+    add_bundle_content(${name})
+    add_bundle_file(${name} ${name}BundleContent)
+endmacro()
+add_bundle(${name})</template>
+			</File>
+			<File type="BndlspecFrame" filename="Module.bndlspec">
+				<template>&lt;?xml version="1.0"?&gt;
+&lt;bundlespec&gt;
+&lt;manifest&gt;
+&lt;name&gt;[#BundleDescriber]&lt;/name&gt;
+&lt;symbolicName&gt;[#LibraryName]&lt;/symbolicName&gt;
+&lt;version&gt;[#BundleVersion]&lt;/version&gt;
+&lt;vendor&gt;[#vendor]&lt;/vendor&gt;
+&lt;copyright&gt;[#CopyRight]&lt;/copyright&gt;
+&lt;activator&gt;
+	&lt;class&gt;[#name]BundleObjectActivator&lt;/class&gt;
+	&lt;library&gt;[#LibraryName]&lt;/library&gt;
+&lt;/activator&gt;
+&lt;lazyStart&gt;[#LazyStart]&lt;/lazyStart&gt;
+&lt;runLevel&gt;[#RunLevel]&lt;/runLevel&gt;
+&lt;module&gt;
+	&lt;symbolicName&gt;[#LibraryName]&lt;/symbolicName&gt;
+	&lt;version&gt;[#BundleVersion]&lt;/version&gt;
+&lt;/module&gt;
+&lt;/manifest&gt;
+&lt;code&gt;
+	[#OutputDir]/*.so,
+	[#OutputDir]/*.dll,
+&lt;/code&gt;
+&lt;/bundlespec&gt;</template>
+			</File>
+		</FileList>
+	</RecipeTemplate>
+	<RecipeTemplate name="Transport Component" type="NO_UI_Component">
+		<FileList>
+			<File type="CppHeaderFrame" filename="Activator.cpp">
+				<template>#include "Poco/OSP/BundleActivator.h"
+#include "Poco/OSP/BundleContext.h"
+#include "Poco/OSP/ServiceRegistry.h"
+#include "Poco/ClassLibrary.h"
+
+#include "DSHost/Transport/ChannelFactoryService.h"
+#include "DSHost/Transport/ImplementationFactoryService.h"
+#include "DSHost/Transport/[#name]/Channel.h"
+#include "DSHost/Transport/[#name]/ChannelFactory.h"
+
+using DS::transport::TransportChannelFactoryService;
+using DS::transport::TransportImplementationFactoryService;
+using DS::transport::[#name]::[#name]Factory;
+using DS::transport::[#name]::[#name]FactoryImpl;
+
+class [#name]ProviderComponentActivator : public Poco::OSP::BundleActivator
+{
+public:
+	[#name]ProviderComponentActivator()
+    {
+    }
+
+    ~[#name]ProviderComponentActivator()
+    {
+    }
+
+    void start(Poco::OSP::BundleContext::Ptr pContext)
+    {
+        Poco::OSP::ServiceRef::Ptr pChannelFactoryServiceRef =
+            pContext->registry().findByName(TRANSPORT_CHANNEL_FACTORY_SERVICE_NAME);
+        if (!pChannelFactoryServiceRef)
+        {
+            pContext->logger().error("The TransportChannelFactoryService is not available.");
+            return;
+        }
+        _pFactoryService = pChannelFactoryServiceRef->castedInstance&lt;TransportChannelFactoryService&gt;();
+
+		_pFactory = new [#name]Factory(new [#name]FactoryImpl(&amp;pContext->logger()));
+
+        _pFactoryService->registerFactory(_pFactory);
+    }
+
+    void stop(Poco::OSP::BundleContext::Ptr pContext)
+    {
+        _pFactoryService->unregisterFactory(
+                _pFactory->name(), _pFactory->componentName());
+    }
+
+private:
+    TransportChannelFactoryService::Ptr _pFactoryService;
+    [#name]Factory::Ptr _pFactory;
+};
+
+POCO_BEGIN_MANIFEST(Poco::OSP::BundleActivator)
+    POCO_EXPORT_CLASS([#name]ProviderComponentActivator)
+POCO_END_MANIFEST</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Transport/[#name]/Impl/Channel.h">
+				<template>#pragma once
+
+#include "DSHost/Transport/[#name]/Defines.h"
+#include "DSHost/Transport/Impl/Channel.h"
+#include "DSHost/Transport/ImplementationFactoryService.h"
+#include "Poco/Runnable.h"
+#include "Poco/AtomicCounter.h"
+#include "Poco/Logger.h"
+#include "Poco/RWLock.h"
+#include "Poco/Mutex.h"
+#include "../Defines.h"
+
+namespace DS {
+namespace transport {
+namespace [#name]{
+
+	class [#name]Impl : public TransportChannelImpl, Poco::Runnable
+	{
+	public:
+		[#name]Impl(const std::string&amp; name, Poco::Logger *pLogger) :_name(name), _id(0), _pCallback(NULL), _pLogger(pLogger)
+		{
+			_thread.setName("[#name] channel");
+		};
+
+		std::string factoryName() const {
+			return [#name]_FACTORY_NAME;
+		};
+		std::string factoryComponentName() const {
+			return [#name]_FACTORY_COMPONENT_NAME;
+		};
+
+		std::string name() const {
+			return _name;
+		};
+
+		ParameterMap configuration() const {
+			Poco::ScopedReadRWLock lock(_lock);
+			return _config;
+		};
+		bool configure(const ParameterMap&amp; config) {
+			Poco::ScopedWriteRWLock lock(_lock);
+			_config = config;
+			return true;
+		};
+
+		bool isStreaming() const { return true; };
+
+		ParameterMap defaultSendParameters() const {
+			Poco::ScopedReadRWLock lock(_lock);
+			return _defaultSendParameters;
+		};
+		void setDefaultSendParameters(const ParameterMap&amp; params) {
+			_defaultSendParameters = params;
+		};
+
+		Id id() const { return _id; };
+		void setId(Id id) { _id = id; };
+
+		bool isOpening() const { return true; };
+		bool isOpen() const { return true; };
+		bool isClosed() const { return true; };
+
+		bool isConnected() const { return true; };
+
+		bool open() { return true; };
+		bool close() { return true; };
+
+		void reset() { return; };
+
+		int send(FIFOBuffer&amp; buffer, const ParameterMap&amp; params) { return 0; };
+		int receive(FIFOBuffer&amp; buffer, ParameterMap&amp; info) { return 0; };
+
+		Callback* callback() const { return _pCallback; };
+		bool setCallback(Callback* pCallback) {
+			_pCallback = pCallback;
+			return true;
+	};
+
+		void run() { while (1) { ; } };
+
+private:
+    std::string _name;
+    ParameterMap _config;
+    ParameterMap _defaultSendParameters;
+    Id _id;
+    typedef DS::protocols::Buffer Buffer;
+    Callback *_pCallback;
+    Poco::Thread _thread;
+    Poco::Logger *_pLogger;
+    mutable Poco::RWLock _lock;
+};
+} } } // namespace DS::transport::[#name]</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Transport/[#name]/Impl/ChannelFactory.h">
+				<template>#pragma once
+
+#include "DSHost/Transport/Impl/ChannelFactory.h"
+#include "Poco/RWLock.h"
+#include "Channel.h"
+
+namespace DS {
+namespace transport {
+namespace [#name]{
+
+class [#name]FactoryImpl : public TransportChannelFactoryImpl
+{
+public:
+	[#name]FactoryImpl(Poco::Logger *pLogger) :
+		_set(false), _pLogger(pLogger){
+			;
+		};
+
+    std::string name() const {
+			return [#name]_FACTORY_NAME;
+		};
+    std::string componentName() const {
+			return [#name]_FACTORY_COMPONENT_NAME;
+		};
+
+    ParameterMap initialConfiguration() const {
+			Poco::ScopedReadRWLock lock(_lock);
+			return _config;
+		};
+    void setInitialConfiguration(const ParameterMap&amp; config) {
+			Poco::ScopedWriteRWLock lock(_lock);
+			_config = config;
+			_set = true;
+		};
+    void unsetInitialConfiguration() {
+			Poco::ScopedWriteRWLock lock(_lock);
+			_config.clear();
+			_set = false;
+		};
+
+    TransportChannelImpl* createChannel(const std::string&amp; name, TransportChannelImpl::Id id) {
+			Poco::ScopedReadRWLock lock(_lock);
+
+			[#name]Impl *pChannelImpl =
+				new [#name]Impl(name, _pLogger);
+			pChannelImpl->setId(id);
+
+			if (_set)
+				pChannelImpl->configure(_config);
+			return pChannelImpl;
+		};
+
+private:
+    bool _set;
+    ParameterMap _config;
+    Poco::Logger *_pLogger;
+    mutable Poco::RWLock _lock;
+};
+} } } // namespace DS::transport::[#name]</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Transport/[#name]/Channel.h">
+				<template>#pragma once
+
+#include "DSHost/Transport/Channel.h"
+#include "Impl/Channel.h"
+
+namespace DS {
+namespace transport {
+namespace [#name]{
+
+class [#name] : public TransportChannel
+{
+public:
+    typedef Poco::AutoPtr&lt;[#name]&gt; Ptr;
+
+    explicit [#name]([#name]Impl *pImpl) :_pImpl(pImpl){
+			poco_check_ptr(pImpl);
+		};
+    ~[#name]() {
+			delete _pImpl;
+		};
+
+    TransportChannelImpl* impl() const {
+			return _pImpl;
+		};
+
+private:
+	[#name]Impl *_pImpl;
+};
+} } } // namespace DS::transport::[#name]</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Transport/[#name]/ChannelFactory.h">
+				<template>#pragma once
+
+#include "DSHost/Transport/ChannelFactory.h"
+#include "Impl/ChannelFactory.h"
+#include "Channel.h"
+
+namespace DS {
+namespace transport {
+namespace [#name] {
+
+class [#name]Factory : public TransportChannelFactory
+{
+public:
+    typedef Poco::AutoPtr&lt;[#name]Factory&gt; Ptr;
+
+    explicit [#name]Factory([#name]FactoryImpl *pImpl) :_pImpl(pImpl){
+			poco_check_ptr(pImpl);
+		};
+    ~[#name]Factory() {
+			delete _pImpl;
+		};
+
+    TransportChannel::Ptr createChannel(const std::string&amp; name, TransportChannel::Id id = 0) {
+			return new [#name](dynamic_cast&lt;[#name]Impl*&gt;(_pImpl->createChannel(name, id)));
+		};
+
+    TransportChannelFactoryImpl* impl() const {
+			return _pImpl;
+		};
+private:
+	[#name]FactoryImpl *_pImpl;
+};
+
+} } } // namespace DS::transport::[#name]</template>
+			</File>
+			<File type="CppHeaderFrame" filename="include/DSHost/Transport/[#name]/Defines.h">
+				<template>#pragma once
+
+#define [#name]_FACTORY_NAME "[#name]"
+#define [#name]_FACTORY_COMPONENT_NAME "ds.host.transport.provider.[#name]"</template>
+			</File>
+			<File type="CmakeFrame" filename="CMakeLists.txt">
+				<template>cmake_minimum_required(VERSION 3.13)
+set(name [#BundleName])
+project(${name}project)
+set(CMAKE_CXX_STANDARD 98)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+if(CMAKE_COMPILER_IS_GNUCC)
+    add_definitions(-Wno-sign-compare)
+endif(CMAKE_COMPILER_IS_GNUCC)
+
+if(NOT CMAKE_DEBUG_POSTFIX)
+    set(CMAKE_DEBUG_POSTFIX d)
+endif()
+
+include(macchina.cmake)
+include(build.cmake)
+
+set(DSHostInclude [#DSHostInclude])
+set(LibrariesDSUtils [#LibrariesDSUtils])
+set(Macchina_LIBRARIES_RELEASE PocoFoundation PocoUtil PocoOSP)
+set(Macchina_LIBRARIES_DEBUG PocoFoundationd PocoUtild PocoOSPd)
+
+add_library(${name} MODULE 
+    Activator.cpp
+    )
+
+set_target_properties(${name} PROPERTIES 
+    OUTPUT_NAME [#LibraryName]
+    PREFIX "")
+
+target_include_directories(${name} PRIVATE 
+    .
+	include
+    ${DSHostInclude}
+    ${Macchina_INCLUDE_DIRS}
+    )
+target_link_directories(${name} PRIVATE 
+    ${Macchina_LIBRARY_DIRS}
+	${LibrariesDSUtils}
+    )
+
+if(CMAKE_BUILD_TYPE MATCHES "Debug")
+	target_link_libraries(${name} PRIVATE 
+		debug ${Macchina_LIBRARIES_DEBUG}
+		[#BaseLibary]
+		)
+else()
+	target_link_libraries(${name} PRIVATE 
+		optimized ${Macchina_LIBRARIES_RELEASE}
+		[#BaseLibary]
+		)
+endif()
+
+target_compile_options(${name} PRIVATE 
+    "-std=c++03"
+    )
+
+macro(add_bundle_content name)
+    add_custom_target(${name}BundleContent ALL
+        COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/Module.bndlspec" "."
+        COMMAND ${CMAKE_COMMAND} -E make_directory "lib"
+        COMMAND ${CMAKE_COMMAND} -E copy "$&lt;TARGET_FILE:${name}&gt;" "lib/"
+        DEPENDS ${name}
+        WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+        VERBATIM
+        )
+endmacro()
+if(WIN32)
+    set(Macchina_BUNDLE_UTIL_ARG "/output-dir=${CMAKE_BINARY_DIR}\\components")
+else()
+    set(Macchina_BUNDLE_UTIL_ARG "--output-dir=${CMAKE_BINARY_DIR}/components")
+endif()
+
+macro(add_bundle_file name namedep)
+    add_custom_target(${name}Bundle ALL
+        COMMAND ${Macchina_BUNDLE_UTIL} ${Macchina_BUNDLE_UTIL_ARG} "Module.bndlspec"
+        DEPENDS ${namedep}
+        WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+        VERBATIM
+        )
+endmacro()
+
+macro(add_bundle name)
+    add_bundle_content(${name})
+    add_bundle_file(${name} ${name}BundleContent)
+endmacro()
+add_bundle(${name})</template>
+			</File>
+			<File type="BndlspecFrame" filename="Module.bndlspec">
+				<template>&lt;?xml version="1.0"?&gt;
+&lt;bundlespec&gt;
+&lt;manifest&gt;
+&lt;name&gt;[#BundleDescriber]&lt;/name&gt;
+&lt;symbolicName&gt;[#LibraryName]&lt;/symbolicName&gt;
+&lt;version&gt;[#BundleVersion]&lt;/version&gt;
+&lt;vendor&gt;[#vendor]&lt;/vendor&gt;
+&lt;copyright&gt;[#CopyRight]&lt;/copyright&gt;
+&lt;activator&gt;
+	&lt;class&gt;[#name]BundleObjectActivator&lt;/class&gt;
+	&lt;library&gt;[#LibraryName]&lt;/library&gt;
+&lt;/activator&gt;
+&lt;lazyStart&gt;[#LazyStart]&lt;/lazyStart&gt;
+&lt;runLevel&gt;[#RunLevel]&lt;/runLevel&gt;
+&lt;module&gt;
+	&lt;symbolicName&gt;[#LibraryName]&lt;/symbolicName&gt;
+	&lt;version&gt;[#BundleVersion]&lt;/version&gt;
+&lt;/module&gt;
+&lt;/manifest&gt;
+&lt;code&gt;
+	[#OutputDir]/*.so,
+	[#OutputDir]/*.dll,
+&lt;/code&gt;
+&lt;/bundlespec&gt;</template>
+			</File>
+		</FileList>
+	</RecipeTemplate>
+	<RecipeTemplate name="Derived Component" type="NO_UI_Component">
+		<FileList>
+			<File type="CppHeaderFrame" filename="Activator.cpp">
+				<template>#include "Poco/OSP/BundleActivator.h"
+#include "Poco/OSP/BundleContext.h"
+#include "Poco/OSP/ServiceRegistry.h"
+#include "Poco/ClassLibrary.h"
+#include "[#name].h"
+#include "[#name]Factory.h"
+[#factoryServiceAndNamespace]
+
+class [#name]ProviderComponentActivator : public Poco::OSP::BundleActivator
+{
+public:
+	[#name]ProviderComponentActivator()
+    {
+    }
+
+    ~[#name]ProviderComponentActivator()
+    {
+    }
+
+    void start(Poco::OSP::BundleContext::Ptr pContext)
+    {
+		[#registry]
+    }
+
+    void stop(Poco::OSP::BundleContext::Ptr pContext)
+    {
+        [#unregistry]
+    }
+
+private:
+    [#FactoryService] _pFactoryService;
+    [#name]Factory::Ptr _pFactory;
+};
+
+POCO_BEGIN_MANIFEST(Poco::OSP::BundleActivator)
+    POCO_EXPORT_CLASS([#name]ProviderComponentActivator)
+POCO_END_MANIFEST</template>
+				<SelectItem module="[#registry]">
+					<content case="general">
+		Poco::OSP::ServiceRef::Ptr pFactoryServiceRef =
+			pContext->registry().findByName(BUNDLE_OBJECT_FACTORY_SERVICE_NAME);
+		if (!pFactoryServiceRef)
+        {
+            pContext->logger().error("The TransportChannelFactoryService is not available.");
+            return;
+        }
+		_pFactoryService =pFactoryServiceRef->castedInstance&lt;BundleObjectFactoryService&gt;();
+
+		[#name]Factory::Ptr _pFactory(new [#name]Factory(
+				pContext->thisBundle()->symbolicName(), pContext));
+		_pFactoryService->registerFactory(_pFactory);
+					</content>
+					<content case="transport">
+        Poco::OSP::ServiceRef::Ptr pFactoryServiceRef =
+            pContext->registry().findByName(TRANSPORT_CHANNEL_FACTORY_SERVICE_NAME);
+        if (!pFactoryServiceRef)
+        {
+            pContext->logger().error("The TransportChannelFactoryService is not available.");
+            return;
+        }
+        _pFactoryService = pFactoryServiceRef->castedInstance&lt;TransportChannelFactoryService&gt;();
+
+		_pFactory = new [#name]Factory();
+        _pFactoryService->registerFactory(_pFactory);
+					</content>
+					<content case="protocol">
+		Poco::OSP::ServiceRef::Ptr pFactoryServiceRef =
+			pContext->registry().findByName(PROTOCOL_FACTORY_SERVICE_NAME);
+		if (!pFactoryServiceRef)
+		{
+			pContext->logger().error("The ProtocolFactoryService is not available.");
+			return;
+		}
+		_pFactoryService = pFactoryServiceRef->castedInstance&lt;ProtocolFactoryService&gt;();
+      
+		_pFactory = new [#name]Factory();
+		_pFactoryService->registerFactory(_pFactory);
+					</content>
+				</SelectItem>
+				<SelectItem module="[#unregistry]">
+					<content case="general">_pFactoryService->unregisterFactory(pContext->thisBundle()->symbolicName());
+        Poco::OSP::ServiceRef::Ptr pServiceRef =
+            pContext->registry().findByName(BUNDLE_OBJECT_SERVICE_NAME);
+        if (pServiceRef)
+        {
+            BundleObjectService::Ptr pService =
+                pServiceRef->castedInstance&lt;BundleObjectService&gt;();
+            pService->unregisterAllObjects(
+                pContext->thisBundle()->symbolicName());
+        }
+					</content>
+					<content case="transport">_pFactoryService->unregisterFactory(
+        _pFactory->name(), _pFactory->componentName());
+					</content>
+					<content case="protocol">_pFactoryService->unregisterFactory(
+        _pFactory->name(), _pFactory->componentName());
+					</content>
+				</SelectItem>
+				<SelectItem module="[#FactoryService]">
+					<content case="general">BundleObjectFactoryService::Ptr</content>
+					<content case="transport">TransportChannelFactoryService::Ptr</content>
+					<content case="protocol">ProtocolFactoryService::Ptr</content>
+				</SelectItem>
+				<SelectItem module="[#factoryServiceAndNamespace]">
+					<content case="general">#include "DSHost/Bundle/Object.h"
+#include "DSHost/Bundle/ObjectFactory.h"
+#include "DSHost/Bundle/ObjectFactoryService.h"
+#include "DSHost/Bundle/ObjectService.h"
+using Poco::OSP::BundleContext;
+
+using DS::bundle_objects::AbstractBundleObjectFactory;
+using DS::bundle_objects::BundleObjectFactoryService;
+using DS::bundle_objects::BundleObjectService;
+					</content>
+					<content case="transport">#include "DSHost/Transport/ChannelFactoryService.h"
+using DS::transport::TransportChannelFactoryService;
+					</content>
+					<content case="protocol">#include "DSHost/Protocol/FactoryService.h"
+using DS::protocols::ProtocolFactoryService;
+					</content>
+				</SelectItem>
+			</File>
+			<File type="CppHeaderFrame" filename="[#name].h">
+				<template>#pragma once
+
+#include "[#BaseClassHeaderFile]"
+
+class [#name] : public [#BaseClass]
+{
+public:
+    typedef Poco::AutoPtr&lt;[#name]&gt; Ptr;
+
+    [#Constructor]
+    ~[#name]() {
+			;
+		};
+
+private:
+	;
+};</template>
+				<SelectItem module="[#Constructor]">
+					<content case="general">[#name](const std::string&amp; name, Poco::OSP::BundleContext::Ptr pContext,
+		const DS::bundle_objects::BundleObject::ParameterMap&amp; config = ParameterMap()) : [#BaseClass](name, pContext,config) {
+			;
+		};</content>
+					<content case="transport">[#name](): [#BaseClass](NULL) {;};
+					</content>
+					<content case="protocol">[#name](): [#BaseClass](NULL) {;};
+					</content>
+				</SelectItem>
+			</File>
+			<File type="CppHeaderFrame" filename="[#name]Factory.h">
+				<template>#pragma once
+#include "[#BaseClassFactoryHeaderFile]"
+#include "[#name].h"
+[#PtrHeaderFileForCreateX]
+class [#name]Factory : public [#BaseClassFactory]
+{
+public:
+    typedef Poco::AutoPtr&lt;[#name]Factory&gt; Ptr;
+	[#Constructor]
+    ~[#name]Factory() {
+        ;
+		};
+    [#createX]
+private:
+	;
+};</template>
+				<SelectItem module="[#createX]">
+					<content case="general">BundleObject::Ptr getObject(const std::string&amp; name,
+			const ParameterMap&amp; config = ParameterMap()) const {
+			return BundleObject::Ptr(new [#name](name, context(), config));};
+					</content>
+					<content case="transport">TransportChannel::Ptr createChannel(const std::string&amp; name, TransportChannel::Id id = 0) {
+			return new [#name]();};
+					</content>
+					<content case="protocol">Protocol::Ptr createProtocol(const std::string&amp; name, Protocol::Id id = 0) {
+			return new [#name]();};
+					</content>
+				</SelectItem>
+				<SelectItem module="[#Constructor]">
+					<content case="general">[#name]Factory(std::string name, Poco::OSP::BundleContext::Ptr pContext): [#BaseClassFactory](name, pContext) {;};
+					</content>
+					<content case="transport">[#name]Factory(): [#BaseClassFactory](NULL) {;};
+					</content>
+					<content case="protocol">[#name]Factory(): [#BaseClassFactory](NULL) {;};
+					</content>
+				</SelectItem>
+				<SelectItem module="[#PtrHeaderFileForCreateX]">
+					<content case="general">#include "DSHost/Bundle/Object.h"
+					</content>
+					<content case="transport">#include "DSHost/Transport/Channel.h"
+using DS::transport::TransportChannel;
+					</content>
+					<content case="protocol">#include "DSHost/Protocol/Protocol.h"
+using DS::protocols::Protocol;
+					</content>
+				</SelectItem>
+			</File>
+			<File type="CmakeFrame" filename="CMakeLists.txt">
+				<template>cmake_minimum_required(VERSION 3.13)
+set(name [#BundleName])
+project(${name}project)
+set(CMAKE_CXX_STANDARD 98)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+if(CMAKE_COMPILER_IS_GNUCC)
+    add_definitions(-Wno-sign-compare)
+endif(CMAKE_COMPILER_IS_GNUCC)
+
+if(NOT CMAKE_DEBUG_POSTFIX)
+    set(CMAKE_DEBUG_POSTFIX d)
+endif()
+
+include(macchina.cmake)
+include(build.cmake)
+
+set(DSHostInclude [#DSHostInclude])
+set(LibrariesDSUtils [#LibrariesDSUtils])
+set(Macchina_LIBRARIES_RELEASE PocoFoundation PocoUtil PocoOSP)
+set(Macchina_LIBRARIES_DEBUG PocoFoundationd PocoUtild PocoOSPd)
+
+add_library(${name} MODULE 
+    Activator.cpp
+    )
+
+set_target_properties(${name} PROPERTIES 
+    OUTPUT_NAME [#LibraryName]
+    PREFIX "")
+
+target_include_directories(${name} PRIVATE 
+    .
+	include
+    ${DSHostInclude}
+    ${Macchina_INCLUDE_DIRS}
+	[#BaseClassInclude]
+    )
+target_link_directories(${name} PRIVATE 
+    ${Macchina_LIBRARY_DIRS}
+	${LibrariesDSUtils}
+    )
+
+if(CMAKE_BUILD_TYPE MATCHES "Debug")
+	target_link_libraries(${name} PRIVATE 
+		debug ${Macchina_LIBRARIES_DEBUG}
+		[#BaseLibary]
+		)
+else()
+	target_link_libraries(${name} PRIVATE 
+		optimized ${Macchina_LIBRARIES_RELEASE}
+		[#BaseLibary]
+		)
+endif()
+
+target_compile_options(${name} PRIVATE 
+    "-std=c++03"
+    )
+
+macro(add_bundle_content name)
+    add_custom_target(${name}BundleContent ALL
+        COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/Module.bndlspec" "."
+        COMMAND ${CMAKE_COMMAND} -E make_directory "lib"
+        COMMAND ${CMAKE_COMMAND} -E copy "$&lt;TARGET_FILE:${name}&gt;" "lib/"
+        DEPENDS ${name}
+        WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+        VERBATIM
+        )
+endmacro()
+if(WIN32)
+    set(Macchina_BUNDLE_UTIL_ARG "/output-dir=${CMAKE_BINARY_DIR}\\components")
+else()
+    set(Macchina_BUNDLE_UTIL_ARG "--output-dir=${CMAKE_BINARY_DIR}/components")
+endif()
+
+macro(add_bundle_file name namedep)
+    add_custom_target(${name}Bundle ALL
+        COMMAND ${Macchina_BUNDLE_UTIL} ${Macchina_BUNDLE_UTIL_ARG} "Module.bndlspec"
+        DEPENDS ${namedep}
+        WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+        VERBATIM
+        )
+endmacro()
+
+macro(add_bundle name)
+    add_bundle_content(${name})
+    add_bundle_file(${name} ${name}BundleContent)
+endmacro()
+add_bundle(${name})</template>
+			</File>
+			<File type="BndlspecFrame" filename="Module.bndlspec">
+				<template>&lt;?xml version="1.0"?&gt;
+&lt;bundlespec&gt;
+&lt;manifest&gt;
+&lt;name&gt;[#BundleDescriber]&lt;/name&gt;
+&lt;symbolicName&gt;[#LibraryName]&lt;/symbolicName&gt;
+&lt;version&gt;[#BundleVersion]&lt;/version&gt;
+&lt;vendor&gt;[#vendor]&lt;/vendor&gt;
+&lt;copyright&gt;[#CopyRight]&lt;/copyright&gt;
+&lt;activator&gt;
+	&lt;class&gt;[#name]BundleObjectActivator&lt;/class&gt;
+	&lt;library&gt;[#LibraryName]&lt;/library&gt;
+&lt;/activator&gt;
+&lt;lazyStart&gt;[#LazyStart]&lt;/lazyStart&gt;
+&lt;runLevel&gt;[#RunLevel]&lt;/runLevel&gt;
+&lt;module&gt;
+	&lt;symbolicName&gt;[#LibraryName]&lt;/symbolicName&gt;
+	&lt;version&gt;[#BundleVersion]&lt;/version&gt;
+&lt;/module&gt;
+&lt;/manifest&gt;
+&lt;code&gt;
+	[#OutputDir]/*.so,
+	[#OutputDir]/*.dll,
+&lt;/code&gt;
+&lt;/bundlespec&gt;</template>
+			</File>
+		</FileList>
+	</RecipeTemplate>
+</Recips>

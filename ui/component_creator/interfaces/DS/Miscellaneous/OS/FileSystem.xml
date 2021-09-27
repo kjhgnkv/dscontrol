@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>miscellaneous/os/fs.h</header>
+ <class>DS::Miscellaneous::OS::FileSystem</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>MakeDirectory</name>
+   <signature>int (const tstring &amp; dirPath)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>TravelDirectory</name>
+   <signature>void (const tstring &amp; dirpath ,const tstring &amp; pattern ,DS::Miscellaneous::OS::IFileVisitor * pVisitor)</signature>
+  </method>
+ </methods>
+</description>

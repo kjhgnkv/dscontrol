@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>processes/threads.h</header>
+ <class>DS::Processes::ThreadDataKey</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>ThreadDataKey</name>
+   <signature>()</signature>
+  </method>
+ </methods>
+</description>

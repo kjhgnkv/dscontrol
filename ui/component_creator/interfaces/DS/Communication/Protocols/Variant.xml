@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/protocols/variant.h</header>
+ <class>DS::Communication::Protocols::Variant</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>Variant</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Variant</name>
+   <signature>(__i8 value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Variant</name>
+   <signature>(__i16 value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Variant</name>
+   <signature>(__i32 value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Variant</name>
+   <signature>(__i64 value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Variant</name>
+   <signature>(__u8 value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Variant</name>
+   <signature>(__u16 value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Variant</name>
+   <signature>(__u32 value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Variant</name>
+   <signature>(__u64 value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Variant</name>
+   <signature>(float value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Variant</name>
+   <signature>(double value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Variant</name>
+   <signature>(long double value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Variant</name>
+   <signature>(const tchar * value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Variant</name>
+   <signature>(bool value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Variant</name>
+   <signature>(const void * data ,unsigned int length)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Variant</name>
+   <signature>(const DS::Communication::Protocols::Variant &amp; other)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Communication::Protocols::Variant &amp;(__i8 val)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Communication::Protocols::Variant &amp;(__i16 val)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Communication::Protocols::Variant &amp;(__i32 val)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Communication::Protocols::Variant &amp;(__i64 val)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Communication::Protocols::Variant &amp;(__u8 val)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Communication::Protocols::Variant &amp;(__u16 val)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Communication::Protocols::Variant &amp;(__u32 val)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Communication::Protocols::Variant &amp;(__u64 val)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Communication::Protocols::Variant &amp;(float val)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Communication::Protocols::Variant &amp;(double val)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Communication::Protocols::Variant &amp;(long double value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Communication::Protocols::Variant &amp;(const tchar * val)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Communication::Protocols::Variant &amp;(bool val)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Communication::Protocols::Variant &amp;(const DS::Communication::Protocols::Variant &amp; other)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>AsStruct</name>
+   <signature>const void *(size_t structSize)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>AsArray</name>
+   <signature>const void *(size_t elementSize ,unsigned int &amp; count)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Size</name>
+   <signature>unsigned int () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Set</name>
+   <signature>void (const void * data ,unsigned int size)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>TestType</name>
+   <signature>DS::Communication::Protocols::VariantType () const</signature>
+  </method>
+ </methods>
+</description>

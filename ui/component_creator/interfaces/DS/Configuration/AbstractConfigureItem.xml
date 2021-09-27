@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>configuration/configureitem.h</header>
+ <class>DS::Configuration::AbstractConfigureItem</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>AbstractConfigureItem</name>
+   <signature>(const tstring &amp; name ,const tstring &amp; unit ,DS::Configuration::ConfigureType type ,const tstring &amp; desc)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetConfigInfo</name>
+   <signature>void (DS::Configuration::ConfigureInfo &amp; info)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetName</name>
+   <signature>const tstring &amp;() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>SetValue</name>
+   <signature>void (const tstring &amp; value)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetValue</name>
+   <signature>const tstring &amp;()</signature>
+  </method>
+ </methods>
+</description>

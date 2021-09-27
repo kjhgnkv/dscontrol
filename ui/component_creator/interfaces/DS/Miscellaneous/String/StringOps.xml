@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>miscellaneous/string/string.h</header>
+ <class>DS::Miscellaneous::String::StringOps</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>EqualIgnoreCase</name>
+   <signature>bool (const tstring &amp; str1 ,const tstring &amp; str2)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Split</name>
+   <signature>void (const tstring &amp; str ,const tchar * separators ,std::vector&lt;tstring> &amp; strs)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Trim</name>
+   <signature>tstring (const tstring &amp; str)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToLower</name>
+   <signature>tstring (const tstring &amp; str)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToUpper</name>
+   <signature>tstring (const tstring &amp; str)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>WildcardMatch</name>
+   <signature>bool (const tchar * pat ,const tchar * str)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Replace</name>
+   <signature>tstring (const tstring &amp; str ,const tstring &amp; pattern ,const tstring &amp; target)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToInt</name>
+   <signature>int (const tstring &amp; str)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToDouble</name>
+   <signature>double (const tstring &amp; str)</signature>
+  </method>
+ </methods>
+</description>

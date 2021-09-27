@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>services/iprotocolservice.h</header>
+ <class>DS::Services::IProtocolService</class>
+ <inheritance>
+  <class>DS::Core::IQueriable</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>RegisterProtocol</name>
+   <signature>void (const tchar * name ,DS::Communication::IProtocol * pFactory)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>UnregisterProtocol</name>
+   <signature>void (const tchar * name ,DS::Communication::IProtocol * pFactory)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetProtocol</name>
+   <signature>DS::Communication::IProtocol *(const tchar * name)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetDefaultProtocol</name>
+   <signature>DS::Communication::IProtocol *()</signature>
+  </method>
+ </methods>
+</description>

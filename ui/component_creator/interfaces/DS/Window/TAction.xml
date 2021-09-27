@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>window/actions.h</header>
+ <class>DS::Window::TAction&lt;ActualHandle></class>
+ <inheritance>
+  <class>DS::Window::ICommandAction</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>TAction&lt;ActualHandle></name>
+   <signature>(const tchar * text ,const tchar * id ,DS::Window::ActionType type)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetId</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetType</name>
+   <signature>DS::Window::ActionType () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetText</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsChecked</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsEnabled</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetText</name>
+   <signature>void (const tchar * text)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetChecked</name>
+   <signature>void (bool checked)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetEnabled</name>
+   <signature>void (bool enabled)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetUndo</name>
+   <signature>DS::Window::ICommandAction *()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetActualHandle</name>
+   <signature>ActualHandle ()</signature>
+  </method>
+ </methods>
+</description>

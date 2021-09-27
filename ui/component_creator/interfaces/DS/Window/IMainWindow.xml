@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>window/imainwindow.h</header>
+ <class>DS::Window::IMainWindow</class>
+ <inheritance>
+  <class>DS::Window::IWindow</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Query</name>
+   <signature>DS::Core::IQueriable *(const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsOrInherits</name>
+   <signature>bool (const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetFramework</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>RegisterCreator</name>
+   <signature>bool (const tchar * name ,DS::Window::IWindowCreator * pCreator)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>UnregisterCreator</name>
+   <signature>bool (const tchar * name ,DS::Window::IWindowCreator * pCreator)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>AddView</name>
+   <signature>bool (DS::Window::IWindow * pView ,bool bPersistent)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>AddPanel</name>
+   <signature>bool (DS::Window::IWindow * pPanel ,DS::Window::DockSite dock)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>AddToolbar</name>
+   <signature>bool (DS::Window::IWindow * pToolbar)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>AddMenu</name>
+   <signature>bool (DS::Window::MenuHandle hMenu ,const tchar * title ,unsigned int index)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>AddMenu</name>
+   <signature>bool (DS::Window::ActionHandle hAction ,unsigned int index)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>AddFreeWindow</name>
+   <signature>bool (DS::Window::IWindow * pFreeWindow ,const tchar * cls ,const tchar * name)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetCurrentView</name>
+   <signature>DS::Window::IWindow *() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>ActivateView</name>
+   <signature>bool (DS::Window::IWindow * pView)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>CloseView</name>
+   <signature>bool (DS::Window::IWindow * pView)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>ClosePanel</name>
+   <signature>bool (DS::Window::IWindow * pPanel)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Execute</name>
+   <signature>void ()</signature>
+  </method>
+ </methods>
+</description>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="ModTrackConfig" title="航迹配置" type="0" category="航迹跟踪">
+    <Recv id="100" name="工作参数设置(work_param)" protocol="stdbin"/>
+    <Send id="100" name="工作参数设置(work_param)" protocol="stdbin"/>
+</ModuleClass>

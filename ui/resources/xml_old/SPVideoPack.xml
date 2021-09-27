@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="SPVideoPack" title="视频打包" type="1" category="信号处理">
+    <Service name="ISignalProcessEngine" provide="0"/>
+    <Recv id="22" name="视频控制(videoctrl)" protocol="stdbin"/>
+    <Send id="21" name="视频数据(videodata)" protocol="stdbin"/>
+</ModuleClass>

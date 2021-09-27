@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>core/imodule.h</header>
+ <class>DS::Core::IModule</class>
+ <inheritance>
+  <class>DS::Core::IQueriable</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetName</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetID</name>
+   <signature>const DS::UID &amp;() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Load</name>
+   <signature>void (DS::Core::IApplication * pOwner)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Initialize</name>
+   <signature>bool (DS::Core::IApplication * pOwner)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Prepare</name>
+   <signature>void (DS::Core::IApplication * pOwner)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Start</name>
+   <signature>bool (DS::Core::IApplication * pOwner)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Stop</name>
+   <signature>bool (DS::Core::IApplication * pOwner)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Cleanup</name>
+   <signature>void (DS::Core::IApplication * pOwner)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Finalize</name>
+   <signature>void (DS::Core::IApplication * pOwner)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Release</name>
+   <signature>void (DS::Core::IApplication * pOwner)</signature>
+  </method>
+ </methods>
+</description>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>processes/thread_pool.h</header>
+ <class>DS::Processes::ThreadPool</class>
+ <inheritance>
+  <class>DS::Processes::ITaskProcessor</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>ThreadPool</name>
+   <signature>(unsigned int maxThreads ,unsigned int maxQueuedTasks)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetLimit</name>
+   <signature>void (unsigned int maxThreads ,unsigned int maxQueuedTasks)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>DispatchTask</name>
+   <signature>bool (DS::Processes::ITask * pTask)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetParallelCount</name>
+   <signature>unsigned int () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>StartAll</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>WaitTasks</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>StopAll</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ThreadIdle</name>
+   <signature>void (DS::Processes::PooledThread * pThread)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ThreadBusy</name>
+   <signature>void (DS::Processes::PooledThread * pThread)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetTask</name>
+   <signature>DS::Processes::ITask *()</signature>
+  </method>
+ </methods>
+</description>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/locks.h</header>
+ <class>DS::Synchronization::Semaphore</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>Semaphore</name>
+   <signature>(unsigned int nInitValue)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Semaphore</name>
+   <signature>(const tchar * psSemName ,unsigned int nInitValue)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Aquire</name>
+   <signature>bool (int timeout)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Release</name>
+   <signature>void () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Synchronization::Semaphore &amp;(const DS::Synchronization::Semaphore &amp; other)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Semaphore</name>
+   <signature>(const DS::Synchronization::Semaphore &amp; other)</signature>
+  </method>
+ </methods>
+</description>

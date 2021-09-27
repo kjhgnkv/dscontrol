@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/iprotocol.h</header>
+ <class>DS::Communication::IProtocol</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>GetConstraint</name>
+   <signature>int () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>IsCompatible</name>
+   <signature>bool (const void * buffer ,unsigned int size)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>CheckCompatibility</name>
+   <signature>int (const void * buffer ,unsigned int size)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>CheckIntegrity</name>
+   <signature>bool (const void * buffer ,unsigned int size)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>CreateMessage</name>
+   <signature>DS::Communication::IMessage *(DS::Communication::MessageId msgId)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Serialize</name>
+   <signature>unsigned int (const DS::Communication::IMessage * pMessage ,void * buffer ,unsigned int size)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Deserialize</name>
+   <signature>unsigned int (DS::Communication::IMessage * pMessage ,const void * data ,unsigned int size)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetMaxLength</name>
+   <signature>unsigned int () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetHeadLength</name>
+   <signature>unsigned int () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetPackageLength</name>
+   <signature>unsigned int (const void * data ,unsigned int size)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>SyncToHead</name>
+   <signature>int (const void * data ,unsigned int size)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>ToMessageName</name>
+   <signature>const tchar *(DS::Communication::MessageId msgId)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>ToFieldName</name>
+   <signature>const tchar *(DS::Communication::FieldId fieldId)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>FromMessageName</name>
+   <signature>DS::Communication::MessageId (const tchar * name)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>FromFieldName</name>
+   <signature>DS::Communication::FieldId (const tchar * name)</signature>
+  </method>
+ </methods>
+</description>

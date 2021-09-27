@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="SPSpectrum" title="频谱分析" type="0" category="信号处理">
+    <Service name="ISignalProcessEngine" provide="0"/>
+    <Send id="23" name="频谱(spectrum)" protocol="stdbin"/>
+</ModuleClass>

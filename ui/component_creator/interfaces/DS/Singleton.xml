@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>singleton.h</header>
+ <class>DS::Singleton&lt;T,distinguish></class>
+ <inheritance>
+  <class>T</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetInstance</name>
+   <signature>Singleton&lt;T, distinguish> *()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Destroy</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetInstanceRef</name>
+   <signature>Singleton&lt;T, distinguish> *&amp;(bool create)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Singleton&lt;T, distinguish></name>
+   <signature>()</signature>
+  </method>
+ </methods>
+</description>

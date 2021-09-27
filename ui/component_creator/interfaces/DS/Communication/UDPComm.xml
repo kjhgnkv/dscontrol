@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/udp.h</header>
+ <class>DS::Communication::UDPComm</class>
+ <inheritance>
+  <class>DS::Communication::ICommProvider</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>UDPComm</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>CreateReceiver</name>
+   <signature>DS::Communication::ICommReceiver *(const tchar * name ,int argc ,const tchar *const [] argv)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>CreateSender</name>
+   <signature>DS::Communication::ICommSender *(const tchar * name ,int argc ,const tchar *const [] argv)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Close</name>
+   <signature>void (DS::Communication::ICommReceiver * receiver)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Close</name>
+   <signature>void (DS::Communication::ICommSender * sender)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>MultiplexWait</name>
+   <signature>DS::Communication::ICommReceiver *(TimeType timeout)</signature>
+  </method>
+ </methods>
+</description>

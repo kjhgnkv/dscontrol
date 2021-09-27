@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/comm_interact.h</header>
+ <class>DS::Communication::CommInteract</class>
+ <inheritance>
+  <class>DS::Communication::SyncReceiver</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>CommInteract</name>
+   <signature>(Core::IApplication * pmm ,const tchar * component ,const tchar * protocol)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>CreateMessage</name>
+   <signature>DS::Communication::IMessage *(const DS::Communication::MessageId &amp; msgId)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Receive</name>
+   <signature>DS::Communication::IMessage *()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Send</name>
+   <signature>bool (const DS::Communication::IMessage * msg_)</signature>
+  </method>
+ </methods>
+</description>

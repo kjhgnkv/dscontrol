@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ComponentGenerator</class>
+ <widget class="QDialog" name="ComponentGenerator">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Component Generator</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="labelProjectName">
+     <property name="text">
+      <string>Enter project name (C++ indentifier, e.g. 'BetterClient'):</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="projectNameEdit"/>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelLibraryName">
+     <property name="text">
+      <string>Enter library name (in OSP format, e.g. 'ds.host.app.scheduler'):</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="libraryNameEdit"/>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelOutputPath">
+     <property name="text">
+      <string>Enter output code directory path (e.g. '/home/user/src/component'):</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QLineEdit" name="codeDirectoryEdit"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="codeDirectoryBtn">
+       <property name="text">
+        <string>Browse</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelDSHostHeaders">
+     <property name="text">
+      <string>Enter path to directory with DSHost headers (e.g. '../../../DSHost/include'):</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QLineEdit" name="dshostHeadersEdit"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="dshostHeadersBtn">
+       <property name="text">
+        <string>Browse</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1">
+     <item>
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Select component type:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>object (business) component</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>protocol (server) component</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>transport (server) component</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>custom component</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelNamespace">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter code namespace (empty string or indentifiers separated with ::, e.g. 'DS::app::server'):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="namespaceEdit"/>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="qtSupportCheckBox">
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Qt graphics support</string>
+     </property>
+     <property name="tristate">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="generateBtn">
+       <property name="text">
+        <string>Generate</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelBtn">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

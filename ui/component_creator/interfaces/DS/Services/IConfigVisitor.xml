@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>services/iintegrationservice.h</header>
+ <class>DS::Services::IConfigVisitor</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>Visit</name>
+   <signature>void (const tchar * name ,int argc ,const tchar *const [] argv)</signature>
+  </method>
+ </methods>
+</description>

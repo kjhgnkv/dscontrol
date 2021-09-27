@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="SPCfarDetect" title="CFAR检测" type="1" category="信号处理">
+    <Service name="ISignalProcessEngine" provide="0"/>
+    <Recv id="100" name="工作参数设置(work_param)" protocol="stdbin"/>
+</ModuleClass>

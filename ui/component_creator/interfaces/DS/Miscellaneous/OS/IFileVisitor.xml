@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>miscellaneous/os/fs.h</header>
+ <class>DS::Miscellaneous::OS::IFileVisitor</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>VisitFile</name>
+   <signature>void (const tchar * baseDir ,const tchar * fileName)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>VisitDirectory</name>
+   <signature>void (const tchar * baseDir ,const tchar * dirName)</signature>
+  </method>
+ </methods>
+</description>

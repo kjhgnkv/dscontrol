@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/timer.h</header>
+ <class>DS::Synchronization::Timer</class>
+ <inheritance>
+  <class>DS::Processes::Thread</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>Timer</name>
+   <signature>(const DS::Synchronization::ClockSource &amp; source ,uint64 immergent ,uint64 normal)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>AddTimerTask</name>
+   <signature>void (DS::Synchronization::Timer::Task * timerTask)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>KillTimerTask</name>
+   <signature>void (DS::Synchronization::Timer::Task * timerTask)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetTaskCount</name>
+   <signature>unsigned int () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Execute</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>MoveForward</name>
+   <signature>void (DS::Synchronization::Timer::TaskList &amp; levelup ,DS::Synchronization::Mutex &amp; uplock ,DS::Synchronization::Timer::TaskList &amp; leveldown ,DS::Synchronization::Mutex &amp; downlock ,uint64 interval)</signature>
+  </method>
+ </methods>
+</description>

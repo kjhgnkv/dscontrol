@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="305px" height="175px" viewBox="0 0 305 175" style="enable-background:new 0 0 305 175;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#DFE4EA;stroke:#7F8C8D;stroke-miterlimit:10;}
+	.st1{fill:#EDF0F1;stroke:#7F8C8D;stroke-miterlimit:10;}
+	.st2{fill:#EDCC69;stroke:#2C3E50;stroke-miterlimit:10;}
+	.st3{fill:#F2F2F5;stroke:#2C3E50;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#2C3E50;stroke-miterlimit:10;}
+	.st5{font-family:'MyriadPro-Regular';}
+	.st6{font-size:17px;}
+	.st7{fill:#EDCC69;stroke:#747D8C;stroke-miterlimit:10;}
+	.st8{fill:#F9A242;stroke:#747D8C;stroke-miterlimit:10;}
+	.st9{fill:#FAA41A;stroke:#747D8C;stroke-miterlimit:10;}
+	.st10{fill:#EDCDAB;stroke:#747D8C;stroke-miterlimit:10;}
+	.st11{fill:#FFFFFF;stroke:#747D8C;stroke-miterlimit:10;}
+	.st12{fill:none;stroke:#747D8C;stroke-miterlimit:10;}
+	.st13{fill:#4C86C6;stroke:#747D8C;stroke-miterlimit:10;}
+</style>
+<g>
+	<path class="st0" d="M280.7,172.5H3.3c-0.5,0-0.8-0.4-0.8-0.8V3.3c0-0.5,0.4-0.8,0.8-0.8l278.2,0v169.2
+		C281.6,172.1,281.2,172.5,280.7,172.5z"/>
+	<ellipse class="st1" cx="281.6" cy="23.8" rx="20.9" ry="21.3"/>
+	<g>
+		<g>
+			<rect x="273.1" y="9.6" class="st2" width="10.6" height="5.4"/>
+		</g>
+		<g>
+			<rect x="282.6" y="20.4" class="st3" width="8" height="5.4"/>
+		</g>
+		<g>
+			<rect x="279.9" y="20.4" class="st2" width="2.7" height="5.4"/>
+		</g>
+		<g>
+			<rect x="282.6" y="31.2" class="st3" width="8" height="5.4"/>
+		</g>
+		<g>
+			<rect x="279.9" y="31.2" class="st2" width="2.7" height="5.4"/>
+		</g>
+		<line class="st4" x1="276.1" y1="15" x2="276.1" y2="33.9"/>
+		<line class="st4" x1="279.9" y1="33.9" x2="275.8" y2="33.9"/>
+		<line class="st4" x1="279.9" y1="23.1" x2="276.1" y2="23.1"/>
+		<line class="st4" x1="276.1" y1="15" x2="276.1" y2="9.6"/>
+	</g>
+	<text transform="matrix(0.985 0 0 1 71.125 31.125)" class="st5 st6">Computer modeling</text>
+	<g>
+		<g>
+			<path class="st7" d="M154.8,82.6h-46c-0.1,0-0.2-0.1-0.2-0.2V52h46.5v30.5C155.1,82.5,155,82.6,154.8,82.6z"/>
+			<rect x="131.8" y="47.2" class="st8" width="23.3" height="4.7"/>
+		</g>
+		<path class="st9" d="M122.5,134.9v2.8h-14v17.5c0,0.5,0.4,0.9,0.9,0.9h26c0.5,0,0.9-0.4,0.9-0.9v-17.5v-2.8H122.5z"/>
+		<path class="st7" d="M135.5,156.1h-26c-0.5,0-0.9-0.4-0.9-0.9l-3.3-16.1h27.9l3.3,16.1C136.5,155.7,136,156.1,135.5,156.1z"/>
+		<path class="st10" d="M136.3,119.4h-27.6c-0.1,0-0.1-0.1-0.1-0.1V101h27.9v18.3C136.5,119.3,136.4,119.4,136.3,119.4z"/>
+		<rect x="166.7" y="141.4" class="st11" width="22.3" height="14.7"/>
+		<rect x="122.5" y="98.1" class="st9" width="14" height="2.8"/>
+		<line class="st12" x1="143.4" y1="82.6" x2="143.4" y2="145.9"/>
+		<line class="st12" x1="143.4" y1="110.2" x2="136.5" y2="110.2"/>
+		<line class="st12" x1="136.5" y1="145.9" x2="166.7" y2="145.9"/>
+		<rect x="166.7" y="141.4" class="st13" width="22.3" height="2.7"/>
+	</g>
+</g>
+</svg>

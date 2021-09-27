@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/tcpip.h</header>
+ <class>DS::Communication::IPLayer</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>IPLayer</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Resolve</name>
+   <signature>DS::Communication::ipv4_t (const tstring &amp; ipport ,ushort &amp; port)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Resolve</name>
+   <signature>DS::Communication::ipv4_t (const tstring &amp; addr)</signature>
+  </method>
+ </methods>
+</description>

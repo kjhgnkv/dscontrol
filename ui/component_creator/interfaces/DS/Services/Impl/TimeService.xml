@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>services/impl/time_service.h</header>
+ <class>DS::Services::Impl::TimeService</class>
+ <inheritance>
+  <class>DS::Services::ITimeService</class>
+  <class>DS::Services::ITimeServiceDebug</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Query</name>
+   <signature>DS::Core::IQueriable *(const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsOrInherits</name>
+   <signature>bool (const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>TimeService</name>
+   <signature>(DS::Synchronization::ClockSource * pClockSource)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetSystemTime</name>
+   <signature>TimeType () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Synchronize</name>
+   <signature>void (TimeType nSystemTime ,TimeType nSyncTime)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Wait</name>
+   <signature>void (TimeType nTimeSpan)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClockSource</name>
+   <signature>const DS::Synchronization::ClockSource &amp;() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Pause</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Resume</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetSpeedRatio</name>
+   <signature>void (double ratio)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRatioTime</name>
+   <signature>TimeType (TimeType current)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRealTime</name>
+   <signature>TimeType (TimeType time)</signature>
+  </method>
+ </methods>
+</description>

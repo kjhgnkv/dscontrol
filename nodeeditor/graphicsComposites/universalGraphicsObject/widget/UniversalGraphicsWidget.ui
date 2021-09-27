@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UniversalGraphicsWidget</class>
+ <widget class="QWidget" name="UniversalGraphicsWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>128</width>
+    <height>121</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: transparent;</string>
+  </property>
+  <layout class="QGridLayout" name="mainLay">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="scenePage">
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid #3b3e3d;
+border-radius: 0;
+background-color: transparent;</string>
+      </property>
+      <layout class="QGridLayout" name="sceneLay">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item row="0" column="0" colspan="3">
+        <widget class="QtNodes::FlowView" name="graphicsView">
+         <property name="styleSheet">
+          <string notr="true">QToolTip {
+                        background-color: white;
+                        color: black;
+                        border: 1px solid black;
+                        font-family: Source Sans Pro;
+                        font-size: 12px;
+                    }</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="picturePage">
+      <property name="styleSheet">
+       <string notr="true">border: none;
+border-radius: 0;</string>
+      </property>
+      <layout class="QGridLayout" name="pictureLay">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QtNodes::PictureLabel" name="pictureLabel">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QtNodes::FlowView</class>
+   <extends>QGraphicsView</extends>
+   <header>views/FlowView.hpp</header>
+  </customwidget>
+  <customwidget>
+   <class>QtNodes::PictureLabel</class>
+   <extends>QLabel</extends>
+   <header>nodeeditor/graphicsComposites/universalGraphicsObject/widget/PictureLabel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

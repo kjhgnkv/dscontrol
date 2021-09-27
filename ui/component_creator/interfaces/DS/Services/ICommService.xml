@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>services/icommservice.h</header>
+ <class>DS::Services::ICommService</class>
+ <inheritance>
+  <class>DS::Core::IQueriable</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Open</name>
+   <signature>DS::Communication::IMessageSender *(const tchar * name ,DS::Communication::IMessageHandler * pHandler ,DS::Communication::ICommListener * pListener)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Close</name>
+   <signature>void (DS::Communication::IMessageSender * handle)</signature>
+  </method>
+ </methods>
+</description>

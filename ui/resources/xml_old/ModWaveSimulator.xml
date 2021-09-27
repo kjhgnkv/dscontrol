@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="ModWaveSimulator" title="波形模拟" type="0" category="波束调度">
+    <Recv id="1" name="波束描述(beam)" protocol="stdbin"/>
+    <Send id="20" name="原始回波(cpisdata)" protocol="stdbin"/>
+    <Send id="2" name="点迹包(plot)" protocol="stdbin"/>
+</ModuleClass>

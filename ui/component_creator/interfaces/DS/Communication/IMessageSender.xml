@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/imessagesender.h</header>
+ <class>DS::Communication::IMessageSender</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>Send</name>
+   <signature>bool (int msgId ,const void * msg_ ,unsigned int size)</signature>
+  </method>
+ </methods>
+</description>

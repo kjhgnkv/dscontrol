@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/atomic.h</header>
+ <class>DS::Synchronization::AtomicInt32</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>AtomicInt32</name>
+   <signature>(DS::Synchronization::AtomicInt32::AtomicNumber value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>AtomicInt32</name>
+   <signature>(const DS::Synchronization::AtomicInt32 &amp; other)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator++</name>
+   <signature>DS::Synchronization::AtomicInt32::AtomicNumber (int )</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator++</name>
+   <signature>DS::Synchronization::AtomicInt32::AtomicNumber ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator--</name>
+   <signature>DS::Synchronization::AtomicInt32::AtomicNumber (int )</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator--</name>
+   <signature>DS::Synchronization::AtomicInt32::AtomicNumber ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator+=</name>
+   <signature>DS::Synchronization::AtomicInt32 &amp;(DS::Synchronization::AtomicInt32::AtomicNumber value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator-=</name>
+   <signature>DS::Synchronization::AtomicInt32 &amp;(DS::Synchronization::AtomicInt32::AtomicNumber value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Synchronization::AtomicInt32 &amp;(DS::Synchronization::AtomicInt32::AtomicNumber value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>swap</name>
+   <signature>DS::Synchronization::AtomicInt32::AtomicNumber (DS::Synchronization::AtomicInt32::AtomicNumber value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>cas</name>
+   <signature>DS::Synchronization::AtomicInt32::AtomicNumber (DS::Synchronization::AtomicInt32::AtomicNumber compare ,DS::Synchronization::AtomicInt32::AtomicNumber value)</signature>
+  </method>
+ </methods>
+</description>

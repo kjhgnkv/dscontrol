@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>core/modules.h</header>
+ <class>DS::Core::ServiceModule&lt;_Service,_Interface></class>
+ <inheritance>
+  <class>DS::Core::DefaultModule&lt;_Module></class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>ServiceModule&lt;_Service, _Interface></name>
+   <signature>(const tchar * strModName)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Load</name>
+   <signature>void (DS::Core::IApplication * pOwner)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Finalize</name>
+   <signature>void (DS::Core::IApplication * pOwner)</signature>
+  </method>
+ </methods>
+</description>

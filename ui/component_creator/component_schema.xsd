@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="description" type="desc_type"/>
+
+  <xsd:complexType name="desc_type">
+    <xsd:sequence>
+      <xsd:element name="packages" type="pack_type"/>
+      <xsd:element name="header" type="xsd:string"/>
+      <xsd:element name="class" type="xsd:string"/>
+      <xsd:element name="inheritance" type="inheritance_type" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="methods" type="methods_type"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="pack_type">
+    <xsd:sequence>
+      <xsd:element name="package" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="inheritance_type">
+    <xsd:sequence>
+      <xsd:element name="class" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="methods_type">
+    <xsd:sequence>
+      <xsd:element name="method" type="method_type" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="method_type">
+    <xsd:sequence>
+      <xsd:element name="type" type="method_status_type"/>
+      <xsd:element name="name" type="xsd:string"/>
+      <xsd:element name="signature" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:simpleType name="method_status_type">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="pure"/>
+      <xsd:enumeration value="realized"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

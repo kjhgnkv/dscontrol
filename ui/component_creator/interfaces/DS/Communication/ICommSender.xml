@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/isender.h</header>
+ <class>DS::Communication::ICommSender</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>Send</name>
+   <signature>bool (const void * msg_ ,unsigned int size)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Print</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Start</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Stop</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>AddListener</name>
+   <signature>void (DS::Communication::ICommListener * pListener ,int nCommId)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>RemoveListener</name>
+   <signature>void (DS::Communication::ICommListener * pListener)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>BindSendProtocol</name>
+   <signature>void (DS::Communication::IProtocol * pProtocol)</signature>
+  </method>
+ </methods>
+</description>

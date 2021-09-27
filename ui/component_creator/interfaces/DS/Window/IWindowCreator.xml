@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>window/iwindowcreator.h</header>
+ <class>DS::Window::IWindowCreator</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>CreateCommandAction</name>
+   <signature>DS::Window::ICommandAction *(const tchar * id ,const tchar * text)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>CreateNewWindow</name>
+   <signature>DS::Window::IWindow *(const tchar * id ,const tchar * title)</signature>
+  </method>
+ </methods>
+</description>

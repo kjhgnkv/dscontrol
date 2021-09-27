@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>window/window.h</header>
+ <class>DS::Window::TWindow&lt;_ActualHandle,WindowType></class>
+ <inheritance>
+  <class>WindowType</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Query</name>
+   <signature>DS::Core::IQueriable *(const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsOrInherits</name>
+   <signature>bool (const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>TWindow&lt;_ActualHandle, WindowType></name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>TWindow&lt;_ActualHandle, WindowType></name>
+   <signature>(DS::Window::IWindow * pParent)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetTitle</name>
+   <signature>void (const tchar * title)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetTitle</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetParent</name>
+   <signature>void (DS::Window::IWindow * pWindow)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetParent</name>
+   <signature>DS::Window::IWindow *() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>FindWindow</name>
+   <signature>DS::Window::IWindow *(DS::Window::WindowHandle handle)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Destroy</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetActualHandle</name>
+   <signature>_ActualHandle () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>AddChild</name>
+   <signature>void (DS::Window::IWindow * pChild)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>RemoveChild</name>
+   <signature>void (DS::Window::IWindow * pChild)</signature>
+  </method>
+ </methods>
+</description>

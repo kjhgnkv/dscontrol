@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/atomic.h</header>
+ <class>DS::Synchronization::Atomic</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>increase_fetch</name>
+   <signature>int32 (volatile int32 &amp; atomic)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>decrease_fetch</name>
+   <signature>int32 (volatile int32 &amp; atomic)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>fetch_increase</name>
+   <signature>int32 (volatile int32 &amp; atomic)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>fetch_decrease</name>
+   <signature>int32 (volatile int32 &amp; atomic)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>add_fetch</name>
+   <signature>int32 (volatile int32 &amp; atomic ,int32 value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>sub_fetch</name>
+   <signature>int32 (volatile int32 &amp; atomic ,int32 value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>fetch_add</name>
+   <signature>int32 (volatile int32 &amp; atomic ,int32 value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>fetch_sub</name>
+   <signature>int32 (volatile int32 &amp; atomic ,int32 value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>cas</name>
+   <signature>int32 (volatile int32 &amp; atomic ,int32 compare ,int32 value)</signature>
+  </method>
+ </methods>
+</description>

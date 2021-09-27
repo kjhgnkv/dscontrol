@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/clock.h</header>
+ <class>DS::Synchronization::SystemClockSource</class>
+ <inheritance>
+  <class>DS::Synchronization::ClockSource</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetTime</name>
+   <signature>TimeType () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetLocalTime</name>
+   <signature>TimeType ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetLocalTimeHighRes</name>
+   <signature>TimeType ()</signature>
+  </method>
+ </methods>
+</description>

@@ -1,0 +1,22 @@
+{
+    \"Name\" : \"DSPlatform\",
+    \"Version\" : \"0.0.1\",
+    \"CompatVersion\" : \"0.0.1\",
+    \"Vendor\" : \"DSPlatform\",
+    \"Copyright\" : \"(C) CETC\",
+    \"License\" : \"no license\",
+    \"Description\" : \"This plugin incapsulated DSPlatform functionality\",
+    \"Url\" : \"\",
+    $$dependencyList,
+
+    \"Mimetypes\" : [
+        \"<?xml version=\'1.0\'?>\",
+        \"<mime-info xmlns=\'http://www.freedesktop.org/standards/shared-mime-info\'>\",
+        \"  <mime-type type=\'DS/dspl.pro.xml\'>\",
+        \"    <sub-class-of type=\'text/plain\'/>\",
+        \"    <comment>DS Project file</comment>\",
+        \"    <glob pattern=\'*.dspl.pro.xml\'/>\",
+        \"  </mime-type>\",
+        \"</mime-info>\"
+    ]
+}

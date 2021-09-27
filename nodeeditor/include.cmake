@@ -1,0 +1,305 @@
+set(arrows
+    arrows/AbstractArrow.cpp
+    arrows/AbstractArrow.h
+    arrows/Annulus.cpp
+    arrows/Annulus.h
+    arrows/ArrowPicture.cpp
+    arrows/ArrowPicture.h
+    arrows/ArrowPosition.cpp
+    arrows/ArrowPosition.h
+    arrows/Circle.cpp
+    arrows/Circle.h
+    arrows/ConnectionArrow.cpp
+    arrows/ConnectionArrow.h
+    arrows/CurvedArrow.cpp
+    arrows/CurvedArrow.h
+    arrows/EdgePoint.cpp
+    arrows/EdgePoint.h
+    arrows/EquilateralTriangle.cpp
+    arrows/EquilateralTriangle.h
+    arrows/LateralArrow.cpp
+    arrows/LateralArrow.h
+    arrows/LateralHorizontalArrow.cpp
+    arrows/LateralHorizontalArrow.h
+    arrows/LateralVerticalArrow.cpp
+    arrows/LateralVerticalArrow.h
+    arrows/LineArrow.cpp
+    arrows/LineArrow.h
+    arrows/PolyLineArrow.cpp
+    arrows/PolyLineArrow.h
+    arrows/SpecialStyleArrow.cpp
+    arrows/SpecialStyleArrow.h
+    arrows/SpecialTextItem.cpp
+    arrows/SpecialTextItem.h
+    arrows/TinyMath.cpp
+    arrows/TinyMath.h
+    arrows/TreeStyleArrow.cpp
+    arrows/TreeStyleArrow.h
+    arrows/TreeStyleHorizontalArrow.cpp
+    arrows/TreeStyleHorizontalArrow.h
+    arrows/TreeStyleVerticalArrow.cpp
+    arrows/TreeStyleVerticalArrow.h
+    )
+
+set(common
+    common/ArrowController.cpp
+    common/ArrowController.h
+    common/IdentityUnit.cpp
+    common/IdentityUnit.h
+    common/nodeeditor_globals.hpp
+    common/SerializableIdentityUnit.cpp
+    common/SerializableIdentityUnit.h
+    )
+
+set(factories
+    factories/AbstractCommandFactory.hpp
+    factories/CommandFactory.cpp
+    factories/CommandFactory.hpp
+    )
+
+set(graphicsComposites
+    graphicsComposites/frame/FrameGraphicsItem.cpp
+    graphicsComposites/frame/FrameGraphicsItem.hpp
+    graphicsComposites/frame/FramePropertiesDialog.cpp
+    graphicsComposites/frame/FramePropertiesDialog.h
+    graphicsComposites/frame/FramePropertiesDialog.ui
+
+    graphicsComposites/text/GraphicsTextItem.cpp
+    graphicsComposites/text/GraphicsTextItem.h
+    graphicsComposites/text/NoteGraphicsItem.cpp
+    graphicsComposites/text/NoteGraphicsItem.hpp
+    graphicsComposites/text/TextGraphicsItem.cpp
+    graphicsComposites/text/TextGraphicsItem.hpp
+    )
+
+set(frame
+    graphicsComposites/frame/FrameGraphicsItem.cpp
+    graphicsComposites/frame/FrameGraphicsItem.hpp
+    graphicsComposites/frame/FramePropertiesDialog.cpp
+    graphicsComposites/frame/FramePropertiesDialog.h
+    graphicsComposites/frame/FramePropertiesDialog.ui
+    )
+
+set(text
+    graphicsComposites/text/GraphicsTextItem.cpp
+    graphicsComposites/text/GraphicsTextItem.h
+    graphicsComposites/text/NoteGraphicsItem.cpp
+    graphicsComposites/text/NoteGraphicsItem.hpp
+    graphicsComposites/text/TextGraphicsItem.cpp
+    graphicsComposites/text/TextGraphicsItem.hpp
+    )
+
+set(universalGraphicsObject
+    graphicsComposites/universalGraphicsObject/imageSelector
+    graphicsComposites/universalGraphicsObject/imageSelector/ImageSelector.cpp
+    graphicsComposites/universalGraphicsObject/imageSelector/ImageSelector.hpp
+    graphicsComposites/universalGraphicsObject/imageSelector/ImageSelector.ui
+
+    graphicsComposites/universalGraphicsObject/ports/UniversalPort.cpp
+    graphicsComposites/universalGraphicsObject/ports/UniversalPort.h
+    graphicsComposites/universalGraphicsObject/ports/UniversalPortBar.cpp
+    graphicsComposites/universalGraphicsObject/ports/UniversalPortBar.h
+    graphicsComposites/universalGraphicsObject/ports/UniversalPortProjection.cpp
+    graphicsComposites/universalGraphicsObject/ports/UniversalPortProjection.h
+
+    graphicsComposites/universalGraphicsObject/ResizableItem/Corner.cpp
+    graphicsComposites/universalGraphicsObject/ResizableItem/Corner.h
+    graphicsComposites/universalGraphicsObject/ResizableItem/ResizableItem.cpp
+    graphicsComposites/universalGraphicsObject/ResizableItem/ResizableItem.h
+    graphicsComposites/universalGraphicsObject/ResizableItem/ResizeBox.cpp
+    graphicsComposites/universalGraphicsObject/ResizableItem/ResizeBox.h
+
+    graphicsComposites/universalGraphicsObject/TitleItem/LockSignItem.cpp
+    graphicsComposites/universalGraphicsObject/TitleItem/LockSignItem.h
+    graphicsComposites/universalGraphicsObject/TitleItem/TitleItem.cpp
+    graphicsComposites/universalGraphicsObject/TitleItem/TitleItem.h
+
+    graphicsComposites/universalGraphicsObject/toolbar/BorderSpinBox.cpp
+    graphicsComposites/universalGraphicsObject/toolbar/BorderSpinBox.h
+    graphicsComposites/universalGraphicsObject/toolbar/ToolBarBrush.cpp
+    graphicsComposites/universalGraphicsObject/toolbar/ToolBarBrush.h
+    graphicsComposites/universalGraphicsObject/toolbar/ToolBarItem.cpp
+    graphicsComposites/universalGraphicsObject/toolbar/ToolBarItem.h
+    graphicsComposites/universalGraphicsObject/toolbar/ToolBarWidget.cpp
+    graphicsComposites/universalGraphicsObject/toolbar/ToolBarWidget.h
+    graphicsComposites/universalGraphicsObject/toolbar/ToolBarWidget.ui
+    graphicsComposites/universalGraphicsObject/toolbar/ToolBarWidgetProperties.h
+
+    graphicsComposites/universalGraphicsObject/widget/PictureLabel.cpp
+    graphicsComposites/universalGraphicsObject/widget/PictureLabel.h
+    graphicsComposites/universalGraphicsObject/widget/UniversalGraphicsWidget.cpp
+    graphicsComposites/universalGraphicsObject/widget/UniversalGraphicsWidget.h
+    graphicsComposites/universalGraphicsObject/widget/UniversalGraphicsWidget.ui
+    graphicsComposites/universalGraphicsObject/DangerousProxyWidget.cpp
+    graphicsComposites/universalGraphicsObject/DangerousProxyWidget.h
+    graphicsComposites/universalGraphicsObject/UniversalConnectionableItem.cpp
+    graphicsComposites/universalGraphicsObject/UniversalConnectionableItem.h
+    graphicsComposites/universalGraphicsObject/UniversalGraphicsItem.cpp
+    graphicsComposites/universalGraphicsObject/UniversalGraphicsItem.h
+    graphicsComposites/universalGraphicsObject/UniversalMovableItem.cpp
+    graphicsComposites/universalGraphicsObject/UniversalMovableItem.h
+    graphicsComposites/universalGraphicsObject/UniversalSelectableItem.cpp
+    graphicsComposites/universalGraphicsObject/UniversalSelectableItem.h
+    )
+
+set(lists
+    lists/Communication.cpp
+    lists/Communication.hpp
+    lists/CommunicationList.cpp
+    lists/CommunicationList.hpp
+    lists/Message.cpp
+    lists/Message.hpp
+    lists/MessageList.cpp
+    lists/MessageList.hpp
+    )
+
+set(models
+    models/DataFlowModel.cpp
+    models/DataFlowModel.hpp
+    models/DataFlowModelIteratorImpl.cpp
+    models/DataFlowModelIteratorImpl.hpp
+    models/FlowSelectionModel.cpp
+    models/FlowSelectionModel.hpp
+    models/MimeGenerator.cpp
+    models/MimeGenerator.hpp
+    models/ModelAdapter.cpp
+    models/ModelAdapter.hpp
+    models/NodeIterator.cpp
+    models/NodesModel.cpp
+    models/NodesModel.hpp
+    models/NodesScene.cpp
+    models/NodesScene.hpp
+    )
+
+set(nodes
+    nodes/ApplicationItemImpl.cpp
+    nodes/ApplicationItemImpl.h
+    nodes/ApplicationNode.cpp
+    nodes/ApplicationNode.hpp
+    nodes/ComponentItemImpl.cpp
+    nodes/ComponentItemImpl.h
+    nodes/ComponentNode.cpp
+    nodes/ComponentNode.hpp
+    nodes/ComputerItemImpl.cpp
+    nodes/ComputerItemImpl.h
+    nodes/ComputerNode.cpp
+    nodes/ComputerNode.hpp
+    nodes/Connection.cpp
+    nodes/Connection.hpp
+    #    nodes/ConnectionData.hpp
+    nodes/ConnectionID.hpp
+    nodes/FlowItemMimeData.cpp
+    nodes/FlowItemMimeData.hpp
+    nodes/Node.cpp
+    nodes/Node.hpp
+    nodes/NodeImp.cpp
+    nodes/NodeImp.hpp
+    nodes/NodeIndex.cpp
+    nodes/NodeIndex.hpp
+    nodes/NodeIteratorImpl.hpp
+    nodes/QStringStdHash.hpp
+    nodes/QUuidStdHash.hpp
+    nodes/Serializable.hpp
+    nodes/SubSystemItemImpl.cpp
+    nodes/SubSystemItemImpl.h
+    nodes/SubSystemNode.cpp
+    nodes/SubSystemNode.hpp
+    nodes/SystemItemImpl.cpp
+    nodes/SystemItemImpl.h
+    nodes/SystemNode.cpp
+    nodes/SystemNode.hpp
+    nodes/UniversalGraphicsItemImpl.cpp
+    nodes/UniversalGraphicsItemImpl.h
+    )
+
+set(scenes
+    scenes/FlowScene.cpp
+    scenes/FlowScene.hpp
+    )
+
+set(singletones
+    singletones/ClipboardController.cpp
+    singletones/ClipboardController.hpp
+    singletones/Facade.cpp
+    singletones/Facade.hpp
+    singletones/MenuBuilder.cpp
+    singletones/MenuBuilder.h
+    singletones/NameController.cpp
+    singletones/NameController.hpp
+    singletones/UndoController.cpp
+    singletones/UndoController.hpp
+    )
+
+set(src
+    src/widgets/GridAlignmentDialog.cpp
+    src/widgets/GridAlignmentDialog.h
+    src/widgets/GridAlignmentDialog.ui
+    )
+
+set(styles
+    styles/FlowViewStyle.cpp
+    styles/FlowViewStyle.hpp
+    styles/MiniViewStyle.cpp
+    styles/MiniViewStyle.hpp
+    styles/NodeStyle.cpp
+    styles/NodeStyle.hpp
+    styles/StyleCollection.cpp
+    styles/StyleCollection.hpp
+    )
+
+set(utils
+    utils/undo/AbstractCommand.cpp
+    utils/undo/AbstractCommand.hpp
+    utils/undo/AbstractModelCommand.cpp
+    utils/undo/AbstractModelCommand.hpp
+    utils/undo/AbstractSceneCommand.cpp
+    utils/undo/AbstractSceneCommand.hpp
+    utils/undo/AddConnectionCommand.cpp
+    utils/undo/AddConnectionCommand.hpp
+    utils/undo/AddGraphicsArrowCommand.cpp
+    utils/undo/AddGraphicsArrowCommand.hpp
+    utils/undo/AddGraphicsFrameCommand.cpp
+    utils/undo/AddGraphicsFrameCommand.hpp
+    utils/undo/AddGraphicsTextCommand.cpp
+    utils/undo/AddGraphicsTextCommand.hpp
+    utils/undo/AddNodeCommand.cpp
+    utils/undo/AddNodeCommand.hpp
+    utils/undo/ChangeItemPositionCommand.cpp
+    utils/undo/ChangeItemPositionCommand.hpp
+    utils/undo/ChangeItemPropertyCommand.cpp
+    utils/undo/ChangeItemPropertyCommand.hpp
+    utils/undo/ChangeItemSizeCommand.cpp
+    utils/undo/ChangeItemSizeCommand.hpp
+    utils/undo/CommandStack.cpp
+    utils/undo/CommandStack.hpp
+    utils/undo/RemoveConnectionCommand.cpp
+    utils/undo/RemoveConnectionCommand.hpp
+    utils/undo/RemoveGraphicsArrowCommand.cpp
+    utils/undo/RemoveGraphicsArrowCommand.hpp
+    utils/undo/RemoveGraphicsFrameCommand.cpp
+    utils/undo/RemoveGraphicsFrameCommand.hpp
+    utils/undo/RemoveGraphicsTextCommand.cpp
+    utils/undo/RemoveGraphicsTextCommand.hpp
+    utils/undo/RemoveNodeCommand.cpp
+    utils/undo/RemoveNodeCommand.hpp
+    )
+
+set(views
+    views/FlowView.cpp
+    views/FlowView.hpp
+    views/FlowViewPainter.cpp
+    views/FlowViewPainter.hpp
+    views/MiniView.cpp
+    views/MiniView.hpp
+    )
+
+set(widgets
+    widgets/RenameDialog.cpp
+    widgets/RenameDialog.h
+    widgets/RenameDialog.ui
+    widgets/RenameNodeDialog.cpp
+    widgets/RenameNodeDialog.h
+    widgets/TextInputDialog.cpp
+    widgets/TextInputDialog.h
+    widgets/TextInputDialog.ui
+    )

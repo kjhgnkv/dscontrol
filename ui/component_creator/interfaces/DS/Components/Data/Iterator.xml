@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>components/data/abstract_iterator.h</header>
+ <class>DS::Components::Data::Iterator&lt;T></class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>Iterator&lt;T></name>
+   <signature>(AbstractIterator&lt;T> * pIter)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator++</name>
+   <signature>Iterator&lt;T> &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator*</name>
+   <signature>T &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator-></name>
+   <signature>T *()</signature>
+  </method>
+ </methods>
+</description>

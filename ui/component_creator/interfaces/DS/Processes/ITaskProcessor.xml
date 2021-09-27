@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>processes/task_processor.h</header>
+ <class>DS::Processes::ITaskProcessor</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>DispatchTask</name>
+   <signature>bool (DS::Processes::ITask * pTask)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetParallelCount</name>
+   <signature>unsigned int () const</signature>
+  </method>
+ </methods>
+</description>

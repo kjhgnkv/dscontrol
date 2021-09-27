@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>services/impl/universal_factory.h</header>
+ <class>DS::Services::Impl::UniversalFactory</class>
+ <inheritance>
+  <class>DS::Services::IUniversalFactory</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>RegisterFactory</name>
+   <signature>void (const DS::UID &amp; clsid ,DS::Core::IObjectFactory * pFactory)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>UnregisterFactory</name>
+   <signature>void (const DS::UID &amp; clsid)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Allocate</name>
+   <signature>DS::Core::IQueriable *(const DS::UID &amp; clsid)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Allocate</name>
+   <signature>DS::Core::IQueriable *(const DS::UID &amp; clsid ,const DS::UID &amp; instanceId)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Deallocate</name>
+   <signature>bool (DS::Core::IQueriable * pObject)</signature>
+  </method>
+ </methods>
+</description>

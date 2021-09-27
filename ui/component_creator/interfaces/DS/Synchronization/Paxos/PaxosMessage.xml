@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/paxos/paxos.h</header>
+ <class>DS::Synchronization::Paxos::PaxosMessage</class>
+ <inheritance>
+  <class>DS::Synchronization::Paxos::Proposal</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>PaxosMessage</name>
+   <signature>(const DS::Synchronization::Paxos::Proposal &amp; proposal ,unsigned int recverRoles ,DS::Synchronization::Paxos::Role senderRole)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetType</name>
+   <signature>DS::Synchronization::Paxos::MessageType () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetSenderId</name>
+   <signature>const DS::UID &amp;() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetReceiverRoles</name>
+   <signature>unsigned int () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetSenderRole</name>
+   <signature>DS::Synchronization::Paxos::Role () const</signature>
+  </method>
+ </methods>
+</description>

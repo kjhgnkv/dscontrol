@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>components/data/flyweight.h</header>
+ <class>DS::Components::Data::FlyweightHost&lt;Host></class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetExtraInfo</name>
+   <signature>Core::IReleaseable *(const DS::UID &amp; key)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetExtraInfo</name>
+   <signature>Core::IReleaseable *(const DS::UID &amp; key ,Core::IReleaseable * pExtraInfo)</signature>
+  </method>
+ </methods>
+</description>

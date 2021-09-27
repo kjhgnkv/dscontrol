@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>components/data/abstract_iterator.h</header>
+ <class>DS::Components::Data::AbstractIterator&lt;T></class>
+ <inheritance>
+  <class>DS::Core::IReleaseable</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>Current</name>
+   <signature>T *() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Eof</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Next</name>
+   <signature>bool ()</signature>
+  </method>
+ </methods>
+</description>

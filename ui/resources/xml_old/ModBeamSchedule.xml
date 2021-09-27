@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="ModBeamSchedule" title="波束调度" type="0" category="波束调度">
+    <Service name="IBeamScheduler" provide="1"/>
+    <Recv id="30-42" name="雷达设计(design_*)" protocol="stdbin"/>
+    <Recv id="8" name="定时定位信息(gps_ins)" protocol="stdbin"/>
+    <Recv id="7" name="跟踪请求(trace)" protocol="stdbin"/>
+    <Recv id="150" name="系统状态设置(system_state)" protocol="stdbin"/>
+    <Send id="1" name="波束描述(beam)" protocol="stdbin"/>
+    <Send id="5" name="状态报(state)" protocol="stdbin"/>
+</ModuleClass>

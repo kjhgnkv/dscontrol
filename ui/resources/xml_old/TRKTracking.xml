@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="TRKTracking" title="TAS跟踪" type="1" category="航迹跟踪">
+    <Service name="ITrackerEngine" provide="0"/>
+    <Recv id="7" name="跟踪请求(trace)" protocol="stdbin"/>
+    <Send id="7" name="跟踪请求(trace)" protocol="stdbin"/>
+</ModuleClass>

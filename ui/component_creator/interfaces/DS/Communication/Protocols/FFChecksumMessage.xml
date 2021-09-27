@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/protocols/cetc38_tradition.h</header>
+ <class>DS::Communication::Protocols::FFChecksumMessage&lt;></class>
+ <inheritance>
+  <class>DS::Communication::IMessage</class>
+  <class>DS::Communication::IField</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>FFChecksumMessage&lt;_MsgLen, _CodeOffset, _Leading></name>
+   <signature>(char * pData ,unsigned int length ,bool managed)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetId</name>
+   <signature>DS::Communication::MessageId () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetId</name>
+   <signature>void (DS::Communication::MessageId msgId)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetValue</name>
+   <signature>void (const DS::Communication::Protocols::Variant &amp; value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetValue</name>
+   <signature>DS::Communication::Protocols::Variant () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetField</name>
+   <signature>const DS::Communication::IField *(DS::Communication::FieldId field ,unsigned int index)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>CreateField</name>
+   <signature>DS::Communication::IField *(DS::Communication::FieldId field ,unsigned int position)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ForeachField</name>
+   <signature>void (DS::Communication::IFieldVisitor * pVisitor)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Release</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>CopyRawData</name>
+   <signature>unsigned int (void * buffer ,unsigned int size)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetData</name>
+   <signature>unsigned int (const void * buffer ,unsigned int length)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetRawData</name>
+   <signature>unsigned int (const void * buffer ,unsigned int length)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>DeleteData</name>
+   <signature>void ()</signature>
+  </method>
+ </methods>
+</description>

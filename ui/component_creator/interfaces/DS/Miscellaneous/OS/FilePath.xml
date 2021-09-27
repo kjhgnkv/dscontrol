@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>miscellaneous/os/fs.h</header>
+ <class>DS::Miscellaneous::OS::FilePath</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>FilePath</name>
+   <signature>(int system)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>FilePath</name>
+   <signature>(const tstring &amp; path ,int system)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>FilePath</name>
+   <signature>(const tchar * path ,int system)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator/</name>
+   <signature>DS::Miscellaneous::OS::FilePath (const tstring &amp; subpath)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator/=</name>
+   <signature>DS::Miscellaneous::OS::FilePath &amp;(const tstring &amp; subpath)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Miscellaneous::OS::FilePath &amp;(const tstring &amp; path)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Miscellaneous::OS::FilePath &amp;(const DS::Miscellaneous::OS::FilePath &amp; path)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetPath</name>
+   <signature>const tstring &amp;() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetFilePath</name>
+   <signature>DS::Miscellaneous::OS::FilePath (const tstring &amp; filename)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetParentDirectory</name>
+   <signature>DS::Miscellaneous::OS::FilePath () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetFileName</name>
+   <signature>tstring () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetFileNameWithoutExt</name>
+   <signature>tstring () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetFileExtension</name>
+   <signature>tstring () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsEmpty</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsAbsolute</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsFile</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsDirectory</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Exists</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToAbsolute</name>
+   <signature>DS::Miscellaneous::OS::FilePath () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToRelative</name>
+   <signature>DS::Miscellaneous::OS::FilePath (const DS::Miscellaneous::OS::FilePath &amp; base)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsParentOf</name>
+   <signature>bool (const DS::Miscellaneous::OS::FilePath &amp; path)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Normalize</name>
+   <signature>tstring (const tstring &amp; path ,int system)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetSeperatorOfSystem</name>
+   <signature>const tchar *(int system)</signature>
+  </method>
+ </methods>
+</description>

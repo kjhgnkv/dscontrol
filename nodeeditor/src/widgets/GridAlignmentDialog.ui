@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GridAlignmentDialog</class>
+ <widget class="QDialog" name="GridAlignmentDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>373</width>
+    <height>177</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Source Sans Pro</family>
+    <italic>false</italic>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+	background-color: #605f6e;
+	box-shadow: 0px 0px 4px #7b59ff;
+	font-family: &quot;Source Sans Pro&quot;;
+	font-style: normal;
+}
+
+QLabel {
+	font-size: 14px;
+	color: #ffffff;
+}
+
+QSpinBox {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #aaaac5;
+    border-radius: 5px;
+    height: 20px;
+	font-size: 14px;
+}
+
+QSpinBox:disabled {
+    color: #707070;
+    border: 1px solid #707070;
+}
+
+QSpinBox::up-button {
+    border-left: 1px solid #aaaac5;
+    width: 16px;
+    height: 10px;
+}
+
+QSpinBox::up-button:disabled {
+    border-left: 1px solid #707070;
+}
+
+QSpinBox::up-arrow {
+    image: url(:/toolbar/upArrow.png);
+    width: 16px;
+    height: 9px;
+}
+
+QSpinBox::up-arrow:disabled {
+    image: url(:/toolbar/upArrowDisabled.png);
+}
+
+QSpinBox::down-button {
+    border-left: 1px solid #aaaac5;
+    width: 16px;
+    height: 10px;
+}
+
+QSpinBox::down-button:disabled {
+    border-left: 1px solid #707070;
+}
+
+QSpinBox::down-arrow {
+    image: url(:/toolbar/downArrow.png);
+    width: 16px;
+    height: 9px;
+    top: 1px;
+}
+
+QSpinBox::down-arrow:disabled {
+    image: url(:/toolbar/downArrowDisabled.png);
+}</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>50</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Row Count</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>80</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Column Count</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="okButton">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>130</y>
+     <width>104</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>104</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background: #27ae60;
+	border-radius: 8px;
+	font-size: 16px;
+	color: #ffffff;
+}
+                  
+QPushButton::hover {
+	background-color: #46ce7f;
+}</string>
+   </property>
+   <property name="text">
+    <string>OK</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancelButton">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>130</y>
+     <width>100</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color: #eb5757;
+	border-radius: 10px;
+	font-size: 16px;
+	color: #ffffff;
+}
+
+QPushButton:hover {
+	background: #f87e7e;
+}</string>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="rowCountSpin">
+   <property name="geometry">
+    <rect>
+     <x>141</x>
+     <y>50</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
+   <property name="maximum">
+    <number>99</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="columnCountSpin">
+   <property name="geometry">
+    <rect>
+     <x>141</x>
+     <y>80</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
+   <property name="maximum">
+    <number>99</number>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

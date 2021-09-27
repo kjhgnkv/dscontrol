@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="SPAngleMe" title="和差测角" type="0" category="信号处理">
+    <Service name="ISignalProcessEngine" provide="0"/>
+</ModuleClass>

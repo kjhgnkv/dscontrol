@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DSHost>
+    <Protocols>
+        <Protocol name="network" id="1" factory="stdbin" component="ds.host.protocols.protocol.stdbin">Serialization protocol for network communication</Protocol>
+        <Protocol name="internal" id="1" factory="default">Application internal protocol</Protocol>
+        <!-- <Protocol name="internal" id="1" factory="protobuf" component="ds.host.protocols.protocol.protobuf"/> -->
+    </Protocols>
+    <Communication>
+        <Comm name="tcp/server/any" id="1" protocol="network" recv_protocol="internal" factory="tcp" component="ds.host.transport.provider.tcp" server="true" bind="localhost:60000"/>
+        <Comm name="tcp/client/localhost" id="1" protocol="network" recv_protocol="internal" factory="tcp" component="ds.host.transport.provider.tcp" addr="localhost:60000"/>
+
+        <!-- <Comm name="udp/bind/any" id="1" protocol="network" recv_protocol="internal" factory="udp" component="ds.host.transport.provider.udp" bind=":60000"/> -->
+        <!-- <Comm name="udp/connect/localhost" id="1" protocol="network" recv_protocol="internal" factory="udp" component="ds.host.transport.provider.udp" addr="localhost:60000"/> -->
+        <!-- <Comm name="udp/broadcast/local" id="1" protocol="network" recv_protocol="internal" factory="udp" component="ds.host.transport.provider.udp" addr="192.168.1.255:60000" broadcast="true"/> -->
+
+        <!-- <Comm name="mqtt/localhost" id="1" protocol="network" recv_protocol="internal" factory="mqtt" component="ds.host.transport.provider.mqtt" topic="test/topic1,test/topic2" addr="localhost:1883" qos="0"/> -->
+
+        <!-- <Comm name="dds_localhost" id="1" protocol="network" recv_protocol="internal" factory="dds" component="ds.host.transport.provider.dds" domain_id="1" topic="test_topic1,test_topic2" mode="both" transport=""/> -->
+        <!-- <Comm name="dds_localhost" id="1" protocol="network" recv_protocol="internal" factory="dds" component="ds.host.transport.provider.dds" domain_id="1" topic="test_topic1,test_topic2" mode="both" transport="udp" udp_port="60000" udp_locator="localhost:60000"/> -->
+        <!-- <Comm name="dds_localhost_pub" id="1" protocol="network" recv_protocol="internal" factory="dds" component="ds.host.transport.provider.dds" domain_id="1" topic="test_topic1,test_topic2" mode="publisher" transport="tcp" tcp_port="60000"/> -->
+        <!-- <Comm name="dds_localhost_sub" id="1" protocol="network" recv_protocol="internal" factory="dds" component="ds.host.transport.provider.dds" domain_id="1" topic="test_topic1,test_topic2" mode="subscriber" transport="tcp" tcp_locator="localhost:60000"/> -->
+    </Communication>
+    <Components>
+        <Component name="ds.host.samples.echo" compat="stdbin" logerr="true">
+            Test echo component
+            -------------------
+            <Object name="comp1.app1.object1" content_id="echo_msg" text="12345">
+                <!-- <Send name="local" destination="comp1.app1.object2" id="1-5" test_attr="test_value"/> -->
+                <Send name="remote" destination="comp1.app1.object2" id="1-5" comm="tcp/client/localhost"/>
+                <!-- <Send name="remote" destination="comp1.app1.object2" id="1-5" comm="udp/connect/localhost"/> -->
+                <!-- <Send name="remote" destination="comp1.app1.object2" id="1-5" comm="mqtt/localhost" topic="test/topic1"/> -->
+                <!-- <Send name="remote" destination="comp1.app1.object2" id="1-5" comm="dds_localhost" topic="test_topic1,test_topic2"/> -->
+            </Object>
+            -------------------
+            <Object name="comp1.app1.object2" start="false">
+                <!-- <Recv name="local" source="comp1.app1.object1" id="1,2,3" test_attr="test_value"/> -->
+                <Recv name="remote" source="comp1.app1.object1" id="1,2,3" comm="tcp/server/any"/>
+                <!-- <Recv name="remote" source="comp1.app1.object1" id="1,2,3" comm="udp/bind/any"/> -->
+                <!-- <Recv name="remote" source="comp1.app1.object1" id="1,2,3" comm="mqtt/localhost" topic="test/topic1"/> -->
+                <!-- <Recv name="remote" source="comp1.app1.object1" id="1,2,3" comm="dds_localhost" topic="test_topic1"/> -->
+            </Object>
+        </Component>
+    </Components>
+</DSHost>
+

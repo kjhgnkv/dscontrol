@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>core/modules.h</header>
+ <class>DS::Core::CommModule&lt;_Module></class>
+ <inheritance>
+  <class>DS::Core::DefaultModule&lt;_Module></class>
+  <class>DS::Communication::DefaultCommSetting</class>
+  <class>DS::Communication::IMessageHandler</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>CommModule&lt;_Module></name>
+   <signature>(const tchar * strModName)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetMessageHandler</name>
+   <signature>DS::Communication::IMessageHandler *()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Query</name>
+   <signature>DS::Core::IQueriable *(const DS::UID &amp; iid)</signature>
+  </method>
+ </methods>
+</description>

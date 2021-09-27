@@ -1,0 +1,8 @@
+// automatic config file by cmake
+
+#pragma once
+
+// this path have to be always with slash (not back!), because it is variable for cmake
+#define CMAKE_MODULE_PATH "${DS_OUT_FILES_DIR}"
+// this variable uses by QDir, so here also we can use right slash
+#define XML_DIR "./interfaces"

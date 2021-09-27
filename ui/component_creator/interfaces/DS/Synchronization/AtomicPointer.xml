@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/atomic.h</header>
+ <class>DS::Synchronization::AtomicPointer</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>AtomicPointer</name>
+   <signature>(DS::Synchronization::AtomicPointer::Pointer pointer)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>AtomicPointer</name>
+   <signature>(const DS::Synchronization::AtomicPointer &amp; other)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>DS::Synchronization::AtomicPointer &amp;(DS::Synchronization::AtomicPointer::Pointer value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>swap</name>
+   <signature>DS::Synchronization::AtomicPointer::Pointer (DS::Synchronization::AtomicPointer::Pointer value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>cas</name>
+   <signature>DS::Synchronization::AtomicPointer::Pointer (DS::Synchronization::AtomicPointer::Pointer compare ,DS::Synchronization::AtomicPointer::Pointer value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>get_pointer</name>
+   <signature>DS::Synchronization::AtomicPointer::Pointer () const</signature>
+  </method>
+ </methods>
+</description>

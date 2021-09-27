@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>utils/service_proxy.h</header>
+ <class>DS::ServiceProxy&lt;_Interface></class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>ServiceProxy&lt;_Interface></name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ServiceProxy&lt;_Interface></name>
+   <signature>(Core::IApplication * pmm)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator=</name>
+   <signature>ServiceProxy&lt;_Interface> &amp;(Core::IApplication * pmm)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsPresent</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator-></name>
+   <signature>_Interface *() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Get</name>
+   <signature>_Interface *() const</signature>
+  </method>
+ </methods>
+</description>

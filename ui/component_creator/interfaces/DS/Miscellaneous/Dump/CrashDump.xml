@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>miscellaneous/dump/crash_dump.h</header>
+ <class>DS::Miscellaneous::Dump::CrashDump</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>CrashDump</name>
+   <signature>(const tstring &amp; dumpfile)</signature>
+  </method>
+ </methods>
+</description>

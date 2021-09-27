@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/atomic.h</header>
+ <class>DS::Synchronization::AtomicPointerT&lt;T></class>
+ <inheritance>
+  <class>DS::Synchronization::AtomicPointer</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>AtomicPointerT&lt;T></name>
+   <signature>(T * pointer)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>swap</name>
+   <signature>T *(T * value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>cas</name>
+   <signature>T *(T * compare ,T * value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator-></name>
+   <signature>T *() const</signature>
+  </method>
+ </methods>
+</description>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="Plot" title="点迹处理" type="2" category="点迹处理">
+    <Recv id="2" name="点迹包(plot)" protocol="stdbin"/>
+    <Recv id="100" name="工作参数设置(work_param)" protocol="stdbin"/>
+    <Send id="2" name="点迹包(plot)" protocol="stdbin"/>
+    <Send id="5" name="状态报(state)" protocol="stdbin"/>
+</ModuleClass>

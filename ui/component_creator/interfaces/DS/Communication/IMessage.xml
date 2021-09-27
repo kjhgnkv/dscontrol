@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/imessage.h</header>
+ <class>DS::Communication::IMessage</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>GetId</name>
+   <signature>DS::Communication::MessageId () const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetField</name>
+   <signature>const DS::Communication::IField *(DS::Communication::FieldId field ,unsigned int index)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>SetId</name>
+   <signature>void (DS::Communication::MessageId msgId)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>CreateField</name>
+   <signature>DS::Communication::IField *(DS::Communication::FieldId field ,unsigned int position)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>ForeachField</name>
+   <signature>void (DS::Communication::IFieldVisitor * pVisitor)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Release</name>
+   <signature>void ()</signature>
+  </method>
+ </methods>
+</description>

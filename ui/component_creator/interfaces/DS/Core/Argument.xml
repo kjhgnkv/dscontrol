@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>core/argument.h</header>
+ <class>DS::Core::Argument</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>Argument</name>
+   <signature>(const tchar * arg)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToString</name>
+   <signature>const tstring &amp;() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToBoolean</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToInteger</name>
+   <signature>int () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToFloat</name>
+   <signature>double () const</signature>
+  </method>
+ </methods>
+</description>

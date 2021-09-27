@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>components/data/reference_count.h</header>
+ <class>DS::Components::Data::ReferenceCountable&lt;T></class>
+ <inheritance>
+  <class>DS::Components::Data::IReferenceCountable</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>ReferenceCountable&lt;T></name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Reference</name>
+   <signature>int ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Dereference</name>
+   <signature>void ()</signature>
+  </method>
+ </methods>
+</description>

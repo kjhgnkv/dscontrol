@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<bundlespec>
+    <manifest>
+        <name>%name% Custom Component</name>
+        <symbolicName>%library-name%</symbolicName>
+        <version>1.0.0</version>
+        <vendor>CETC</vendor>
+        <copyright>(c) CETC Belarus</copyright>
+        <activator>
+            <class>%name%CustomComponentActivator</class>
+            <library>%library-name%</library>
+        </activator>
+        <lazyStart>false</lazyStart>
+        <runLevel>111</runLevel>
+        <module>
+            <symbolicName>%library-name%</symbolicName>
+            <version>1.0</version>
+        </module>
+    </manifest>
+    <code>
+        lib/*.so,
+        lib/*.dll,
+    </code>
+</bundlespec>

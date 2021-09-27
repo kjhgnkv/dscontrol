@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/lockfree.h</header>
+ <class>DS::Synchronization::LockFreeList&lt;Ty></class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>LockFreeList&lt;Ty></name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>PushBack</name>
+   <signature>void (const Ty &amp; val)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>PushFront</name>
+   <signature>void (const Ty &amp; val)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>PopFront</name>
+   <signature>bool (Ty &amp; data)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Clear</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Size</name>
+   <signature>AtomicInt32::AtomicNumber ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>begin</name>
+   <signature>DS::Synchronization::LockFreeList::const_iterator () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>end</name>
+   <signature>DS::Synchronization::LockFreeList::const_iterator () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>begin</name>
+   <signature>DS::Synchronization::LockFreeList::iterator ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>end</name>
+   <signature>DS::Synchronization::LockFreeList::iterator ()</signature>
+  </method>
+ </methods>
+</description>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>core/iobjectfactory.h</header>
+ <class>DS::Core::IObjectFactory</class>
+ <inheritance>
+  <class>DS::Core::IQueriable</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Query</name>
+   <signature>DS::Core::IQueriable *(const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsOrInherits</name>
+   <signature>bool (const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Allocate</name>
+   <signature>DS::Core::IQueriable *(const DS::UID &amp; clsid)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Allocate</name>
+   <signature>DS::Core::IQueriable *(const DS::UID &amp; clsid ,const DS::UID &amp; instanceId)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>Deallocate</name>
+   <signature>bool (DS::Core::IQueriable * pObject)</signature>
+  </method>
+ </methods>
+</description>

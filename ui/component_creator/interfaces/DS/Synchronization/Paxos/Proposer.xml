@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/paxos/paxos.h</header>
+ <class>DS::Synchronization::Paxos::Proposer</class>
+ <inheritance>
+  <class>DS::Synchronization::Paxos::PaxosRole</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>Proposer</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetLeader</name>
+   <signature>void (bool isleader)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsLeader</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRole</name>
+   <signature>DS::Synchronization::Paxos::Role () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Receive</name>
+   <signature>void (DS::Synchronization::Paxos::PaxosParticipant * participant ,const DS::Synchronization::Paxos::PaxosMessage * message)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>CheckMessageFromClient</name>
+   <signature>bool (const DS::Synchronization::Paxos::PaxosMessage * message)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>CheckMessageFromAcceptor</name>
+   <signature>bool (const DS::Synchronization::Paxos::PaxosMessage * message)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Prepare</name>
+   <signature>void (DS::Synchronization::Paxos::PaxosParticipant * participant ,const DS::Synchronization::Paxos::Proposal &amp; proposal)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Accept</name>
+   <signature>void (DS::Synchronization::Paxos::PaxosParticipant * participant ,const DS::Synchronization::Paxos::Proposal &amp; proposal ,unsigned int actualValue)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Reject</name>
+   <signature>void (DS::Synchronization::Paxos::PaxosParticipant * participant ,const DS::Synchronization::Paxos::Proposal &amp; proposal)</signature>
+  </method>
+ </methods>
+</description>

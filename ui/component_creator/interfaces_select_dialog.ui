@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>interfaces_select_dialog</class>
+ <widget class="QDialog" name="interfaces_select_dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>700</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLineEdit" name="lineEdit"/>
+   </item>
+   <item>
+    <widget class="QTreeView" name="treeView">
+     <property name="styleSheet">
+      <string notr="true">QTreeView {
+        border: none;
+}
+
+QTreeView::item {
+        font-size: 14px;
+        height: 28px;
+        border: 1px solid #33333A;
+        background: #605F6E;
+}
+
+QHeaderView {
+                qproperty-defaultAlignment: AlignCenter;
+}
+
+QHeaderView {
+        border: none;
+}
+
+QHeaderView::section {
+        color: #ffffff;
+        background-color: #252434;
+        border: none;
+        height: 36px;
+        
+}</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="select">
+     <property name="text">
+      <string>Add Interface</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

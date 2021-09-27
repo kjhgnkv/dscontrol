@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/tcpip.h</header>
+ <class>DS::Communication::IpKey</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>IpKey</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IpKey</name>
+   <signature>(DS::Communication::ipv4_t ip_ ,ushort port)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator&lt;</name>
+   <signature>bool (const DS::Communication::IpKey &amp; key)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToString</name>
+   <signature>tstring () const</signature>
+  </method>
+ </methods>
+</description>

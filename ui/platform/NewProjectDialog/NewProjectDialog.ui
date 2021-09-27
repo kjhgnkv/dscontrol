@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NewProjectDialog</class>
+ <widget class="QDialog" name="NewProjectDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>360</width>
+    <height>143</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>360</width>
+    <height>143</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>360</width>
+    <height>143</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>New project</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLineEdit {
+	padding-left: 3px;
+	background: #3D3D46;
+	border: 1px solid #AAAAC5;
+	border-radius: 5px;
+	font-weight: normal;
+	font-size: 12px;
+
+	color: #FFFFFF;
+}
+
+QDialog {
+	background: #605F6E;
+	box-shadow: 0px 0px 4px #7B59FF;
+}
+
+QLabel {
+	font-weight: 300;
+	font-size: 12px;
+
+	color: #FFFFFF;
+}</string>
+  </property>
+  <widget class="dscontrol::DSLineEdit" name="linePath_" native="true">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>72</y>
+     <width>328</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>328</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>328</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineName_">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>32</y>
+     <width>328</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>328</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>328</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblName_">
+   <property name="geometry">
+    <rect>
+     <x>19</x>
+     <y>16</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Project name</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblPath_">
+   <property name="geometry">
+    <rect>
+     <x>19</x>
+     <y>56</y>
+     <width>51</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Folder</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnCreateProject_">
+   <property name="geometry">
+    <rect>
+     <x>239</x>
+     <y>112</y>
+     <width>104</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>104</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background: #27AE60;
+	border-radius: 8px;
+	font-size: 14px;
+
+	color: #FFFFFF;
+}
+
+QPushButton::hover {
+	background: #46CE7F;
+	border-radius: 8;
+}</string>
+   </property>
+   <property name="text">
+    <string>Create Project</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>dscontrol::DSLineEdit</class>
+   <extends>QWidget</extends>
+   <header>ui/platform/custom/DSLineEdit.hpp</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

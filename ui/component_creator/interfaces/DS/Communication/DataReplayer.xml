@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/data_replayer.h</header>
+ <class>DS::Communication::DataReplayer</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>DataReplayer</name>
+   <signature>(DS::Communication::IMessageHandler * pHandler ,int commId)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Open</name>
+   <signature>bool (const tchar * fileName)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Close</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ReplayOneBlock</name>
+   <signature>DS::Communication::DataReplayer::ReplayState (bool wait)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Reset</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ExitWaiting</name>
+   <signature>void ()</signature>
+  </method>
+ </methods>
+</description>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/stream_reader.h</header>
+ <class>DS::Communication::StreamReader&lt;_GetLength></class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>StreamReader&lt;_GetLength, minLength></name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>WriteStream</name>
+   <signature>void (const void * msg_ ,size_t size)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ReadMessage</name>
+   <signature>void *()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ReleaseMessage</name>
+   <signature>void (void * msg_)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>EnsureBuffer</name>
+   <signature>void (size_t size)</signature>
+  </method>
+ </methods>
+</description>

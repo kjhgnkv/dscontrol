@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>core/module_manager.h</header>
+ <class>DS::Core::ModuleManager</class>
+ <inheritance>
+  <class>DS::Core::IApplication</class>
+  <class>DS::Miscellaneous::IScriptingSupport</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ModuleManager</name>
+   <signature>(int argc ,const char *[] argv)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetNodeName</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetNodeID</name>
+   <signature>const DS::UID &amp;() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetArgument</name>
+   <signature>const tchar *(const tchar * parameter)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Query</name>
+   <signature>DS::Core::IQueriable *(const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>RegisterService</name>
+   <signature>bool (const DS::UID &amp; sid ,DS::Core::IQueriable * pService)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>UnregisterService</name>
+   <signature>bool (const DS::UID &amp; sid ,DS::Core::IQueriable * pService)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>AddScriptSuport</name>
+   <signature>void (const tstring &amp; scriptName ,const tstring &amp; scriptExt ,void * pExternalScriptEngine)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>LoadModules</name>
+   <signature>void (const tstring &amp; path)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>LoadProcModel</name>
+   <signature>bool ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Initialize</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Start</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Stop</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>UnloadProcModel</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ReleaseModules</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>StartScriptingEngine</name>
+   <signature>bool (const tchar * pstrScriptName ,void * pScriptingEngine)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>StopScriptingEngine</name>
+   <signature>bool (const tchar * pstrScriptName ,void * pScriptingEngine)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>LoadScriptFile</name>
+   <signature>bool (const tchar * pstrScriptFile ,void * pScriptingEngine)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>AddBlackList</name>
+   <signature>void (const tchar * modName)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ParseArgs</name>
+   <signature>void (int argc ,const char ** argv)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>StartScriptEngine</name>
+   <signature>void (Miscellaneous::IScriptingSupport * pScripting)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>StopScriptEngine</name>
+   <signature>void (Miscellaneous::IScriptingSupport * pScripting)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>InitializeServices</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>StartServices</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>LoadLinkedModules</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>PrintModuleHelp</name>
+   <signature>void ()</signature>
+  </method>
+ </methods>
+</description>

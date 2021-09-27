@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="ModSPY1Process" title="SPY1波形处理" type="0" category="波束调度">
+    <Service name="IBeamScheduler" provide="0"/>
+    <Recv id="1" name="波束描述(beam)" protocol="stdbin"/>
+    <Recv id="30-43" name="雷达设计(design_*)" protocol="stdbin"/>
+    <Recv id="9" name="模拟波形描述(simulation)" protocol="stdbin"/>
+    <Send id="30-43" name="雷达设计(design_*)" protocol="stdbin"/>
+    <Send id="1" name="波束描述(beam)" protocol="stdbin"/>
+</ModuleClass>

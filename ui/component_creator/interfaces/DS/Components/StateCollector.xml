@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>components/statecollector.h</header>
+ <class>DS::Components::StateCollector</class>
+ <inheritance>
+  <class>DS::Components::IStateCollector</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>StateCollector</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>CollectState</name>
+   <signature>void (int field ,const Communication::Protocols::Variant &amp; value)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>WriteToMessage</name>
+   <signature>void (Communication::IMessage * pMesage)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Clear</name>
+   <signature>void ()</signature>
+  </method>
+ </methods>
+</description>

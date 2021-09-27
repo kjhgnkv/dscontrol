@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>core/iapplication.h</header>
+ <class>DS::Core::IApplication</class>
+ <inheritance>
+  <class>DS::Core::IQueriable</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetArgument</name>
+   <signature>const tchar *(const tchar * parameter)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetNodeName</name>
+   <signature>const tchar *() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>GetNodeID</name>
+   <signature>const DS::UID &amp;() const</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>RegisterService</name>
+   <signature>bool (const DS::UID &amp; sid ,DS::Core::IQueriable * pService)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>UnregisterService</name>
+   <signature>bool (const DS::UID &amp; sid ,DS::Core::IQueriable * pService)</signature>
+  </method>
+ </methods>
+</description>

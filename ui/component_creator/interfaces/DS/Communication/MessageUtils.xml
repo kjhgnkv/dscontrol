@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/messageutils.h</header>
+ <class>DS::Communication::MessageUtils</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>FromMessage</name>
+   <signature>bool (tstring &amp; to ,const DS::Communication::IField * pParentField ,DS::Communication::FieldId childFieldId ,unsigned int index)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>FromMessage</name>
+   <signature>bool (tstring &amp; to ,const DS::Communication::IMessage * pMessage ,DS::Communication::FieldId childFieldId ,unsigned int index)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToMessage</name>
+   <signature>void (const tstring &amp; val ,DS::Communication::IField * pParentField ,DS::Communication::FieldId childFieldId ,unsigned int position)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToMessage</name>
+   <signature>void (const tstring &amp; val ,DS::Communication::IMessage * pMessage ,DS::Communication::FieldId childFieldId ,unsigned int position)</signature>
+  </method>
+ </methods>
+</description>

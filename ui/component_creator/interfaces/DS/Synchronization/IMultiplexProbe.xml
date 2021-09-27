@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/imultiplex.h</header>
+ <class>DS::Synchronization::IMultiplexProbe</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>NotifyMultiplexEvent</name>
+   <signature>void (DS::Synchronization::IMultiplexable * pObject)</signature>
+  </method>
+  <method>
+   <type>pure</type>
+   <name>NotifyObjectExit</name>
+   <signature>void (DS::Synchronization::IMultiplexable * pObject)</signature>
+  </method>
+ </methods>
+</description>

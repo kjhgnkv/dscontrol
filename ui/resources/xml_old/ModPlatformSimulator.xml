@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="ModPlatformSimulator" title="平台模拟" type="0" category="波束调度">
+    <Recv id="11" name="扫描线(scanline)" protocol="stdbin"/>
+</ModuleClass>

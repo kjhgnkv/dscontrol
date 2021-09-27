@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/multiplex.h</header>
+ <class>DS::Synchronization::Multiplex</class>
+ <inheritance>
+  <class>DS::Synchronization::IMultiplexProbe</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>Multiplex</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Add</name>
+   <signature>bool (DS::Synchronization::IMultiplexable * pObject)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Remove</name>
+   <signature>void (DS::Synchronization::IMultiplexable * pObject)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Wait</name>
+   <signature>DS::Synchronization::IMultiplexable *(int timeout)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>NotifyMultiplexEvent</name>
+   <signature>void (DS::Synchronization::IMultiplexable * pObject)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>NotifyObjectExit</name>
+   <signature>void (DS::Synchronization::IMultiplexable * pObject)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>PrepareWait</name>
+   <signature>void ()</signature>
+  </method>
+ </methods>
+</description>

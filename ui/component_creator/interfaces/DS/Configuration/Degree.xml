@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>configuration/configureitem.h</header>
+ <class>DS::Configuration::Degree</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>operator()</name>
+   <signature>double (double val ,bool storage)</signature>
+  </method>
+ </methods>
+</description>

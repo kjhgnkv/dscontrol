@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/multiplexable.h</header>
+ <class>DS::Synchronization::Multiplexable&lt;T></class>
+ <inheritance>
+  <class>T</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>Bind</name>
+   <signature>bool (DS::Synchronization::IMultiplexProbe * probe)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Unbind</name>
+   <signature>bool (DS::Synchronization::IMultiplexProbe * probe)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>SetEvent</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Multiplexable&lt;T></name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ExitMultiplex</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Bound</name>
+   <signature>bool () const</signature>
+  </method>
+ </methods>
+</description>

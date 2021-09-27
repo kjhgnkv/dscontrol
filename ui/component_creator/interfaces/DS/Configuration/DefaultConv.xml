@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>configuration/configureitem.h</header>
+ <class>DS::Configuration::DefaultConv&lt;ValueType></class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>operator()</name>
+   <signature>const ValueType &amp;(const ValueType &amp; val ,bool storage)</signature>
+  </method>
+ </methods>
+</description>

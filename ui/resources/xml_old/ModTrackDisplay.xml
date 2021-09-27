@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="ModTrackDisplay" title="空情显示" type="0" category="显控处理">
+    <Recv id="2" name="点迹包(plot)" protocol="stdbin"/>
+    <Recv id="3" name="航迹(track)" protocol="stdbin"/>
+    <Recv id="8" name="定时定位信息(gps_ins)" protocol="stdbin"/>
+    <Recv id="11" name="扫描线(scanline)" protocol="stdbin"/>
+    <Recv id="21" name="视频数据(videodata)" protocol="stdbin"/>
+    <Recv id="23" name="频谱(spectrum)" protocol="stdbin"/>
+    <Send id="4" name="战术操作(tactic)" protocol="stdbin"/>
+    <Send id="22" name="视频控制(videoctrl)" protocol="stdbin"/>
+</ModuleClass>

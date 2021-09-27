@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>synchronization/locks_linux.h</header>
+ <class>DS::Synchronization::MutexImpl</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>MutexImpl</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>MutexImpl</name>
+   <signature>(const tchar * pstrName)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Lock</name>
+   <signature>bool (int timeout)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Unlock</name>
+   <signature>void ()</signature>
+  </method>
+ </methods>
+</description>

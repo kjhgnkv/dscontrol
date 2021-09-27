@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DSHost>
+<Communication>
+    <Comm name="broadcasterWithMqtt:server" id="1" factory="broadcaster_with_mqtt" component="ds.host.transport.provider.broadcaster_with_mqtt" topicPrefix="ds"/>
+    <Comm name="broadcasterWithMqtt:client" id="2" factory="broadcaster_with_mqtt" component="ds.host.transport.provider.broadcaster_with_mqtt" topicPrefix="ds" isClient="true"/>
+</Communication>
+----------------
+<Components>
+    <Component name="ds.host.components.dsserver">
+        <Object name="DSServerObj">
+        	<Send name="DSServerObj.sender1" id="2-6" comm="broadcasterWithMqtt:server"/>
+		<Send name="DSServerObj.sender2" destination="DSMonitorObj" id="1"/>
+		<Recv name="DSServerObj.receiver1" id="2-6" comm="broadcasterWithMqtt:server"/>
+		<Recv name="DSServerObj.receiver2" source="DSMonitorObj" id="1"/>
+        </Object>
+    </Component>
+    <Component name="ds.host.components.dsmonitor">
+        <Object name="DSMonitorObj">
+		<Send name="DSMonitorObj.sender1" destination="DSServerObj" id="1"/>
+		<Recv name="DSMonitorObj.receiver1" source="DSServerObj" id="1"/>
+        </Object>
+    </Component>
+    <Component name="ds.host.components.dscontrol_provider">
+ 	<Object name="DSControlProviderObj" chanelName="DSControl" memorySize="40000">
+		<Send name="DSControlProviderObj.sender1" id="2-6" comm="broadcasterWithMqtt:client"/>
+ 		<Recv name="DSControlProviderObj.receiver1" id="2-6" comm="broadcasterWithMqtt:client" />
+ 	</Object>
+     </Component>
+</Components>
+</DSHost>

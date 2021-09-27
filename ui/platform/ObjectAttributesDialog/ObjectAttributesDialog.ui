@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ObjectAttributesDialog</class>
+ <widget class="QDialog" name="ObjectAttributesDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>825</width>
+    <height>572</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>825</width>
+    <height>572</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Object attributes</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout_8">
+     <property name="spacing">
+      <number>8</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <property name="spacing">
+        <number>8</number>
+       </property>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QFrame" name="frame">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>176</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">borders: none;
+background-color: #484853;</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QGridLayout" name="gridLayout">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_2">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>16</number>
+                </property>
+                <property name="topMargin">
+                 <number>12</number>
+                </property>
+                <property name="rightMargin">
+                 <number>16</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="label">
+                  <property name="minimumSize">
+                   <size>
+                    <width>51</width>
+                    <height>24</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 18px;
+
+
+
+color: #FFFFFF;</string>
+                  </property>
+                  <property name="text">
+                   <string>Name</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="lineName_">
+                  <property name="minimumSize">
+                   <size>
+                    <width>144</width>
+                    <height>24</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background: #3D3D46;
+border: 1px solid #AAAAC5;
+box-sizing: border-box;
+border-radius: 5px;
+padding-left: 5px;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 18px;
+
+</string>
+                  </property>
+                  <property name="text">
+                   <string>8879</string>
+                  </property>
+                  <property name="cursorPosition">
+                   <number>4</number>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>16</number>
+                </property>
+                <property name="rightMargin">
+                 <number>16</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="label_2">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>31</width>
+                    <height>24</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 18px;
+
+
+
+color: #FFFFFF;</string>
+                  </property>
+                  <property name="text">
+                   <string>Id</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="lineId_">
+                  <property name="minimumSize">
+                   <size>
+                    <width>144</width>
+                    <height>24</height>
+                   </size>
+                  </property>
+                  <property name="layoutDirection">
+                   <enum>Qt::LeftToRight</enum>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background: #3D3D46;
+border: 1px solid #AAAAC5;
+box-sizing: border-box;
+border-radius: 5px;
+
+padding-left: 5px;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 18px;</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>8</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="label_3">
+                  <property name="minimumSize">
+                   <size>
+                    <width>159</width>
+                    <height>36</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 23px;
+
+
+
+
+color: #FFFFFF;</string>
+                  </property>
+                  <property name="text">
+                   <string>Components:</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="dscontrol::DSTableView" name="componentView_">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>176</width>
+             <height>292</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: none;
+</string>
+           </property>
+           <attribute name="horizontalHeaderMinimumSectionSize">
+            <number>159</number>
+           </attribute>
+           <attribute name="horizontalHeaderDefaultSectionSize">
+            <number>159</number>
+           </attribute>
+           <attribute name="horizontalHeaderHighlightSections">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderMinimumSectionSize">
+            <number>32</number>
+           </attribute>
+           <attribute name="verticalHeaderDefaultSectionSize">
+            <number>32</number>
+           </attribute>
+           <attribute name="verticalHeaderHighlightSections">
+            <bool>false</bool>
+           </attribute>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <property name="spacing">
+          <number>8</number>
+         </property>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>36</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+background: #484853;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 23px;
+
+
+
+
+color: #FFFFFF;</string>
+             </property>
+             <property name="text">
+              <string>Receive message</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableView" name="recvView_">
+             <property name="minimumSize">
+              <size>
+               <width>520</width>
+               <height>218</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+                        border: none;
+                        border-right: none;</string>
+             </property>
+             <property name="verticalScrollBarPolicy">
+              <enum>Qt::ScrollBarAsNeeded</enum>
+             </property>
+             <property name="horizontalScrollBarPolicy">
+              <enum>Qt::ScrollBarAsNeeded</enum>
+             </property>
+             <property name="verticalScrollMode">
+              <enum>QAbstractItemView::ScrollPerItem</enum>
+             </property>
+             <attribute name="horizontalHeaderMinimumSectionSize">
+              <number>124</number>
+             </attribute>
+             <attribute name="horizontalHeaderDefaultSectionSize">
+              <number>124</number>
+             </attribute>
+             <attribute name="horizontalHeaderHighlightSections">
+              <bool>false</bool>
+             </attribute>
+             <attribute name="verticalHeaderMinimumSectionSize">
+              <number>36</number>
+             </attribute>
+             <attribute name="verticalHeaderDefaultSectionSize">
+              <number>36</number>
+             </attribute>
+             <attribute name="verticalHeaderHighlightSections">
+              <bool>false</bool>
+             </attribute>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>36</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+background: #484853;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 23px;
+
+
+
+
+color: #FFFFFF;</string>
+             </property>
+             <property name="text">
+              <string>Send message</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableView" name="sendView_">
+             <property name="minimumSize">
+              <size>
+               <width>520</width>
+               <height>218</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+                        border: none;
+                        border-right: none;</string>
+             </property>
+             <attribute name="horizontalHeaderMinimumSectionSize">
+              <number>124</number>
+             </attribute>
+             <attribute name="horizontalHeaderDefaultSectionSize">
+              <number>124</number>
+             </attribute>
+             <attribute name="horizontalHeaderHighlightSections">
+              <bool>false</bool>
+             </attribute>
+             <attribute name="verticalHeaderMinimumSectionSize">
+              <number>36</number>
+             </attribute>
+             <attribute name="verticalHeaderDefaultSectionSize">
+              <number>36</number>
+             </attribute>
+             <attribute name="verticalHeaderHighlightSections">
+              <bool>false</bool>
+             </attribute>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>716</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="btnClose_">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>88</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Close</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>dscontrol::DSTableView</class>
+   <extends>QTableView</extends>
+   <header>ui/platform/custom/DSTableView.hpp</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

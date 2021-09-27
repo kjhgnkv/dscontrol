@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>uid.h</header>
+ <class>DS::UID</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>operator==</name>
+   <signature>bool (const DS::UID &amp; other)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator!=</name>
+   <signature>bool (const DS::UID &amp; other)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>operator&lt;</name>
+   <signature>bool (const DS::UID &amp; other)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>ToString</name>
+   <signature>tstring () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsValid</name>
+   <signature>bool () const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>IsValidUIDString</name>
+   <signature>bool (const tstring &amp; uidstring)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>FromString</name>
+   <signature>DS::UID (const tstring &amp; uidstring)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Generate</name>
+   <signature>DS::UID ()</signature>
+  </method>
+ </methods>
+</description>

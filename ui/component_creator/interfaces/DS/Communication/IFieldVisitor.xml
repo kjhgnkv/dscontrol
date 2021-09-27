@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>communication/imessage.h</header>
+ <class>DS::Communication::IFieldVisitor</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>Visit</name>
+   <signature>void (DS::Communication::FieldId fieldId ,const DS::Communication::IField * subField)</signature>
+  </method>
+ </methods>
+</description>

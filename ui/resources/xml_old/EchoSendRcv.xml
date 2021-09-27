@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="EchoSendRcv" title="SendReceive" type="0" category="Test">
+    <Send id="777" name="EchoMessage">
+     <Protocol name="network" id="1" factory="json" component="ds.host.protocols.protocol.json"/>
+     <InternalProtocol name="internal" id="1" factory="default"/>
+    </Send>
+    <Recv id="777" name="EchoMessage">
+	 <Protocol name="network" id="1" factory="json" component="ds.host.protocols.protocol.json"/>
+     <InternalProtocol name="internal" id="1" factory="default"/>
+    </Recv>
+</ModuleClass>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>miscellaneous/iprintstream.h</header>
+ <class>DS::Miscellaneous::IPrintStream</class>
+ <inheritance/>
+ <methods>
+  <method>
+   <type>pure</type>
+   <name>Print</name>
+   <signature>void (const tchar * content ,DS::Miscellaneous::IPrintStream::Category cat)</signature>
+  </method>
+ </methods>
+</description>

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ModuleClass name="TRKPlotPlotAssociation" title="点点关联" type="1" category="航迹跟踪">
+    <Service name="ITrackerEngine" provide="0"/>
+</ModuleClass>

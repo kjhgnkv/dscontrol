@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+ <packages>
+  <package>DS</package>
+ </packages>
+ <header>services/impl/comm_service.h</header>
+ <class>DS::Services::Impl::CommService</class>
+ <inheritance>
+  <class>DS::Services::ICommService</class>
+  <class>DS::Services::ICommTransport</class>
+  <class>DS::Services::IServiceControl</class>
+ </inheritance>
+ <methods>
+  <method>
+   <type>realized</type>
+   <name>GetUID</name>
+   <signature>const DS::UID &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetClass</name>
+   <signature>const DS::ClassInfo &amp;()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>GetRuntimeClass</name>
+   <signature>const DS::ClassInfo &amp;() const</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>CommService</name>
+   <signature>()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Query</name>
+   <signature>DS::Core::IQueriable *(const DS::UID &amp; iid)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Open</name>
+   <signature>DS::Communication::IMessageSender *(const tchar * name ,DS::Communication::IMessageHandler * pHandler ,DS::Communication::ICommListener * pListener)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Close</name>
+   <signature>void (DS::Communication::IMessageSender * handle)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>RegisterCommProvider</name>
+   <signature>void (const tchar * type ,DS::Communication::ICommProvider * pProvider)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>UnregisterCommProvider</name>
+   <signature>void (const tchar * type ,DS::Communication::ICommProvider * pProvider)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>FindCommProvider</name>
+   <signature>DS::Communication::ICommProvider *(const tchar * type)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Initialize</name>
+   <signature>void (Core::IApplication * pmm)</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Start</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Stop</name>
+   <signature>void ()</signature>
+  </method>
+  <method>
+   <type>realized</type>
+   <name>Finalize</name>
+   <signature>void (Core::IApplication * pmm)</signature>
+  </method>
+ </methods>
+</description>
